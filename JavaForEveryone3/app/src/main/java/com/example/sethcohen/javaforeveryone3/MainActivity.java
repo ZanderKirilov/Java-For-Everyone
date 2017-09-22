@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -80,8 +81,23 @@ public class MainActivity extends AppCompatActivity {
 }
 
     public void websiteITTalents(View view){
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.ittalents.bg/home"));
-        startActivity(browserIntent);
+        final ImageButton iTTalents = (ImageButton) findViewById(R.id.imageButton);
+
+        new Thread(new Runnable() {
+            public void run() {
+                iTTalents.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {;
+                    Intent intent = new Intent();
+                    intent.setAction(Intent.ACTION_VIEW);
+                    intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                    intent.setData(Uri.parse("http://www.ittalents.bg/home"));
+                    startActivity(intent);
+                }
+            })  ;
+            }
+        }).start();
+
     }
 
 }
