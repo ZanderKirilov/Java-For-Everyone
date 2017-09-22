@@ -27,6 +27,10 @@
         tools:layout_constraintRight_creator="1" />
 
     <EditText
+<<<<<<< HEAD
+=======
+
+>>>>>>> 26ca23d5fede10ac14a1324ca946cebb38d0795d
         android:id="@+id/editTextEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,8 +39,9 @@
         android:hint="@string/email"
         android:inputType="textEmailAddress"
         android:textColor="@android:color/background_dark"
-        android:textColorHint="@android:color/background_dark"
+        android:textColorHint="@color/colorPrimaryDark"
         android:textColorLink="#0097A7"
+        android:textSize="14sp"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -52,33 +57,62 @@
         android:layout_marginTop="19dp"
         android:ems="10"
         android:hint="@string/password"
+<<<<<<< HEAD
         android:inputType="textEmailAddress"
+=======
+        android:inputType="textPassword"
+>>>>>>> 26ca23d5fede10ac14a1324ca946cebb38d0795d
         android:textColor="@android:color/background_dark"
-        android:textColorHint="@android:color/background_dark"
+        android:textColorHint="@color/colorPrimaryDark"
         android:textColorLink="#0097A7"
+        android:textSize="14sp"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextEmail"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1" />
+        tools:layout_constraintTop_creator="1"
+        />
 
+<<<<<<< HEAD
+=======
+    <TextView
+        android:id="@+id/textViewLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+
+        android:fontFamily="sans-serif"
+        android:text="Login"
+        android:textAlignment="center"
+        android:textColor="#0097A7"
+        android:textSize="36sp"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1" />
+
+>>>>>>> 26ca23d5fede10ac14a1324ca946cebb38d0795d
     <CheckBox
         android:id="@+id/checkBoxRemember"
         style="@android:style/Widget.CompoundButton.CheckBox"
-        android:layout_width="215dp"
-        android:layout_height="42dp"
+        android:layout_width="165dp"
+        android:layout_height="38dp"
         android:text="Remember me"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         android:textColor="#0097A7"
         android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintVertical_bias="0.462" />
+        app:layout_constraintVertical_bias="0.462"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1" />
 
     <Button
         android:id="@+id/btn_Login_Login"
@@ -92,9 +126,17 @@
         android:onClick="loginButton"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+<<<<<<< HEAD
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.663"  />
+=======
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/btn_RegisterHome"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="8dp" />
+>>>>>>> 26ca23d5fede10ac14a1324ca946cebb38d0795d
 
     <Button
         android:id="@+id/btn_RegisterHome_Login"
@@ -102,9 +144,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Register"
+<<<<<<< HEAD
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.814" />
+=======
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="125dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
+>>>>>>> 26ca23d5fede10ac14a1324ca946cebb38d0795d
 </android.support.constraint.ConstraintLayout>
