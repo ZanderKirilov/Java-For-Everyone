@@ -2,13 +2,13 @@
     <string name="app_name">Java For Everyone</string>
     <string name="signin">SIGN IN</string>
     <string name="Create_an_account">CREATE AN ACCOUNT</string>
-    <string name="password">Password</string>
+    <string name="password">Insert password</string>
     <string name="rePassword">Retype Password</string>
-    <string name="email">Email</string>
+    <string name="email">Insert email</string>
     <string name="success_login_msg">Login successful</string>
     <string name="error_login_msg">Please fill any empty fields!</string>
     <string name="retype_password">Retype Password</string>
-    <string name="username">Username</string>
+    <string name="username">Insert username</string>
     <string name="loginfailed">Login Failed. Try Again !!!</string>
     <string name="loginsuccess">Login Success</string>
     <string name="login">Login</string>

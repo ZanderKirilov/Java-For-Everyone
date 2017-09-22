@@ -45,8 +45,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="394dp"
-        android:layout_height="358dp"
+        android:layout_width="433dp"
+        android:layout_height="384dp"
         android:orientation="vertical"
         android:scaleType="fitCenter"
         android:src="@drawable/cover1javaaa"
@@ -60,7 +60,9 @@
         tools:layout_constraintLeft_creator="1"
         android:layout_marginLeft="1dp"
         android:layout_marginRight="1dp"
-        android:layout_marginTop="-1dp" />
+        android:layout_marginTop="-1dp"
+        tools:layout_editor_absoluteX="-34dp"
+        app:layout_constraintHorizontal_bias="0.448" />
 
     <ImageButton
         android:id="@+id/imageButton"
