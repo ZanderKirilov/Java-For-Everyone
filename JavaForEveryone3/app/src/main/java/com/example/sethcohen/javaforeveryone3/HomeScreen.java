@@ -21,8 +21,8 @@ public class HomeScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                                             //Ако тук смениш Introduction.class със Register.class работи!
-                Intent register = new Intent(HomeScreen.this, Introduction.class);
-                startActivity(register);
+                Intent gotoIntro = new Intent(HomeScreen.this, Introduction.class);
+                startActivity(gotoIntro);
             }
         });
     }
