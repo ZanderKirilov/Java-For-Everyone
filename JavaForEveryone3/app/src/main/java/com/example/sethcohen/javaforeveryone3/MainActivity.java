@@ -54,8 +54,8 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View view){
             AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
             View mView = getLayoutInflater().inflate(R.layout.activity_register, null);
-            final EditText mEmail = (EditText) mView.findViewById(R.id.editTextEmail);
-            final EditText mPassword = (EditText) mView.findViewById(R.id.editTextPassword);
+            final EditText mEmail = (EditText) mView.findViewById(R.id.Username_Login);
+            final EditText mPassword = (EditText) mView.findViewById(R.id.Password_Login);
             Button mSignIn = (Button) mView.findViewById(R.id.btn_SignIn);
             Button mRegisterHome = (Button) mView.findViewById(R.id.btn_RegisterHome);
 

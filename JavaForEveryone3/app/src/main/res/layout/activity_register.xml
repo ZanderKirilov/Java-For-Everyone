@@ -8,7 +8,7 @@
     tools:context="com.example.sethcohen.javaforeveryone3.Register">
 
     <TextView
-        android:id="@+id/signUp"
+        android:id="@+id/signUp_Register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -25,14 +25,13 @@
         tools:layout_constraintRight_creator="1" />
 
     <EditText
-        android:id="@+id/editTextUsername"
+        android:id="@+id/Username_Register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:ems="10"
         android:hint="@string/username"
         android:inputType="textPersonName"
-        android:textAppearance="@android:style/TextAppearance.Material.Medium.Inverse"
         android:textColor="@android:color/background_dark"
         android:textColorHighlight="@android:color/background_dark"
         android:textColorHint="@color/colorPrimaryDark"
@@ -41,73 +40,70 @@
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signUp"
+        app:layout_constraintTop_toBottomOf="@+id/signUp_Register"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintTop_creator="1" />
 
     <EditText
-        android:id="@+id/editTextPasswod"
+        android:id="@+id/Password_Register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/password"
         android:inputType="textPassword"
-        android:textAppearance="@android:style/TextAppearance.Material.Medium.Inverse"
         android:textColorHighlight="@android:color/background_dark"
         android:textColorHint="@color/colorPrimaryDark"
         android:textSize="14sp"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextUsername"
+        app:layout_constraintTop_toBottomOf="@+id/Username_Register"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintTop_creator="1" />
 
     <EditText
-        android:id="@+id/editRetyPassword"
+        android:id="@+id/RetypePassword_Register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
         android:ems="10"
         android:hint="Retype Password"
         android:inputType="textPassword"
-        android:textAppearance="@android:style/TextAppearance.Material.Medium.Inverse"
         android:textColorHighlight="@android:color/background_dark"
         android:textColorHint="@color/colorPrimaryDark"
         android:textSize="14sp"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextUsername"
+        app:layout_constraintTop_toBottomOf="@+id/Password_Register"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintTop_creator="1" />
 
     <EditText
-        android:id="@+id/editEmail"
+        android:id="@+id/Email_Register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
-        android:textAppearance="@android:style/TextAppearance.Material.Medium.Inverse"
         android:textColorHighlight="@android:color/background_dark"
         android:textColorHint="@color/colorPrimaryDark"
         android:textSize="14sp"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editRetyPassword"
+        app:layout_constraintTop_toBottomOf="@+id/RetypePassword_Register"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintTop_creator="1" />
 
     <Button
-        android:id="@+id/btn_RegisterHome"
+        android:id="@+id/btn_RegisterHome_Register"
         android:layout_width="150dp"
         android:layout_height="48dp"
         android:layout_marginBottom="82dp"
@@ -122,7 +118,7 @@
         tools:layout_constraintRight_creator="1" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/checkBox_Register"
         style="@android:style/Widget.CompoundButton.CheckBox"
         android:layout_width="165dp"
         android:layout_height="38dp"
@@ -131,7 +127,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         android:textColor="#0097A7"
         android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_RegisterHome"
+        app:layout_constraintBottom_toTopOf="@+id/btn_RegisterHome_Register"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         tools:layout_constraintBottom_creator="1"

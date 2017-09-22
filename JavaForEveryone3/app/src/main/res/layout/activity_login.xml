@@ -13,7 +13,6 @@
         android:layout_width="215dp"
         android:layout_height="42dp"
         android:layout_marginTop="16dp"
-
         android:fontFamily="sans-serif"
         android:text="Login"
         android:textAlignment="center"
@@ -27,7 +26,7 @@
         tools:layout_constraintRight_creator="1" />
 
     <EditText
-        android:id="@+id/editTextEmail"
+        android:id="@+id/Username_Login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -47,7 +46,7 @@
         tools:layout_constraintTop_creator="1" />
 
     <EditText
-        android:id="@+id/editTextPassword"
+        android:id="@+id/Password_Login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="19dp"
@@ -61,7 +60,7 @@
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEmail"
+        app:layout_constraintTop_toBottomOf="@+id/Username_Login"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintTop_creator="1"
@@ -69,7 +68,7 @@
 
 
     <CheckBox
-        android:id="@+id/checkBoxRemember"
+        android:id="@+id/checkBoxRemember_Login"
         style="@android:style/Widget.CompoundButton.CheckBox"
         android:layout_width="165dp"
         android:layout_height="38dp"
