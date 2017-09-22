@@ -30,8 +30,8 @@ public class HomeScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent register = new Intent(HomeScreen.this, Introduction.class);
-                startActivity(register);
+                Intent gotoIntro = new Intent(HomeScreen.this, Introduction.class);
+                startActivity(gotoIntro);
             }
         });
     }

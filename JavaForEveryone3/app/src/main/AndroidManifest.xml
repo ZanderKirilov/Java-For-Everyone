@@ -18,10 +18,15 @@
         </activity>
         <activity android:name=".HomeScreen" />
         <activity android:name=".Register" />
+<<<<<<< HEAD
         <activity android:name=".Login" />
         <activity android:name=".Introduction" />
         <activity android:name=".ConditionsAndLoops" />
         <activity android:name=".Arrays"></activity>
+=======
+        <activity android:name=".Login"/>
+        <activity android:name=".Introduction"></activity>
+>>>>>>> 5cf1f5f03ec1bb90c1c81928e9696c0a9e872552
     </application>
 
 </manifest>
