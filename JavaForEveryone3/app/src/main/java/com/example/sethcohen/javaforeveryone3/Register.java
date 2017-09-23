@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Register extends AppCompatActivity {
+public class Register extends Login {
     Button register_register;
     EditText username_register;
     EditText password_register;
@@ -38,19 +38,21 @@ public class Register extends AppCompatActivity {
         String retPass = retyped_password_register.getText().toString().trim();
         String email = email_register.getText().toString().trim();
         if(user.equals("admin") && pass.equals("admin") && email.equals("admin") && retPass.equals(pass)){
-            AlertDialog.Builder welcomeAlert = new AlertDialog.Builder(Register.this);
-            welcomeAlert.setTitle("ITTalents - JavaForEveryone");
-            welcomeAlert.setMessage("Welcome " + user);
-            welcomeAlert.setPositiveButton("Go!", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialogInterface, int i) {
-                    Intent testing = new Intent(Register.this, HomeScreen.class);
-                    startActivity(testing);
-                }
-            });
-            welcomeAlert.show();
+            successfulAppEnter(user);
+//            AlertDialog.Builder welcomeAlert = new AlertDialog.Builder(Register.this);
+//            welcomeAlert.setTitle("ITTalents - JavaForEveryone");
+//            welcomeAlert.setMessage("Welcome " + user);
+//            welcomeAlert.setPositiveButton("Go!", new DialogInterface.OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialogInterface, int i) {
+//                    Intent testing = new Intent(Register.this, HomeScreen.class);
+//                    startActivity(testing);
+//                }
+//            });
+//            welcomeAlert.show();
         }else{
-            Toast.makeText(this,"Wrong input", Toast.LENGTH_LONG).show();
+            unSuccessfulAppEnter();
+//            Toast.makeText(this,"Wrong input", Toast.LENGTH_LONG).show();
         }
 
     }
