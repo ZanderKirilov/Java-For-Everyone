@@ -22,7 +22,7 @@
         <activity android:name=".Introduction" />
         <activity android:name=".ConditionsAndLoops" />
         <activity android:name=".Arrays"></activity>
-        
+
     </application>
 
 </manifest>

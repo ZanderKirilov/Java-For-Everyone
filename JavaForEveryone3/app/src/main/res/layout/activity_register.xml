@@ -121,7 +121,7 @@
         android:id="@+id/checkBox_Register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="73dp"
+        android:layout_marginBottom="74dp"
         android:text="Remember me"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         android:textColor="#0097A7"
@@ -131,5 +131,6 @@
         app:layout_constraintRight_toRightOf="parent"
         tools:layout_constraintBottom_creator="1"
         tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1" />
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintHorizontal_bias="0.404" />
 </android.support.constraint.ConstraintLayout>

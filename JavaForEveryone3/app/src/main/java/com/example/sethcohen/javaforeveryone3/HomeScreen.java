@@ -36,7 +36,11 @@ public class HomeScreen extends AppCompatActivity {
         });
     }
 
-    TextView textView;
+
+
+
+
+//    TextView textView;
 
 //    public void showIntro(){
 //        textView = (TextView) findViewById(R.id.text_Intro);
