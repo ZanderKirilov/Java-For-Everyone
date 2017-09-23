@@ -9,6 +9,25 @@
 
 
     <Button
+        android:id="@+id/button2"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="#0097A7"
+        android:text="Въведение"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <Button
         android:id="@+id/button4"
         android:layout_width="100dp"
         android:layout_height="70dp"
@@ -74,32 +93,17 @@
         android:layout_height="70dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+<<<<<<< HEAD
+        android:layout_marginTop="112dp"
+=======
         android:layout_marginTop="182dp"
+>>>>>>> 1338a7018cb0af5d303a8917606d33392eff23ff
         android:background="#0097A7"
         android:text="Масиви"
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@android:color/background_light"
         app:layout_constraintHorizontal_bias="0.901"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1" />
-
-    <Button
-        android:id="@+id/button1_Intro"
-        android:layout_width="100dp"
-        android:layout_height="70dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="112dp"
-        android:background="#0097A7"
-        android:text="Въведение"
-        android:textAllCaps="false"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColor="@android:color/background_light"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"

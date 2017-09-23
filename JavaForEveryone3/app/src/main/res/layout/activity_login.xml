@@ -76,11 +76,11 @@
         android:textColor="#0097A7"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.421"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.548"
+        app:layout_constraintVertical_bias="0.547"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1" />
 
