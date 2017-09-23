@@ -15,27 +15,28 @@ public class Introduction extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_introduction);
+        showIntro();
     }
 
-//    TextView textView;
-//
-//    public void showIntro(){
-//        textView = (TextView) findViewById(R.id.text_Intro);
-//        textView.setMovementMethod(new ScrollingMovementMethod());
-//        String data = "";
-//        StringBuffer sBuffer = new StringBuffer();
-//        InputStream is = this.getResources().openRawResource(R.raw.intro);
-//        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-//        if(is != null){
-//            try{
-//                while ((data = reader.readLine()) != null){
-//                    sBuffer.append(data + "n");
-//                }
-//                textView.setText(sBuffer);
-//                is.close();
-//            } catch (Exception ex) {
-//                ex.printStackTrace();
-//            }
-//        }
-//    }
+    TextView textView;
+
+    public void showIntro(){
+        textView = (TextView) findViewById(R.id.text_Intro);
+        textView.setMovementMethod(new ScrollingMovementMethod());
+        String data = "";
+        StringBuffer sBuffer = new StringBuffer();
+        InputStream is = this.getResources().openRawResource(R.raw.java_for_everyone2);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+        if(is != null){
+            try{
+                while ((data = reader.readLine()) != null){
+                    sBuffer.append(data + "n");
+                }
+                textView.setText(sBuffer);
+                is.close();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
 }

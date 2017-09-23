@@ -47,7 +47,7 @@
         android:layout_height="70dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="295dp"
+        android:layout_marginTop="317dp"
         android:background="@drawable/buttonshape"
         android:text="Методи и рекурсия"
         android:textAllCaps="false"
@@ -68,7 +68,7 @@
         android:layout_height="70dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="295dp"
+        android:layout_marginTop="317dp"
         android:background="@drawable/buttonshape"
         android:text="Символни низове"
         android:textAllCaps="false"
@@ -132,7 +132,7 @@
         android:layout_alignLeft="@+id/button5"
         android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/button5"
-        android:layout_marginBottom="101dp"
+        android:layout_marginBottom="91dp"
         android:background="@drawable/buttonshape"
         android:text="Алгоритми"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -150,7 +150,8 @@
         android:id="@+id/tv_test"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="May The Code \n Be With You!"
+        android:text="May The Code \nBe With You!"
+        android:gravity="center"
         android:textColor="#0097A7"
         android:textColorHighlight="@android:color/holo_blue_dark"
         android:textIsSelectable="false"
@@ -159,8 +160,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.48" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView3"

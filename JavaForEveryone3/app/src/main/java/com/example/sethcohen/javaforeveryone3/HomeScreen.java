@@ -25,7 +25,6 @@ public class HomeScreen extends AppCompatActivity {
         gotoIntroduction();
         gotoConditionsAndLoops();
         gotoArrays();
-        //showIntro();
     }
 
     @Override
@@ -65,30 +64,6 @@ public class HomeScreen extends AppCompatActivity {
     }
 
 
-
-
-
-//    TextView textView;
-
-//    public void showIntro(){
-//        textView = (TextView) findViewById(R.id.text_Intro);
-//        textView.setMovementMethod(new ScrollingMovementMethod());
-//        String data = "";
-//        StringBuffer sBuffer = new StringBuffer();
-//        InputStream is = this.getResources().openRawResource(R.raw.intro);
-//        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-//        if(is != null){
-//            try{
-//                while ((data = reader.readLine()) != null){
-//                    sBuffer.append(data + "n");
-//                }
-//                textView.setText(sBuffer);
-//                is.close();
-//            } catch (Exception ex) {
-//                ex.printStackTrace();
-//            }
-//        }
-//    }
 
     public void gotoConditionsAndLoops(){
         Button registerPage = (Button) findViewById(R.id.button2_Loops);
