@@ -16,6 +16,7 @@
         android:layout_marginTop="32dp"
         android:background="#0097A7"
         android:text="@string/signin"
+        android:onClick="signIn"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"

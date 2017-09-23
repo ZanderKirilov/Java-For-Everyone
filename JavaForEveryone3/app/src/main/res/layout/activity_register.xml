@@ -11,7 +11,7 @@
         android:id="@+id/signUp_Register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="sans-serif"
         android:text="Sign Up"
         android:textAlignment="center"
@@ -28,7 +28,7 @@
         android:id="@+id/Username_Register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="57dp"
         android:ems="10"
         android:hint="@string/username"
         android:inputType="textPersonName"
@@ -89,7 +89,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="@string/email"
+        android:hint="Insert E-Mail - Optional"
         android:inputType="textEmailAddress"
         android:textColorHighlight="@android:color/background_dark"
         android:textColorHint="@color/colorPrimaryDark"
@@ -117,20 +117,4 @@
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1" />
 
-    <CheckBox
-        android:id="@+id/checkBox_Register"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="74dp"
-        android:text="Remember me"
-        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-        android:textColor="#0097A7"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_RegisterHome_Register"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_constraintBottom_creator="1"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"
-        app:layout_constraintHorizontal_bias="0.404" />
 </android.support.constraint.ConstraintLayout>

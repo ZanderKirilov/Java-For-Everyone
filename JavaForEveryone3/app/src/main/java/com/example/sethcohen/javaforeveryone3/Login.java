@@ -12,10 +12,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import DBpack.LoginDataBaseAdapter;
+
 public class Login extends AppCompatActivity {
-    Button login;
-    EditText username;
-    EditText password;
+    private Button login;
+    private EditText username;
+    private EditText password;
+    private LoginDataBaseAdapter logDBAdp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,14 +29,8 @@ public class Login extends AppCompatActivity {
         login = (Button)findViewById(R.id.btn_Login_Login);
         username = (EditText)findViewById(R.id.Username_Login);
         password = (EditText)findViewById(R.id.Password_Login);
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                login();
-            }
-        });
-
-
+        logDBAdp=new LoginDataBaseAdapter(this);
+        logDBAdp=logDBAdp.open();
 
 
     }
@@ -63,10 +60,12 @@ public class Login extends AppCompatActivity {
     }
 
 
-    public void login(){
+    public void login(View V){
         String user = username.getText().toString().trim();
         String pass = password.getText().toString().trim();
-        if(user.equals("admin") && pass.equals("admin")){
+        String storedPass = logDBAdp.getSinlgeEntry(user);
+
+        if(pass.equals(storedPass)){
             successfulAppEnter(user);
         }else{
             unSuccessfulAppEnter();
@@ -84,5 +83,9 @@ public class Login extends AppCompatActivity {
             }
         });
     }
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        logDBAdp.close();
+    }
 }

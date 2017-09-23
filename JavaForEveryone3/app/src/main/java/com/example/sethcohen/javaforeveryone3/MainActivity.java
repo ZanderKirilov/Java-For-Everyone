@@ -1,8 +1,8 @@
 package com.example.sethcohen.javaforeveryone3;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,9 +11,24 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import DBpack.LoginDataBaseAdapter;
 
-    public Button registerHome;
+public class MainActivity extends AppCompatActivity {
+    private LoginDataBaseAdapter loginDataBaseAdp;
+
+    private Button registerHome;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        loginDataBaseAdp=new LoginDataBaseAdapter(this);
+        loginDataBaseAdp=loginDataBaseAdp.open();
+
+        signUp();
+
+    }
 
     public void signUp(){
         registerHome = (Button) findViewById(R.id.btn_RegisterHome);
@@ -25,60 +40,41 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    public Button signIn;
-    public void signIn(){
-        signIn = (Button) findViewById(R.id.btn_SignIn);
-        signIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent login = new Intent(MainActivity.this, Login.class);
-                startActivity(login);
+
+    public void signIn(View V)
+    {
+        final Dialog dialog = new Dialog(MainActivity.this);
+        dialog.setContentView(R.layout.dialog_login);
+        dialog.setTitle("Login To " + getString(R.string.app_name));
+        final EditText editTextUserName=(EditText)dialog.findViewById(R.id.editTextUserNameToLogin);
+        final EditText editTextPassword=(EditText)dialog.findViewById(R.id.editTextPasswordToLogin);
+
+        Button btnSignIn=(Button)dialog.findViewById(R.id.buttonSignIn);
+
+        btnSignIn.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+
+                String userName=editTextUserName.getText().toString();
+                String password=editTextPassword.getText().toString();
+
+                String storedPassword=loginDataBaseAdp.getSinlgeEntry(userName);
+
+                if(password.equals(storedPassword)){
+                    Toast.makeText(MainActivity.this, "Login Successfull", Toast.LENGTH_LONG).show();
+                    dialog.dismiss();
+                    Intent goneToHome = new Intent(MainActivity.this, HomeScreen.class);
+                    startActivity(goneToHome);
+                }
+                else{
+                    Toast.makeText(MainActivity.this, "User Name or Password does not match", Toast.LENGTH_LONG).show();
+                }
             }
         });
+        dialog.show();
     }
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        signUp();
-        signIn();
-
-    }
-
-    public void login(){
-    Button mRegisterHome = (Button) findViewById(R.id.btn_RegisterHome);
-        mRegisterHome.setOnClickListener(new View.OnClickListener(){
-        @Override
-        public void onClick(View view){
-            AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
-            View mView = getLayoutInflater().inflate(R.layout.activity_register, null);
-            final EditText mEmail = (EditText) mView.findViewById(R.id.Username_Login);
-            final EditText mPassword = (EditText) mView.findViewById(R.id.Password_Login);
-            Button mSignIn = (Button) mView.findViewById(R.id.btn_SignIn);
-            Button mRegisterHome = (Button) mView.findViewById(R.id.btn_RegisterHome);
-
-            mSignIn.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View view){
-                    if(!mEmail.getText().toString().isEmpty() && !mPassword.getText().toString().isEmpty()){
-                        Toast.makeText(MainActivity.this,
-                                R.string.success_login_msg,
-                                Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(MainActivity.this,
-                                R.string.error_login_msg,
-                                Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
-            mBuilder.setView(mView);
-            AlertDialog dialog= mBuilder.create();
-            dialog.show();
-        }
-    });
-}
 
     public void websiteITTalents(View view){
         final ImageButton iTTalents = (ImageButton) findViewById(R.id.imageButton);
@@ -99,5 +95,9 @@ public class MainActivity extends AppCompatActivity {
         }).start();
 
     }
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        loginDataBaseAdp.close();
+    }
 }

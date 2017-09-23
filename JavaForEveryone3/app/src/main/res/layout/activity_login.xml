@@ -90,6 +90,7 @@
         android:layout_height="wrap_content"
         android:background="#0097A7"
         android:text="@string/login"
+        android:onClick="login"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"

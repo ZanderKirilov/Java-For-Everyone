@@ -1,62 +1,63 @@
 package com.example.sethcohen.javaforeveryone3;
 
-import android.content.DialogInterface;
+
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import DBpack.LoginDataBaseAdapter;
+
 public class Register extends Login {
-    Button register_register;
-    EditText username_register;
-    EditText password_register;
-    EditText retyped_password_register;
-    EditText email_register;
+    EditText editTextUserName,editTextPassword,editTextConfirmPassword;
+    Button btnCreateAccount;
+
+    LoginDataBaseAdapter loginDataBaseAdapter;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        register_register = (Button)findViewById(R.id.btn_RegisterHome_Register);
-        username_register = (EditText)findViewById(R.id.Username_Register);
-        password_register = (EditText)findViewById(R.id.Password_Register);
-        retyped_password_register = (EditText)findViewById(R.id.RetypePassword_Register);
-        email_register = (EditText)findViewById(R.id.Email_Register);
-        register_register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                login();
+
+        loginDataBaseAdapter=new LoginDataBaseAdapter(this);
+        loginDataBaseAdapter=loginDataBaseAdapter.open();
+
+        editTextUserName=(EditText)findViewById(R.id.Username_Register);
+        editTextPassword=(EditText)findViewById(R.id.Password_Register);
+        editTextConfirmPassword=(EditText)findViewById(R.id.RetypePassword_Register);
+
+        btnCreateAccount=(Button)findViewById(R.id.btn_RegisterHome_Register);
+        btnCreateAccount.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+
+                String userName=editTextUserName.getText().toString();
+                String password=editTextPassword.getText().toString();
+                String confirmPassword=editTextConfirmPassword.getText().toString();
+
+                if(userName.equals("")||password.equals("")||confirmPassword.equals("")) {
+                    Toast.makeText(getApplicationContext(), "Field Vaccant", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if(!password.equals(confirmPassword)) {
+                    Toast.makeText(getApplicationContext(), "Password does not match", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                else {
+                    loginDataBaseAdapter.insertEntry(userName, password);
+                    Toast.makeText(getApplicationContext(), "Account Successfully Created - Log in now", Toast.LENGTH_LONG).show();
+                    Intent goneToLogin = new Intent(Register.this, Login.class);
+                    startActivity(goneToLogin);
+                }
             }
         });
     }
-    public void login(){
-        String user = username_register.getText().toString().trim();
-        String pass = password_register.getText().toString().trim();
-        String retPass = retyped_password_register.getText().toString().trim();
-        String email = email_register.getText().toString().trim();
-        if(user.equals("admin") && pass.equals("admin") && email.equals("admin") && retPass.equals(pass)){
-            successfulAppEnter(user);
-//            AlertDialog.Builder welcomeAlert = new AlertDialog.Builder(Register.this);
-//            welcomeAlert.setTitle("ITTalents - JavaForEveryone");
-//            welcomeAlert.setMessage("Welcome " + user);
-//            welcomeAlert.setPositiveButton("Go!", new DialogInterface.OnClickListener() {
-//                @Override
-//                public void onClick(DialogInterface dialogInterface, int i) {
-//                    Intent testing = new Intent(Register.this, HomeScreen.class);
-//                    startActivity(testing);
-//                }
-//            });
-//            welcomeAlert.show();
-        }else{
-            unSuccessfulAppEnter();
-//            Toast.makeText(this,"Wrong input", Toast.LENGTH_LONG).show();
-        }
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        loginDataBaseAdapter.close();
     }
-
-
 
 }
