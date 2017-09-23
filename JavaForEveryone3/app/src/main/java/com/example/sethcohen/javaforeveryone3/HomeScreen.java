@@ -25,7 +25,7 @@ public class HomeScreen extends AppCompatActivity {
     }
 
     public void gotoIntroduction(){
-        Button registerPage = (Button) findViewById(R.id.button1_Intro);
+        Button registerPage = (Button) findViewById(R.id.button_Intro);
         registerPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

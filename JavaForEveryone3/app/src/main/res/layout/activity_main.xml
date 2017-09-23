@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background"
+    android:background="@drawable/pink_nuances"
     tools:context="com.example.sethcohen.javaforeveryone3.MainActivity">
 
     <Button
@@ -16,6 +16,7 @@
         android:layout_marginTop="32dp"
         android:background="#0097A7"
         android:text="@string/signin"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -32,6 +33,7 @@
         android:layout_marginTop="40dp"
         android:background="#0097A7"
         android:text="@string/Create_an_account"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
         app:layout_constraintLeft_toLeftOf="parent"

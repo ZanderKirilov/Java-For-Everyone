@@ -21,8 +21,8 @@
         <activity android:name=".Login" />
         <activity android:name=".Introduction" />
         <activity android:name=".ConditionsAndLoops" />
-        <activity android:name=".Arrays"></activity>
-
+        <activity android:name=".Arrays" />
+        <activity android:name=".Tester"></activity>
     </application>
 
 </manifest>
