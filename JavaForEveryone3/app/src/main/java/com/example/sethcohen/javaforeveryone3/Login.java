@@ -40,7 +40,8 @@ public class Login extends AppCompatActivity {
     public void successfulAppEnter(String user){
         final AlertDialog.Builder welcomeAlert = new AlertDialog.Builder(Login.this);
         welcomeAlert.setTitle("ITTalents - JavaForEveryone");
-        welcomeAlert.setMessage("\tWelcome " + user);
+        welcomeAlert.setMessage("\tWelcome, " + user);
+        welcomeAlert.setIcon(R.drawable.it_talents_logo_inner);
         final AlertDialog alert = welcomeAlert.create();
         alert.show();
         new CountDownTimer(2000,1000) {
