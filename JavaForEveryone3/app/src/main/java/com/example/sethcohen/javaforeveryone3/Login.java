@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import DBpack.LoginDataBaseAdapter;
@@ -25,6 +26,8 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         registerButton();
+        String tempEmail = "";
+        forgottenPassword(tempEmail);
 
         login = (Button)findViewById(R.id.btn_Login_Login);
         username = (EditText)findViewById(R.id.Username_Login);
@@ -83,6 +86,34 @@ public class Login extends AppCompatActivity {
             }
         });
     }
+
+    public void forgottenPassword(String email){
+
+        TextView frgtPass = (TextView) findViewById(R.id.frgt_pass);
+        frgtPass.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder frgtBuilder = new AlertDialog.Builder(Login.this);
+                View frgtView = getLayoutInflater().inflate(R.layout.activity_login, null);
+                Button send = frgtView.findViewById(R.id.frgt_pass);
+
+                send.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        //TO DO check email in DB
+//                        "Please enter your Registered Email: "
+//                        if(){
+//                        }else {
+//                        }
+                    }
+                });
+                frgtBuilder.setView(frgtView);
+                AlertDialog dialog = frgtBuilder.create();
+                dialog.show();
+            }
+        });
+    }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
