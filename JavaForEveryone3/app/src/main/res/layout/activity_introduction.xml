@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:scrollbars="vertical"
                 android:id="@+id/text_Intro"
-                android:background="#FFFFFFFF"
+                android:background="#FFFFFF"
                 tools:layout_editor_absoluteY="8dp"
                 tools:layout_editor_absoluteX="0dp"
                 android:layout_weight="0.94" />

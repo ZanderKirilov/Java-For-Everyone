@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pink_nuances"
+    tools:context="com.example.sethcohen.javaforeveryone3.HomeScreen">
+    <EditText
+        android:id="@+id/editTextUserNameToLogin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="User Name"
+        android:ems="10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.185"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.0">
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/editTextPasswordToLogin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:hint="Password"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.395" />
+
+    <Button
+        android:id="@+id/buttonSignIn"
+        android:layout_width="225dp"
+        android:layout_height="48dp"
+        android:background="#0097A7"
+        android:textColor="@android:color/background_light"
+        android:textSize="18sp"
+        android:text="Login"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordToLogin"
+        android:layout_marginTop="111dp"
+        app:layout_constraintHorizontal_bias="0.503" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RememberMe"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordToLogin"
+        android:layout_marginTop="49dp" />
+
+</android.support.constraint.ConstraintLayout>
