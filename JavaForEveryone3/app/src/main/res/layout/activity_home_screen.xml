@@ -21,7 +21,7 @@
 
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btn_profile_stages"
             android:layout_width="90dp"
             android:layout_height="20dp"
             android:layout_alignParentEnd="true"
@@ -40,7 +40,7 @@
             android:textStyle="bold|italic" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btn_achievements_profile"
             android:layout_width="90dp"
             android:layout_height="20dp"
             android:layout_alignParentLeft="true"

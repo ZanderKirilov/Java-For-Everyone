@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pink_nuances"
+    tools:context="com.example.sethcohen.javaforeveryone3.HomeScreen">
+
+
+    <TextView
+        android:id="@+id/text_profile_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Профил"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="#0097A7"
+        android:textSize="36sp"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/username_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="74dp" />
+
+    <TextView
+        android:id="@+id/lastAchievement_Profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17dp"
+        android:textStyle="italic"
+        android:elegantTextHeight="true"
+        android:textColor="@color/colorAccent"
+        android:text="Last Achievement : "
+        app:layout_constraintHorizontal_bias="0.066"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="215dp" />
+
+    <TextView
+        android:id="@+id/current_stage_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:elegantTextHeight="true"
+        android:text="Current Stage : "
+        android:textColor="@color/colorAccent"
+        android:textSize="17dp"
+        android:textStyle="italic"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/current_stage_input_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Your Current stage Here"
+        android:textSize="15dp"
+        app:layout_constraintHorizontal_bias="0.897"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="168dp" />
+
+    <EditText
+        android:id="@+id/lastAchievement_Input_Profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="220dp"
+        android:hint="Your last achievement"
+        android:textSize="15dp"
+        app:layout_constraintHorizontal_bias="0.853"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_helpPoints_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17dp"
+        android:textStyle="italic"
+        android:elegantTextHeight="true"
+        android:textColor="@color/colorAccent"
+        android:text="Help Points : "
+        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="273dp" />
+
+
+    <EditText
+        android:id="@+id/Points_Input_Profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="9"
+        android:textSize="15dp"
+        android:hint="Your HelpPoints Here"
+        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="275dp" />
+
+    <TextView
+        android:id="@+id/email_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="326dp"
+        android:elegantTextHeight="true"
+        android:text="Email : "
+        android:textColor="@color/colorAccent"
+        android:textSize="17dp"
+        android:textStyle="italic"
+        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="335dp"
+        android:hint="Your E-mail Here"
+        android:textSize="15dp"
+        app:layout_constraintHorizontal_bias="0.727"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/btn_Achievements_Profile"
+        style="@android:style/Widget.DeviceDefault.Button"
+        android:layout_width="111dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="499dp"
+        android:background="#0097A7"
+        android:text="Achievements"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@android:color/background_light"
+        android:textSize="15sp"
+        android:typeface="monospace"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_changePass_profile"
+        style="@android:style/Widget.DeviceDefault.Button"
+        android:layout_width="111dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="499dp"
+        android:background="#0097A7"
+        android:text="Change Pass"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@android:color/background_light"
+        android:textSize="15sp"
+        android:typeface="monospace"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/btn_inviteFriend_profile"
+        style="@android:style/Widget.DeviceDefault.Button"
+        android:layout_width="111dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="499dp"
+        android:background="#0097A7"
+        android:text="Invite Friend"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@android:color/background_light"
+        android:textSize="15sp"
+        android:typeface="monospace"
+        app:layout_constraintHorizontal_bias="0.941"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_logout_prifle"
+        android:layout_width="86dp"
+        android:layout_height="47dp"
+        android:text="LogOut"
+        android:background="#0097A7"
+        app:layout_constraintHorizontal_bias="0.946"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/btn_home_profile"
+        android:layout_width="86dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="16dp"
+        android:background="#0097A7"
+        android:text="Home"
+        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
+
