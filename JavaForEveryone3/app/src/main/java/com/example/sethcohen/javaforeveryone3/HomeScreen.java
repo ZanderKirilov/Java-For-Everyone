@@ -47,7 +47,7 @@ public class HomeScreen extends AppCompatActivity {
     }
 
     public void gotoIntroduction(){
-        Button registerPage = (Button) findViewById(R.id.button_Intro);
+        Button registerPage = (Button) findViewById(R.id.btn_intro_stages);
         registerPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,7 +61,7 @@ public class HomeScreen extends AppCompatActivity {
 
 
     public void gotoConditionsAndLoops(){
-        Button registerPage = (Button) findViewById(R.id.button2_Loops);
+        Button registerPage = (Button) findViewById(R.id.btn_loops_stages);
         registerPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,7 +73,7 @@ public class HomeScreen extends AppCompatActivity {
     }
 
     public void gotoArrays(){
-        Button registerPage = (Button) findViewById(R.id.button3_Arrays);
+        Button registerPage = (Button) findViewById(R.id.btn_arrays_stages);
         registerPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -110,7 +110,7 @@ public class HomeScreen extends AppCompatActivity {
     }
 
     public void websiteITTalents(View view){
-        final ImageButton iTTalents = (ImageButton) findViewById(R.id.imageButton2);
+        final ImageButton iTTalents = (ImageButton) findViewById(R.id.img_btn_ittalents);
 
         new Thread(new Runnable() {
             public void run() {

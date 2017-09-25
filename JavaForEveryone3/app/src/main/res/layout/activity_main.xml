@@ -9,7 +9,7 @@
     tools:context="com.example.sethcohen.javaforeveryone3.MainActivity">
 
     <Button
-        android:id="@+id/btn_SignIn"
+        android:id="@+id/btn_signin_main"
         style="@android:style/Widget.DeviceDefault.Button"
         android:layout_width="70dp"
         android:layout_height="25dp"
@@ -22,12 +22,12 @@
         android:textSize="18sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/img_backgrnd_main"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1" />
 
     <Button
-        android:id="@+id/btn_RegisterHome"
+        android:id="@+id/btn_register_main"
         style="@android:style/Widget.DeviceDefault.Button"
         android:layout_width="190dp"
         android:layout_height="25dp"
@@ -37,16 +37,17 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
+        android:onClick="signUp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_SignIn"
+        app:layout_constraintTop_toTopOf="@+id/btn_signin_main"
         tools:layout_constraintBottom_creator="1"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintTop_creator="1" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/img_backgrnd_main"
         android:layout_width="433dp"
         android:layout_height="384dp"
         android:orientation="vertical"
@@ -67,7 +68,7 @@
         app:layout_constraintHorizontal_bias="0.448" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/img_btn_ittalents_main"
         android:layout_width="113dp"
         android:layout_height="61dp"
         android:layout_marginBottom="16dp"

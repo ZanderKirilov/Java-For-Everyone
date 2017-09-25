@@ -54,6 +54,13 @@ public class Register extends Login {
             }
         });
     }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        finish();
+    }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();

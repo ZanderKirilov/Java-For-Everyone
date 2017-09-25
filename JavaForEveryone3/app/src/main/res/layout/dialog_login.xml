@@ -8,10 +8,10 @@
     android:background="@drawable/pink_nuances"
     tools:context="com.example.sethcohen.javaforeveryone3.HomeScreen">
     <EditText
-        android:id="@+id/editTextUserNameToLogin"
+        android:id="@+id/username_dialoglogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="User Name"
+        android:hint="@string/ins_username"
         android:ems="10"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -23,12 +23,12 @@
     </EditText>
 
     <EditText
-        android:id="@+id/editTextPasswordToLogin"
+        android:id="@+id/password_dialoglogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPassword"
-        android:hint="Password"
+        android:hint="@string/ins_password"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -37,27 +37,27 @@
         app:layout_constraintVertical_bias="0.395" />
 
     <Button
-        android:id="@+id/buttonSignIn"
+        android:id="@+id/btn_login_dialoglogin"
         android:layout_width="225dp"
         android:layout_height="48dp"
         android:background="#0097A7"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
-        android:text="Login"
+        android:text="@string/login"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordToLogin"
+        app:layout_constraintTop_toBottomOf="@+id/password_dialoglogin"
         android:layout_marginTop="111dp"
         app:layout_constraintHorizontal_bias="0.503" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/checkbox_rememberme_dialoglogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="RememberMe"
+        android:text="@string/remember_me"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPasswordToLogin"
+        app:layout_constraintTop_toBottomOf="@+id/password_dialoglogin"
         android:layout_marginTop="49dp"
         app:layout_constraintHorizontal_bias="0.0" />
 

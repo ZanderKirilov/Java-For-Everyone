@@ -8,11 +8,11 @@
     tools:context="com.example.sethcohen.javaforeveryone3.Arrays">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/title_arrays"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Масиви"
+        android:text="@string/arrays"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#0097A7"
         android:textSize="32sp"
@@ -22,11 +22,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_next_array"
+        android:id="@+id/btn_next_1_arrays"
         android:layout_width="90dp"
         android:layout_height="45dp"
         android:background="@drawable/button_on_click_next"
-        android:text="Next"
+        android:text="@string/next"
         android:textColor="?attr/colorButtonNormal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.817"

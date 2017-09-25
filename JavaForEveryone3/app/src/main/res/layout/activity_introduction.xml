@@ -20,11 +20,11 @@
             android:weightSum="1">
 
             <TextView
-                android:id="@+id/tv_Intro"
+                android:id="@+id/title_introduction"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Въведение"
+                android:text="@string/introduction"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textColor="#0097A7"
                 android:textSize="32sp"
@@ -44,7 +44,7 @@
                 android:layout_weight="0.94" />
 
             <Button
-                android:id="@+id/btn_Next"
+                android:id="@+id/btn_next_1_introduction"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|right"

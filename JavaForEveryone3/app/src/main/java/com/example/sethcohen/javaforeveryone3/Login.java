@@ -1,8 +1,6 @@
 package com.example.sethcohen.javaforeveryone3;
 
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.hardware.camera2.params.BlackLevelPattern;
 import android.os.CountDownTimer;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -30,12 +28,18 @@ public class Login extends AppCompatActivity {
         forgottenPassword(tempEmail);
 
         login = (Button)findViewById(R.id.btn_Login_Login);
-        username = (EditText)findViewById(R.id.Username_Login);
-        password = (EditText)findViewById(R.id.Password_Login);
+        username = (EditText)findViewById(R.id.username_login);
+        password = (EditText)findViewById(R.id.password_login);
         logDBAdp=new LoginDataBaseAdapter(this);
         logDBAdp=logDBAdp.open();
 
 
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        finish();
     }
 
     public void successfulAppEnter(String user){
@@ -77,7 +81,7 @@ public class Login extends AppCompatActivity {
     }
 
     public void registerButton(){
-        Button registerPage = (Button) findViewById(R.id.btn_RegisterHome_Login);
+        Button registerPage = (Button) findViewById(R.id.btn_register_login);
         registerPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -89,13 +93,13 @@ public class Login extends AppCompatActivity {
 
     public void forgottenPassword(String email){
 
-        TextView frgtPass = (TextView) findViewById(R.id.frgt_pass);
+        TextView frgtPass = (TextView) findViewById(R.id.frgtn_pass);
         frgtPass.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder frgtBuilder = new AlertDialog.Builder(Login.this);
                 View frgtView = getLayoutInflater().inflate(R.layout.activity_login, null);
-                Button send = frgtView.findViewById(R.id.frgt_pass);
+                Button send = frgtView.findViewById(R.id.frgtn_pass);
 
                 send.setOnClickListener(new View.OnClickListener() {
                     @Override

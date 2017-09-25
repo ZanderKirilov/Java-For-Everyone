@@ -8,12 +8,12 @@
     tools:context="com.example.sethcohen.javaforeveryone3.Login">
 
     <TextView
-        android:id="@+id/textViewLogin"
+        android:id="@+id/title_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:fontFamily="sans-serif"
-        android:text="Login"
+        android:text="@string/login"
         android:textAlignment="center"
         android:textColor="#0097A7"
         android:textSize="36sp"
@@ -25,12 +25,12 @@
         tools:layout_constraintRight_creator="1" />
 
     <EditText
-        android:id="@+id/Username_Login"
+        android:id="@+id/username_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="95dp"
         android:ems="10"
-        android:hint="Insert Username"
+        android:hint="@string/ins_username"
         android:inputType="textEmailAddress"
         android:textColor="@android:color/background_dark"
         android:textColorHint="@color/colorPrimaryDark"
@@ -39,18 +39,18 @@
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewLogin"
+        app:layout_constraintTop_toBottomOf="@+id/title_login"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintTop_creator="1" />
 
     <EditText
-        android:id="@+id/Password_Login"
+        android:id="@+id/password_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
         android:ems="10"
-        android:hint="Insert Password"
+        android:hint="@string/ins_password"
         android:inputType="textPassword"
         android:textAllCaps="false"
         android:textColor="@android:color/background_dark"
@@ -60,7 +60,7 @@
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Username_Login"
+        app:layout_constraintTop_toBottomOf="@+id/username_login"
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintTop_creator="1" />
@@ -70,7 +70,7 @@
         android:id="@+id/checkBoxRemember_Login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Remember me"
+        android:text="@string/remember_me"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         android:textColor="#0097A7"
         android:textSize="14sp"
@@ -100,11 +100,11 @@
         app:layout_constraintVertical_bias="0.739" />
 
     <Button
-        android:id="@+id/btn_RegisterHome_Login"
+        android:id="@+id/btn_register_login"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register"
+        android:text="@string/register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -113,7 +113,7 @@
 
 
     <TextView
-        android:id="@+id/frgt_pass"
+        android:id="@+id/frgtn_pass"
         style="@style/TextAppearance.AppCompat.Body1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -121,7 +121,7 @@
         android:clickable="true"
         android:onClick="login"
         android:padding="16dp"
-        android:text="Forget password? "
+        android:text="@string/forget_password"
         android:textColor="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

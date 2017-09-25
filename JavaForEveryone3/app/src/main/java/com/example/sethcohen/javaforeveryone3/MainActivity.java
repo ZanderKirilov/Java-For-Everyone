@@ -26,12 +26,16 @@ public class MainActivity extends AppCompatActivity {
         loginDataBaseAdp=new LoginDataBaseAdapter(this);
         loginDataBaseAdp=loginDataBaseAdp.open();
 
-        signUp();
-
     }
 
-    public void signUp(){
-        registerHome = (Button) findViewById(R.id.btn_RegisterHome);
+    @Override
+    protected void onStop() {
+        super.onStop();
+        finish();
+    }
+
+    public void signUp(View v){
+        registerHome = (Button) findViewById(R.id.btn_register_main);
         registerHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,10 +50,10 @@ public class MainActivity extends AppCompatActivity {
         final Dialog dialog = new Dialog(MainActivity.this);
         dialog.setContentView(R.layout.dialog_login);
         dialog.setTitle("Login To " + getString(R.string.app_name));
-        final EditText editTextUserName=(EditText)dialog.findViewById(R.id.editTextUserNameToLogin);
-        final EditText editTextPassword=(EditText)dialog.findViewById(R.id.editTextPasswordToLogin);
+        final EditText editTextUserName=(EditText)dialog.findViewById(R.id.username_dialoglogin);
+        final EditText editTextPassword=(EditText)dialog.findViewById(R.id.password_dialoglogin);
 
-        Button btnSignIn=(Button)dialog.findViewById(R.id.buttonSignIn);
+        Button btnSignIn=(Button)dialog.findViewById(R.id.btn_login_dialoglogin);
 
         btnSignIn.setOnClickListener(new View.OnClickListener() {
 
@@ -77,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void websiteITTalents(View view){
-        final ImageButton iTTalents = (ImageButton) findViewById(R.id.imageButton);
+        final ImageButton iTTalents = (ImageButton) findViewById(R.id.img_btn_ittalents_main);
 
         new Thread(new Runnable() {
             public void run() {

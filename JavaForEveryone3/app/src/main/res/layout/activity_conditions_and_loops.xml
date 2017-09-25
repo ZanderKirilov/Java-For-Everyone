@@ -8,11 +8,11 @@
     tools:context="com.example.sethcohen.javaforeveryone3.ConditionsAndLoops">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/title_condNloops"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Условия и цикли"
+        android:text="@string/cond_loops"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#0097A7"
         android:textSize="32sp"
@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/btn_next_1_condNloops"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/button_on_click_next"
