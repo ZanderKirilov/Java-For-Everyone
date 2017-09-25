@@ -10,9 +10,9 @@ public class Profile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        Bundle gettingData = getIntent().getExtras();
-        String user = gettingData.getString("Username");
-        EditText username = (EditText)findViewById(R.id.username_profile);
-        username.setText(user);
+//        Bundle gettingData = getIntent().getExtras();
+//        String user = gettingData.getString("Username");
+//        EditText username = (EditText)findViewById(R.id.username_profile);
+//        username.setText(user);
     }
 }

@@ -18,6 +18,8 @@ public class HomeScreen extends AppCompatActivity {
         gotoIntroduction();
         gotoConditionsAndLoops();
         gotoArrays();
+        goToProfile();
+        goToAchievements();
     }
 
     @Override
@@ -78,6 +80,31 @@ public class HomeScreen extends AppCompatActivity {
 
                 Intent register = new Intent(HomeScreen.this, Arrays.class);
                 startActivity(register);
+            }
+        });
+    }
+
+  public void goToProfile(){
+        Button profileView = (Button) findViewById(R.id.btn_profile_stages);
+        profileView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent goToProfile = new Intent(HomeScreen.this, Profile.class);
+                startActivity(goToProfile);
+            }
+        });
+    }
+
+
+    public void goToAchievements(){
+        Button registerPage = (Button) findViewById(R.id.btn_achievements_profile);
+        registerPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent goToAchievements = new Intent(HomeScreen.this, Achievements.class);
+                startActivity(goToAchievements);
             }
         });
     }

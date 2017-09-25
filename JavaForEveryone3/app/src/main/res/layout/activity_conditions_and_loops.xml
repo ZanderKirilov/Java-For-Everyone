@@ -15,16 +15,19 @@
         android:text="Условия и цикли"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#0097A7"
+        android:textSize="32sp"
+        app:layout_constraintHorizontal_bias="0.14"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.14" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/button_on_click_next"
         android:text="Next"
+        android:textColor="?attr/colorButtonNormal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.817"
         app:layout_constraintLeft_toLeftOf="parent"

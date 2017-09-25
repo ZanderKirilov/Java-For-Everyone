@@ -15,16 +15,19 @@
         android:text="Масиви"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#0097A7"
+        android:textSize="32sp"
+        app:layout_constraintHorizontal_bias="0.061"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.061" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/btn_next_array"
+        android:layout_width="90dp"
+        android:layout_height="45dp"
+        android:background="@drawable/button_on_click_next"
         android:text="Next"
+        android:textColor="?attr/colorButtonNormal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.817"
         app:layout_constraintLeft_toLeftOf="parent"

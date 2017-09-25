@@ -11,6 +11,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -30,6 +31,206 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <view
+                android:id="@+id/view17"
+                class="android.support.v4.widget.Space"
+                id="@+id/view"
+                layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp" />
+
+            <view
+                android:id="@+id/view18"
+                class="android.support.v4.widget.Space"
+                id="@+id/view15"
+                layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:id="@+id/first_test_achiev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="First Test Achievement"
+                android:textStyle="bold" />
+
+            <view
+                class="android.support.v4.widget.Space"
+                id="@+id/view16"
+                layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Unlock when you pass your first test" />
+
+            <view
+                class="android.support.v4.widget.Space"
+                id="@+id/view2"
+                layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/level_up_achiev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Level Up Achievement"
+                android:textStyle="bold" />
+
+            <view
+                class="android.support.v4.widget.Space"
+                id="@+id/view14"
+                layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Unlock after successfully pass two exams" />
+
+            <view
+                class="android.support.v4.widget.Space"
+                id="@+id/view3"
+                layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/code_master_achiev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Code Master Achievement"
+                android:textStyle="bold" />
+
+            <view
+                class="android.support.v4.widget.Space"
+                id="@+id/view13"
+                layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Unlock after successfully pass all exams" />
+
+            <view
+                class="android.support.v4.widget.Space"
+                id="@+id/view4"
+                layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/hundred_achiev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="First Of Many 100/100"
+                android:textStyle="bold" />
+
+            <view
+                class="android.support.v4.widget.Space"
+                id="@+id/view12"
+                layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Congrats! You have 100/100 points on exam" />
+
+            <view
+                class="android.support.v4.widget.Space"
+                id="@+id/view5"
+                layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/sticky_fing_achiev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sticky Fingers"
+                android:textStyle="bold" />
+
+            <view
+                class="android.support.v4.widget.Space"
+                id="@+id/view11"
+                layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <view
+                class="android.support.v4.widget.Space"
+                id="@+id/view7"
+                layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="3dp" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="You need more practice to achive a higher result to unlock next stage" />
+
+            <view
+                class="android.support.v4.widget.Space"
+                id="@+id/view10"
+                layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <view
+                class="android.support.v4.widget.Space"
+                id="@+id/view6"
+                layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/did_it_achiev"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="You Actually Did It!"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <view
+                class="android.support.v4.widget.Space"
+                id="@+id/view9"
+                layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <view
+                class="android.support.v4.widget.Space"
+                id="@+id/view8"
+                layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="You are the winner, congrats! Successfully passed all stages"
+                android:textColor="@android:color/background_light" />
 
         </LinearLayout>
     </ScrollView>
