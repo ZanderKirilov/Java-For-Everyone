@@ -4,40 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingLeft="18dp"
-    android:paddingRight="18dp"
+    android:orientation="horizontal"
     android:background="@drawable/pink_nuances"
-
     tools:context="com.example.sethcohen.javaforeveryone3.Arrays">
 
     <TextView
         android:id="@+id/title_arrays"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="16dp"
         android:text="@string/arrays"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#0097A7"
-        android:textSize="32sp" />
+        android:textSize="32sp"
+        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="1"
-        android:orientation="vertical">
+        android:orientation="horizontal">
     </LinearLayout>
+
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
     <Button
         android:id="@+id/btn_next_1_arrays"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="15dp"
+        android:layout_weight="1"
         android:background="@drawable/button_on_click_next"
         android:text="@string/next"
         android:textColor="?attr/colorButtonNormal" />
+
     </LinearLayout>
 </LinearLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/pink_nuances"
+    tools:context="com.example.sethcohen.javaforeveryone3.MainActivity">
+    <ImageView
+        android:id="@+id/img_backgrnd_main"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:scaleType="fitXY"
+        android:src="@drawable/cover1javaaa" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_signin_main"
+            style="@android:style/Widget.DeviceDefault.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="100dp"
+            android:layout_gravity="center"
+            android:background="@color/colorDefault"
+            android:onClick="signIn"
+            android:text="@string/signin"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btn_register_main"
+            style="@android:style/Widget.DeviceDefault.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@color/colorDefault"
+            android:text="@string/Create_an_account"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp"
+            android:onClick="signUp"/>
+
+        <ImageButton
+            android:id="@+id/img_btn_ittalents_main"
+            android:layout_width="113dp"
+            android:layout_height="61dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/rsz_ittalents_logo"
+            android:onClick="websiteITTalents"
+            android:tag="http://www.ittalents.bg/home"/>
+</LinearLayout>
+
+
+
+</LinearLayout>

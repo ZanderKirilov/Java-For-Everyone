@@ -44,20 +44,15 @@
                 android:scrollbars="vertical"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="8dp" />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+
             <Button
                 android:id="@+id/btn_next_1_introduction"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|right"
-                android:layout_marginBottom="20dp"
                 android:background="@drawable/button_not_clicked_next"
                 android:text="Next"
                 android:textColor="?attr/colorButtonNormal" />
-        </LinearLayout>
 
         </LinearLayout>
     </ScrollView>

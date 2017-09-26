@@ -1,83 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@drawable/pink_nuances"
     tools:context="com.example.sethcohen.javaforeveryone3.MainActivity">
+    <ImageView
+        android:id="@+id/img_backgrnd_main"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:scaleType="fitXY"
+        android:src="@drawable/cover1javaaa" />
 
     <Button
         android:id="@+id/btn_signin_main"
         style="@android:style/Widget.DeviceDefault.Button"
-        android:layout_width="70dp"
+        android:layout_width="wrap_content"
         android:layout_height="25dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
         android:background="@color/colorDefault"
         android:onClick="signIn"
         android:text="@string/signin"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@android:color/background_light"
-        android:textSize="18sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_backgrnd_main"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1" />
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/btn_register_main"
         style="@android:style/Widget.DeviceDefault.Button"
-        android:layout_width="190dp"
+        android:layout_width="wrap_content"
         android:layout_height="25dp"
-        android:layout_marginTop="40dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
         android:background="@color/colorDefault"
         android:text="@string/Create_an_account"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@android:color/background_light"
         android:textSize="18sp"
-        android:onClick="signUp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_signin_main"
-        tools:layout_constraintBottom_creator="1"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1" />
+        android:onClick="signUp"/>
 
-    <ImageView
-        android:id="@+id/img_backgrnd_main"
-        android:layout_width="433dp"
-        android:layout_height="384dp"
-        android:orientation="vertical"
-        android:scaleType="fitCenter"
-        android:src="@drawable/cover1javaaa"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:srcCompat="@drawable/cover1javaaa"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_constraintRight_creator="1"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        tools:layout_constraintLeft_creator="1"
-        android:layout_marginLeft="1dp"
-        android:layout_marginRight="1dp"
-        android:layout_marginTop="-1dp"
-        tools:layout_editor_absoluteX="-34dp"
-        app:layout_constraintHorizontal_bias="0.448" />
+
 
     <ImageButton
         android:id="@+id/img_btn_ittalents_main"
         android:layout_width="113dp"
         android:layout_height="61dp"
-        android:layout_marginBottom="16dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
         android:background="@drawable/rsz_ittalents_logo"
         android:onClick="websiteITTalents"
-        android:tag="http://www.ittalents.bg/home"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        android:tag="http://www.ittalents.bg/home"/>
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

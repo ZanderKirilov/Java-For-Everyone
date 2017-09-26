@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:background="@drawable/pink_nuances"
     android:paddingLeft="18dp"
     android:paddingRight="18dp"
     tools:context="com.example.sethcohen.javaforeveryone3.Login">
-
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
     <TextView
         android:id="@+id/title_login"
-        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="32dp"
         android:fontFamily="sans-serif"
         android:text="@string/login"
@@ -23,9 +28,9 @@
 
     <EditText
         android:id="@+id/username_login"
-        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="95dp"
         android:ems="10"
         android:hint="@string/ins_username"
@@ -50,46 +55,62 @@
         android:textColorLink="#0097A7"
         android:textSize="14sp"/>
 
-    <LinearLayout
-        android:layout_width="245dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:orientation="vertical">
-
-        <CheckBox
-            android:id="@+id/checkBoxRemember_Login"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:text="@string/remember_me"
-            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-            android:textColor="#0097A7"
-            android:textSize="14sp" />
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/btn_Login_Login"
-        android:layout_gravity="center"
-        style="@android:style/Widget.DeviceDefault.Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#0097A7"
-        android:text="@string/login"
-        android:onClick="login"
-        android:textColor="@android:color/background_light"
-        android:textSize="18sp" />
-
-    <Button
-        android:id="@+id/btn_register_login"
-        style="@style/Widget.AppCompat.Button.Borderless"
+    <CheckBox
+        android:id="@+id/checkBoxRemember_Login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_gravity="center"
-        android:background="#FF1493"
-        android:text="@string/register" />
+        android:text="@string/remember_me"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+        android:textColor="#0097A7"
+        android:textSize="14sp" />
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_weight="0.3">
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_Login_Login"
+            android:layout_marginTop="32dp"
+            android:layout_gravity="center"
+            style="@android:style/Widget.DeviceDefault.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#0097A7"
+            android:text="@string/login"
+            android:onClick="login"
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_weight="0.3">
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_register_login"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="32dp"
+            android:background="#FF1493"
+            android:text="@string/register" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/frgtn_pass"

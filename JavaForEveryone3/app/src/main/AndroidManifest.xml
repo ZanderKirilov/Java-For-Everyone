@@ -23,7 +23,8 @@
         <activity android:name=".ConditionsAndLoops" />
         <activity android:name=".Arrays" />
         <activity android:name=".Achievements" />
-        <activity android:name=".Profile"/>
+        <activity android:name=".Profile" />
+        <activity android:name=".Tester"></activity>
     </application>
 
 </manifest>

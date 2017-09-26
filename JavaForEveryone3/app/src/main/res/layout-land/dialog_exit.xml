@@ -36,7 +36,7 @@
             android:layout_weight="0.3"
             android:orientation="vertical">
         </LinearLayout>
-
+        
         <Button
             android:id="@+id/btn_Exit_Yes"
             android:layout_width="0dp"
@@ -54,7 +54,7 @@
             android:layout_weight="0.5"
             android:orientation="vertical">
         </LinearLayout>
-
+        
         <Button
             android:id="@+id/btn_Exit_NO"
             android:layout_width="0dp"
