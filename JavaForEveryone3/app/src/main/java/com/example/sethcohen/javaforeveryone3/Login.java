@@ -36,11 +36,6 @@ public class Login extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        finish();
-    }
 
     public void successfulAppEnter(String user){
         final AlertDialog.Builder welcomeAlert = new AlertDialog.Builder(Login.this);
@@ -70,7 +65,7 @@ public class Login extends AppCompatActivity {
     public void login(View V){
         String user = username.getText().toString().trim();
         String pass = password.getText().toString().trim();
-        String storedPass = logDBAdp.getSinlgeEntry(user);
+        String storedPass = logDBAdp.getUserPassword(user);
 
         if(pass.equals(storedPass)){
             successfulAppEnter(user);

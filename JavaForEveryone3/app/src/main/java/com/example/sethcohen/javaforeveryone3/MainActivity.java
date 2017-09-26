@@ -28,11 +28,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        finish();
-    }
 
     public void signUp(View v){
         registerHome = (Button) findViewById(R.id.btn_register_main);
@@ -62,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 String userName=editTextUserName.getText().toString();
                 String password=editTextPassword.getText().toString();
 
-                String storedPassword=loginDataBaseAdp.getSinlgeEntry(userName);
+                String storedPassword=loginDataBaseAdp.getUserPassword(userName);
 
                 if(password.equals(storedPassword)){
                     Toast.makeText(MainActivity.this, "Login Successfull", Toast.LENGTH_LONG).show();
