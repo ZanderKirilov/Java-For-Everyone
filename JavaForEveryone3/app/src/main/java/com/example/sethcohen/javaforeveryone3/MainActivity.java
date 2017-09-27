@@ -34,8 +34,14 @@ public class MainActivity extends AppCompatActivity {
         registerHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent register = new Intent(MainActivity.this, Register.class);
-                startActivity(register);
+                final Intent register = new Intent(MainActivity.this, Register.class);
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        startActivity(register);
+                    }
+                }).start();
+
             }
         });
     }
