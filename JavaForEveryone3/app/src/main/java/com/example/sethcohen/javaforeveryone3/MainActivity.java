@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Login Successfull", Toast.LENGTH_LONG).show();
                     dialog.dismiss();
                     Intent goneToHome = new Intent(MainActivity.this, HomeScreen.class);
+                    goneToHome.putExtra("username", userName);
                     startActivity(goneToHome);
                 }
                 else{
