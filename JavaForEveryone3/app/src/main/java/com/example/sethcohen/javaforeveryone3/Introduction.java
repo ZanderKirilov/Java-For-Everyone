@@ -10,17 +10,27 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import DBpack.LoginDataBaseAdapter;
+import User.User;
+
 public class Introduction extends AppCompatActivity {
 
     private Integer[] imagesIntro = {R.drawable.intro2fortheappandittalents, R.drawable.intro3thirdpage, R.drawable.intro4primitives, R.drawable.intro5primitivesecond, R.drawable.intro6moreonprimmitives, R.drawable.intro7moreonprimitives, R.drawable.intro8spesialsigns, R.drawable.intro9operations, R.drawable.intro10moreoperations, R.drawable.intro11scanner, R.drawable.intro12incrementdecrement, R.drawable.empty_pic};
     private ImageView imgSwIntro;
     private int currentImamge = 0;
     private Button nextSlide_intro;
+    private User currentUser;
+    private LoginDataBaseAdapter logDBAdp;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_introduction);
+
+        logDBAdp=new LoginDataBaseAdapter(this);
+        logDBAdp=logDBAdp.open();
+
+        currentUser = (User)getIntent().getSerializableExtra("User");
         imgSwIntro = (ImageView) findViewById(R.id.is_picchanger_intro);
 
 
@@ -45,14 +55,18 @@ public class Introduction extends AppCompatActivity {
                         public void onClick(DialogInterface dialogInterface, int i) {
                             Intent goingToLoops = new Intent(Introduction.this, ConditionsAndLoops.class);
                             Toast.makeText(Introduction.this,"Proceeding to Conditions and Loops",Toast.LENGTH_SHORT).show();
+                            logDBAdp.updateUserStage(currentUser.getUsername(), "Conditions And Loops");
+                            currentUser.setCurrent_stage("Conditions And Loops");
+                            goingToLoops.putExtra("User", currentUser);
                             startActivity(goingToLoops);
                         }
                     });
                     goToLoopsLog.setNegativeButton("No", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            Intent goingToLoops = new Intent(Introduction.this, HomeScreen.class);
-                            startActivity(goingToLoops);
+                            Intent goingToHome = new Intent(Introduction.this, HomeScreen.class);
+                            goingToHome.putExtra("User", currentUser);
+                            startActivity(goingToHome);
                         }
                     });
                     goToLoopsLog.setCancelable(false);
@@ -62,5 +76,13 @@ public class Introduction extends AppCompatActivity {
         });
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent goBack = new Intent(Introduction.this, HomeScreen.class);
+        goBack.putExtra("User", currentUser);
+        startActivity(goBack);
     }
 }

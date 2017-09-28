@@ -10,17 +10,21 @@ import android.widget.ImageSwitcher;
 import android.widget.ImageView;
 import android.widget.ViewSwitcher;
 
+import User.User;
+
 public class Arrays extends AppCompatActivity {
 
     private Integer[] imagesArrays = {R.drawable.arrays1start, R.drawable.arrays2declare, R.drawable.arrays3usage, R.drawable.arrays4twodimenssions, R.drawable.arrays5last};
     private ImageSwitcher imgSwArrays;
     private int currentImamge = -1;
     private Button nextSlide_arr;
+    private User currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_arrays);
+        currentUser = (User)getIntent().getSerializableExtra("User");
 
         imgSwArrays = (ImageSwitcher) findViewById(R.id.is_picchanger_arr);
 //

@@ -50,4 +50,5 @@
     <string name="possitive">Yes</string>
     <string name="negative">NO</string>
     <string name="exit_prompt">Do you want to exit Java For Everyone?</string>
+    <string name="log_out_msg">Do you want to Log Out ?</string>
 </resources>

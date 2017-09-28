@@ -12,10 +12,11 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import DBpack.LoginDataBaseAdapter;
+import User.User;
 
 public class MainActivity extends AppCompatActivity {
     private LoginDataBaseAdapter loginDataBaseAdp;
-
+    private User currentUser;
     private Button registerHome;
 
     @Override
@@ -35,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent register = new Intent(MainActivity.this, Register.class);
                 startActivity(register);
-
             }
         });
     }
@@ -56,14 +56,17 @@ public class MainActivity extends AppCompatActivity {
 
                 String userName=editTextUserName.getText().toString();
                 String password=editTextPassword.getText().toString();
-
                 String storedPassword=loginDataBaseAdp.getUserPassword(userName);
+                String user_email = loginDataBaseAdp.getUserEmail(userName);
+                String user_stage = loginDataBaseAdp.getUserStage(userName);
+                int user_points = loginDataBaseAdp.getUserPoints(userName);
+                currentUser = new User(userName,user_email, user_stage, user_points);
 
                 if(password.equals(storedPassword)){
                     Toast.makeText(MainActivity.this, "Login Successfull", Toast.LENGTH_LONG).show();
                     dialog.dismiss();
                     Intent goneToHome = new Intent(MainActivity.this, HomeScreen.class);
-                    goneToHome.putExtra("username", userName);
+                    goneToHome.putExtra("User", currentUser);
                     startActivity(goneToHome);
                     finish();
                 }

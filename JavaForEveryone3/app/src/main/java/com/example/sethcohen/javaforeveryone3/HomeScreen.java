@@ -2,25 +2,36 @@ package com.example.sethcohen.javaforeveryone3;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import DBpack.LoginDataBaseAdapter;
+import User.User;
+
 public class HomeScreen extends AppCompatActivity {
+
+    private User currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
-        String username = getIntent().getStringExtra("username");
-        gotoIntroduction();
-        gotoConditionsAndLoops();
+        currentUser = (User)getIntent().getSerializableExtra("User");
+
+        String username = currentUser.getUsername();
+
+        gotoIntroduction(currentUser);
+        gotoConditionsAndLoops(currentUser);
         gotoArrays();
-        goToProfile(username);
+        goToProfile(currentUser);
         goToAchievements();
     }
 
@@ -48,13 +59,14 @@ public class HomeScreen extends AppCompatActivity {
         });
     }
 
-    public void gotoIntroduction(){
+    public void gotoIntroduction(final User user){
         Button registerPage = (Button) findViewById(R.id.btn_intro_stages);
         registerPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 Intent gotoIntro = new Intent(HomeScreen.this, Introduction.class);
+                gotoIntro.putExtra("User", user);
                 startActivity(gotoIntro);
             }
         });
@@ -62,16 +74,34 @@ public class HomeScreen extends AppCompatActivity {
 
 
 
-    public void gotoConditionsAndLoops(){
+    public void gotoConditionsAndLoops(final User user){
         Button registerPage = (Button) findViewById(R.id.btn_loops_stages);
-        registerPage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                Intent register = new Intent(HomeScreen.this, ConditionsAndLoops.class);
-                startActivity(register);
-            }
-        });
+            registerPage.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (user.getCurrent_stage().equals("Introduction")){
+                        final AlertDialog.Builder noAcess = new AlertDialog.Builder(HomeScreen.this);
+                        noAcess.setTitle("No Access");
+                        noAcess.setMessage("You don't have permission to this course");
+                        noAcess.setIcon(R.drawable.it_talents_logo_inner);
+                        noAcess.setNeutralButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                            }
+                        });
+                        final AlertDialog alert = noAcess.create();
+                        alert.show();
+                        return;
+                    }else {
+                        Intent goToLoops = new Intent(HomeScreen.this, ConditionsAndLoops.class);
+                        goToLoops.putExtra("User", user);
+                        startActivity(goToLoops);
+                    }
+                }
+            });
+
     }
 
     public void gotoArrays(){
@@ -86,14 +116,14 @@ public class HomeScreen extends AppCompatActivity {
         });
     }
 
-  public void goToProfile(final String username){
+  public void goToProfile(final User user){
         Button profileView = (Button) findViewById(R.id.btn_profile_stages);
         profileView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 Intent goToProfile = new Intent(HomeScreen.this, Profile.class);
-                goToProfile.putExtra("username", username);
+                goToProfile.putExtra("User", user);
                 startActivity(goToProfile);
             }
         });

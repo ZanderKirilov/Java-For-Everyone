@@ -17,7 +17,7 @@ public class LoginDataBaseAdapter {
     public static final int NAME_COLUMN = 1;
 
     static final String DATABASE_CREATE = "create table USER"+
-            "( userID integer primary key autoincrement,USERNAME  text,PASSWORD text, EMAIL text); ";
+            "( userID integer primary key autoincrement,USERNAME  text,PASSWORD text, EMAIL text, CURRENT_STAGE text, ALL_POINTS integer); ";
     static final String DATABASE_ACH_CREATE = "create table Achievement"+
             "( achievementID integer primary key autoincrement,TITLE text, INFO text, USERNAME text, POINTS integer, ACHIEVED boolean);";
 
@@ -43,7 +43,7 @@ public class LoginDataBaseAdapter {
         return db;
     }
 
-    public void insertEntry(String username,String password, String email) {
+    public void insertEntry(String username,String password, String email, String current_achievement, int points) {
         if (email == null || email.equals("")){
             email = "NOMAIL";
         }
@@ -51,6 +51,8 @@ public class LoginDataBaseAdapter {
         newValues.put("USERNAME", username);
         newValues.put("PASSWORD",password);
         newValues.put("EMAIL", email);
+        newValues.put("CURRENT_STAGE", current_achievement);
+        newValues.put("ALL_POINTS", points);
         this.setUpAllAchievements(username);
 
         db.insert("USER", null, newValues);
@@ -76,6 +78,40 @@ public class LoginDataBaseAdapter {
         cursor.close();
         return password;
     }
+    public String getUserStage(String userName){
+        Cursor cursor=db.query("USER", null, " USERNAME=?", new String[]{userName}, null, null, null);
+        if(cursor.getCount()<1){ // UserName Not Exist
+            cursor.close();
+            return "USER DOES NOT EXIST";
+        }
+        cursor.moveToFirst();
+        String stage = cursor.getString(cursor.getColumnIndex("CURRENT_STAGE"));
+        cursor.close();
+        return stage;
+    }
+    public String getUserEmail(String userName){
+        Cursor cursor=db.query("USER", null, " USERNAME=?", new String[]{userName}, null, null, null);
+        if(cursor.getCount()<1){ // UserName Not Exist
+            cursor.close();
+            return "USER DOES NOT EXIST";
+        }
+        cursor.moveToFirst();
+        String e_mail = cursor.getString(cursor.getColumnIndex("EMAIL"));
+        cursor.close();
+        return e_mail;
+    }
+    public int getUserPoints(String userName){
+        Cursor cursor=db.query("USER", null, " USERNAME=?", new String[]{userName}, null, null, null);
+        if(cursor.getCount()<1){ // UserName Not Exist
+            cursor.close();
+            return -1;
+        }
+        cursor.moveToFirst();
+        int points = cursor.getInt(cursor.getColumnIndex("ALL_POINTS"));
+        cursor.close();
+        return points;
+    }
+
     public boolean isUsernameAvailable(String username){
         Cursor cursor = db.query("USER", null, " USERNAME=?", new String[]{username}, null, null,null);
         if (cursor.getCount() < 1){
@@ -94,6 +130,18 @@ public class LoginDataBaseAdapter {
         String where="USERNAME = ?";
         db.update("USER",updatedValues, where, new String[]{userName});
     }
+    public void updateUserStage(String userName, String stage){
+        ContentValues updatedValues = new ContentValues();
+        updatedValues.put("USERNAME", userName);
+        updatedValues.put("CURRENT_STAGE", stage);
+
+        String where="USERNAME = ?";
+        db.update("USER",updatedValues, where, new String[]{userName});
+    }
+
+
+
+
     public void updateAchievements(String username, String achievementTitle, Boolean achieved){
         //TODO - to be tested!
         ContentValues updatedAch = new ContentValues();

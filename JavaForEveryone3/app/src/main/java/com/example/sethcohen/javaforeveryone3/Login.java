@@ -12,12 +12,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import DBpack.LoginDataBaseAdapter;
+import User.User;
 
 public class Login extends AppCompatActivity {
     private Button login;
     private EditText username;
     private EditText password;
     private LoginDataBaseAdapter logDBAdp;
+    private User currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +39,10 @@ public class Login extends AppCompatActivity {
     }
 
 
-    public void successfulAppEnter(final String user){
+    public void successfulAppEnter(final User user){
         final AlertDialog.Builder welcomeAlert = new AlertDialog.Builder(Login.this);
         welcomeAlert.setTitle("ITTalents - JavaForEveryone");
-        welcomeAlert.setMessage("\tWelcome, " + user);
+        welcomeAlert.setMessage("\tWelcome, " + user.getUsername());
         welcomeAlert.setIcon(R.drawable.it_talents_logo_inner);
         final AlertDialog alert = welcomeAlert.create();
         alert.show();
@@ -53,7 +55,7 @@ public class Login extends AppCompatActivity {
             public void onFinish() {
                 alert.dismiss();
                 Intent testing = new Intent(Login.this, HomeScreen.class);
-                testing.putExtra("username", user);
+                testing.putExtra("User", user);
                 startActivity(testing);
                 finish();
             }
@@ -69,8 +71,13 @@ public class Login extends AppCompatActivity {
         String pass = password.getText().toString().trim();
         String storedPass = logDBAdp.getUserPassword(user);
 
+
         if(pass.equals(storedPass)){
-            successfulAppEnter(user);
+            String user_email = logDBAdp.getUserEmail(user);
+            String user_stage = logDBAdp.getUserStage(user);
+            int user_points = logDBAdp.getUserPoints(user);
+            currentUser =  new User(user, user_email,user_stage, user_points);
+            successfulAppEnter(currentUser);
         }else{
             unSuccessfulAppEnter();
         }

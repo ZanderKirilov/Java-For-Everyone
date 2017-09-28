@@ -103,10 +103,11 @@
                 android:textSize="17sp"
                 android:textStyle="italic" />
 
-            <EditText
+            <TextView
                 android:id="@+id/lastAchievement_Input_Profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="end"
                 android:hint="Your last achievement"
                 android:textSize="15sp" />
 
@@ -135,11 +136,12 @@
                 android:textSize="17sp"
                 android:textStyle="italic" />
 
-            <EditText
+            <TextView
                 android:id="@+id/email_insert_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Your E-mail Here"
+                android:gravity="end"
                 android:textSize="15sp" />
         </LinearLayout>
     </LinearLayout>
@@ -166,11 +168,12 @@
                 android:textSize="17sp"
                 android:textStyle="italic" />
 
-            <EditText
+            <TextView
                 android:id="@+id/current_stage_input_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="Your Current stage Here"
+                android:gravity="end"
                 android:textSize="15sp" />
 
         </LinearLayout>
@@ -199,79 +202,34 @@
                 android:textSize="17sp"
                 android:textStyle="italic" />
 
-            <EditText
+            <TextView
                 android:id="@+id/Points_Input_Profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="9"
                 android:hint="Your HelpPoints Here"
                 android:inputType="number"
+                android:gravity="end"
                 android:textSize="15sp" />
         </LinearLayout>
     </LinearLayout>
 
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btn_Achievements_Profile"
-            style="@android:style/Widget.DeviceDefault.Button"
-            android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:gravity="center">
+        <Spinner
+            android:id="@+id/spn_options"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:background="#0097A7"
-            android:text="@string/achievements"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@android:color/background_light"
-            android:textSize="15sp"
-            android:typeface="monospace" />
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.05"
-            android:orientation="vertical">
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/btn_changePass_profile"
-            style="@android:style/Widget.DeviceDefault.Button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:background="#0097A7"
-            android:text="@string/change_pass"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@android:color/background_light"
-            android:textSize="15sp"
-            android:typeface="monospace" />
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.05"
-            android:orientation="vertical">
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/btn_inviteFriend_profile"
-            style="@android:style/Widget.DeviceDefault.Button"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:background="#0097A7"
-            android:text="@string/invite_friend"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@android:color/background_light"
-            android:textSize="15sp"
-            android:typeface="monospace" />
+            android:background="@android:drawable/btn_dropdown"
+            />
     </LinearLayout>
+
+
+
+
 
 
 </LinearLayout>
