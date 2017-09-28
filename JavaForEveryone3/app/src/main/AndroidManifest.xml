@@ -19,12 +19,16 @@
         <activity android:name=".HomeScreen" />
         <activity android:name=".Register" />
         <activity android:name=".Login" />
-        <activity android:name=".Introduction" />
-        <activity android:name=".ConditionsAndLoops" />
-        <activity android:name=".Arrays" />
+        <activity android:name=".Introduction"
+            android:configChanges="orientation|screenSize"/>
+        <activity android:name=".ConditionsAndLoops"
+            android:configChanges="orientation|screenSize"/>
+        <activity android:name=".Arrays"
+            android:configChanges="orientation|screenSize"/>
         <activity android:name=".Achievements" />
         <activity android:name=".Profile" />
-        <activity android:name=".Tester"></activity>
+        <activity android:name=".Tester" />
+        <activity android:name=".Tester2"/>
     </application>
 
 </manifest>

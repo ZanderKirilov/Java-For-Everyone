@@ -109,6 +109,8 @@ public class HomeScreen extends AppCompatActivity {
         });
     }
 
+
+
     public void websiteITTalents(View view){
         final ImageButton iTTalents = (ImageButton) findViewById(R.id.img_btn_ittalents);
 

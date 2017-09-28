@@ -67,11 +67,7 @@
             android:layout_marginBottom="11dp"
             android:background="@drawable/rsz_ittalents_logo"
             android:onClick="websiteITTalents"
-            android:tag="http://www.ittalents.bg/home"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.501"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent" />
+            android:tag="http://www.ittalents.bg/home" />
 
         <Button
             android:id="@+id/btn_intro_stages"
@@ -86,61 +82,39 @@
             android:textAllCaps="false"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="?attr/colorButtonNormal"
-            android:textSize="16sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_constraintLeft_creator="1"
-            tools:layout_constraintRight_creator="1"
-            tools:layout_constraintTop_creator="1" />
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/btn_methodsNrecursion_stages"
             android:layout_width="100dp"
             android:layout_height="70dp"
-            android:layout_alignBaseline="@+id/btn_strings_stages"
-            android:layout_alignBottom="@+id/btn_strings_stages"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-
+            android:layout_alignTop="@+id/btn_strings_stages"
             android:background="@drawable/button_on_click"
             android:text="@string/methodsNrecursion"
             android:textAllCaps="false"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="?attr/colorButtonNormal"
-            android:textSize="16sp"
-            app:layout_constraintHorizontal_bias="0.102"
-            tools:layout_constraintLeft_creator="1"
-            tools:layout_constraintRight_creator="1"
-            tools:layout_constraintTop_creator="1" />
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/btn_strings_stages"
             android:layout_width="100dp"
             android:layout_height="70dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:layout_below="@+id/moto_stages"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="26dp"
             android:background="@drawable/button_on_click"
             android:text="@string/strings"
             android:textAllCaps="false"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="?attr/colorButtonNormal"
-            android:textSize="16sp"
-            app:layout_constraintHorizontal_bias="0.901"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_constraintLeft_creator="1"
-            tools:layout_constraintRight_creator="1"
-            tools:layout_constraintTop_creator="1" />
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/btn_loops_stages"
             android:layout_width="100dp"
             android:layout_height="70dp"
-
             android:layout_above="@+id/moto_stages"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -150,14 +124,7 @@
             android:textAllCaps="false"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="?attr/colorButtonNormal"
-            android:textSize="16sp"
-            app:layout_constraintHorizontal_bias="0.102"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_constraintLeft_creator="1"
-            tools:layout_constraintRight_creator="1"
-            tools:layout_constraintTop_creator="1" />
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/btn_arrays_stages"
@@ -171,33 +138,20 @@
             android:textAllCaps="false"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="?attr/colorButtonNormal"
-            android:textSize="16sp"
-            app:layout_constraintHorizontal_bias="0.901"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_constraintLeft_creator="1"
-            tools:layout_constraintRight_creator="1"
-            tools:layout_constraintTop_creator="1" />
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/btn_algorithms_stages"
             android:layout_width="100dp"
             android:layout_height="70dp"
-            android:layout_below="@+id/btn_methodsNrecursion_stages"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="18dp"
             android:background="@drawable/button_on_click"
             android:text="@string/algorithms"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textColor="?attr/colorButtonNormal"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            tools:layout_constraintBottom_creator="1"
-            tools:layout_constraintLeft_creator="1"
-            tools:layout_constraintRight_creator="1" />
+            android:layout_below="@+id/btn_methodsNrecursion_stages"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="11dp" />
 
 
         <TextView
@@ -214,18 +168,12 @@
             android:textIsSelectable="false"
             android:textSize="18sp"
             android:textStyle="bold|italic"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:visibility="visible" />
 
         <TextView
             android:id="@+id/title_stages"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-
             android:layout_alignBaseline="@+id/btn_achievements_profile"
             android:layout_alignBottom="@+id/btn_achievements_profile"
             android:layout_alignLeft="@+id/btn_intro_stages"
@@ -235,11 +183,7 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
             android:textColor="@android:color/background_dark"
             android:textSize="36sp"
-            android:textStyle="bold|italic"
-            app:layout_constraintHorizontal_bias="0.501"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textStyle="bold|italic" />
     </RelativeLayout>
 
 </LinearLayout>

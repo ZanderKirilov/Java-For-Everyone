@@ -38,11 +38,11 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:background="@color/colorDefault"
+        android:onClick="signUp"
         android:text="@string/Create_an_account"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@android:color/background_light"
-        android:textSize="18sp"
-        android:onClick="signUp"/>
+        android:textSize="18sp" />
 
 
 

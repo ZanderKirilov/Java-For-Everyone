@@ -208,14 +208,57 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="0.5"
         android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_Achievements_Profile"
+            style="@android:style/Widget.DeviceDefault.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="#0097A7"
+            android:text="@string/achievements"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@android:color/background_light"
+            android:textSize="15sp"
+            android:typeface="monospace" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.05"
+            android:orientation="vertical">
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_changePass_profile"
+            style="@android:style/Widget.DeviceDefault.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="#0097A7"
+            android:text="@string/change_pass"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@android:color/background_light"
+            android:textSize="15sp"
+            android:typeface="monospace" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.05"
+            android:orientation="vertical">
+        </LinearLayout>
 
         <Button
             android:id="@+id/btn_inviteFriend_profile"
             style="@android:style/Widget.DeviceDefault.Button"
-            android:layout_width="111dp"
-            android:layout_height="52dp"
-            android:layout_marginTop="499dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:background="#0097A7"
             android:text="@string/invite_friend"
@@ -223,34 +266,6 @@
             android:textColor="@android:color/background_light"
             android:textSize="15sp"
             android:typeface="monospace" />
-
-        <Button
-            android:id="@+id/btn_changePass_profile"
-            style="@android:style/Widget.DeviceDefault.Button"
-            android:layout_width="111dp"
-            android:layout_height="52dp"
-            android:layout_marginTop="499dp"
-            android:layout_weight="1"
-            android:background="#0097A7"
-            android:text="@string/change_pass"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@android:color/background_light"
-            android:textSize="15sp"
-            android:typeface="monospace"/>
-
-        <Button
-            android:id="@+id/btn_Achievements_Profile"
-            style="@android:style/Widget.DeviceDefault.Button"
-            android:layout_width="111dp"
-            android:layout_height="52dp"
-            android:layout_marginTop="499dp"
-            android:layout_weight="1"
-            android:background="#0097A7"
-            android:text="@string/achievements"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@android:color/background_light"
-            android:textSize="15sp"
-            android:typeface="monospace"/>
     </LinearLayout>
 
 
