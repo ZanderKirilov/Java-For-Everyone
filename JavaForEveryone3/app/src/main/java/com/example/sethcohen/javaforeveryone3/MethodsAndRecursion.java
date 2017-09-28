@@ -1,10 +1,13 @@
 package com.example.sethcohen.javaforeveryone3;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import User.User;
 
 
 public class MethodsAndRecursion extends AppCompatActivity {
@@ -13,10 +16,14 @@ public class MethodsAndRecursion extends AppCompatActivity {
     private int currentImamge = 0;
     private Button nextSlide_methods;
     private Button prevSlide_methods;
+    private User currentUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_methods_and_recursion);
+        currentUser = (User)getIntent().getSerializableExtra("User");
+
         imgMethods = (ImageView) findViewById(R.id.is_picchanger_methods);
         nextSlide_methods = (Button) findViewById(R.id.btn_next_1_methods);
 
@@ -46,5 +53,12 @@ public class MethodsAndRecursion extends AppCompatActivity {
             }
         });
 
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent goBack = new Intent(MethodsAndRecursion.this, HomeScreen.class);
+        goBack.putExtra("User", currentUser);
+        startActivity(goBack);
     }
 }

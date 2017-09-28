@@ -83,6 +83,8 @@ public class Introduction extends AppCompatActivity {
         super.onBackPressed();
         Intent goBack = new Intent(Introduction.this, HomeScreen.class);
         goBack.putExtra("User", currentUser);
+        logDBAdp.close();
+        finish();
         startActivity(goBack);
     }
 }

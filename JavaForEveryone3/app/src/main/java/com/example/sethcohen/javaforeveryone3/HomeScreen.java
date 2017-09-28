@@ -30,10 +30,12 @@ public class HomeScreen extends AppCompatActivity {
 
         gotoIntroduction(currentUser);
         gotoConditionsAndLoops(currentUser);
-        gotoArrays();
+        gotoArrays(currentUser);
         goToProfile(currentUser);
-        goToAchievements();
+        goToAchievements(currentUser);
+        goToMethodsAndRecursion(currentUser);
     }
+
 
     @Override
     public void onBackPressed() {
@@ -45,6 +47,7 @@ public class HomeScreen extends AppCompatActivity {
         exitBtnYes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 moveTaskToBack(true);
                 android.os.Process.killProcess(android.os.Process.myPid());
                 System.exit(1);
@@ -75,9 +78,9 @@ public class HomeScreen extends AppCompatActivity {
 
 
     public void gotoConditionsAndLoops(final User user){
-        Button registerPage = (Button) findViewById(R.id.btn_loops_stages);
+        Button gotoCondAndLoops = (Button) findViewById(R.id.btn_loops_stages);
 
-            registerPage.setOnClickListener(new View.OnClickListener() {
+            gotoCondAndLoops.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if (user.getCurrent_stage().equals("Introduction")){
@@ -104,14 +107,60 @@ public class HomeScreen extends AppCompatActivity {
 
     }
 
-    public void gotoArrays(){
-        Button registerPage = (Button) findViewById(R.id.btn_arrays_stages);
-        registerPage.setOnClickListener(new View.OnClickListener() {
+    public void gotoArrays(final User user){
+        Button goToArrays = (Button) findViewById(R.id.btn_arrays_stages);
+        final String user_currentStage = user.getCurrent_stage();
+        goToArrays.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (user_currentStage.equalsIgnoreCase("Introduction")||user_currentStage.equalsIgnoreCase("Conditions And Loops")){
+                    final AlertDialog.Builder noAcess = new AlertDialog.Builder(HomeScreen.this);
+                    noAcess.setTitle("No Access");
+                    noAcess.setMessage("You don't have permission to this course");
+                    noAcess.setIcon(R.drawable.it_talents_logo_inner);
+                    noAcess.setNeutralButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
 
-                Intent register = new Intent(HomeScreen.this, Arrays.class);
-                startActivity(register);
+                        }
+                    });
+                    final AlertDialog alert = noAcess.create();
+                    alert.show();
+                    return;
+                }else {
+                    Intent goToArrays = new Intent(HomeScreen.this, Arrays.class);
+                    goToArrays.putExtra("User", user);
+                    startActivity(goToArrays);
+                }
+            }
+        });
+    }
+    private void goToMethodsAndRecursion(final User user) {
+        Button goToMethods = (Button) findViewById(R.id.btn_methodsNrecursion_stages);
+        final String user_currentStage = user.getCurrent_stage();
+        goToMethods.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (user_currentStage.equalsIgnoreCase("Introduction")|| user_currentStage.equalsIgnoreCase("Conditions And Loops")
+                        || user_currentStage.equalsIgnoreCase("Arrays")){
+                    final AlertDialog.Builder noAcess = new AlertDialog.Builder(HomeScreen.this);
+                    noAcess.setTitle("No Access");
+                    noAcess.setMessage("You don't have permission to this course");
+                    noAcess.setIcon(R.drawable.it_talents_logo_inner);
+                    noAcess.setNeutralButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+
+                        }
+                    });
+                    final AlertDialog alert = noAcess.create();
+                    alert.show();
+                    return;
+                }else {
+                    Intent goToMethods = new Intent(HomeScreen.this, MethodsAndRecursion.class);
+                    goToMethods.putExtra("User", user);
+                    startActivity(goToMethods);
+                }
             }
         });
     }
@@ -130,13 +179,14 @@ public class HomeScreen extends AppCompatActivity {
     }
 
 
-    public void goToAchievements(){
+    public void goToAchievements(final User user){
         Button registerPage = (Button) findViewById(R.id.btn_achievements_profile);
         registerPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 Intent goToAchievements = new Intent(HomeScreen.this, Achievements.class);
+                goToAchievements.putExtra("User", user);
                 startActivity(goToAchievements);
             }
         });

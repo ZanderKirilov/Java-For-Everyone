@@ -28,11 +28,13 @@
         android:layout_weight="1"
         android:orientation="vertical">
 
-        <ImageSwitcher
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/is_picchanger_arr"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:src="@drawable/arrays1start"
+            />
 
     </LinearLayout>
     <LinearLayout

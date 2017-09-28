@@ -21,6 +21,7 @@ public class Achievements extends AppCompatActivity {
         super.onBackPressed();
         Intent goBack = new Intent(Achievements.this, HomeScreen.class);
         goBack.putExtra("User", currentUser);
+        finish();
         startActivity(goBack);
     }
 }
