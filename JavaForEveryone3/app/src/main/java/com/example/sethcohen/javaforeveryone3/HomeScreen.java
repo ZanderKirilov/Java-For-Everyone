@@ -1,6 +1,7 @@
 package com.example.sethcohen.javaforeveryone3;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
@@ -15,10 +16,11 @@ public class HomeScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
+        String username = getIntent().getStringExtra("username");
         gotoIntroduction();
         gotoConditionsAndLoops();
         gotoArrays();
-        goToProfile();
+        goToProfile(username);
         goToAchievements();
     }
 
@@ -84,13 +86,14 @@ public class HomeScreen extends AppCompatActivity {
         });
     }
 
-  public void goToProfile(){
+  public void goToProfile(final String username){
         Button profileView = (Button) findViewById(R.id.btn_profile_stages);
         profileView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 Intent goToProfile = new Intent(HomeScreen.this, Profile.class);
+                goToProfile.putExtra("username", username);
                 startActivity(goToProfile);
             }
         });

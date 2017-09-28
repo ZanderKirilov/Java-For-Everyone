@@ -7,7 +7,6 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -94,6 +93,17 @@ public class LoginDataBaseAdapter {
 
         String where="USERNAME = ?";
         db.update("USER",updatedValues, where, new String[]{userName});
+    }
+    public void updateAchievements(String username, String achievementTitle, Boolean achieved){
+        //TODO - to be tested!
+        ContentValues updatedAch = new ContentValues();
+        updatedAch.put("USERNAME", username);
+        updatedAch.put("TITLE", achievementTitle);
+        updatedAch.put("ACHIEVED", achieved);
+
+        String where="username = ?";
+        db.update("Achievement", updatedAch, where, new String[]{username});
+
     }
     private void setUpAllAchievements(String userName){
         HashMap<String, String> allAchievements = new HashMap<>();

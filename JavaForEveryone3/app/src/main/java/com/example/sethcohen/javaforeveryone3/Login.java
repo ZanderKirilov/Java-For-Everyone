@@ -37,7 +37,7 @@ public class Login extends AppCompatActivity {
     }
 
 
-    public void successfulAppEnter(String user){
+    public void successfulAppEnter(final String user){
         final AlertDialog.Builder welcomeAlert = new AlertDialog.Builder(Login.this);
         welcomeAlert.setTitle("ITTalents - JavaForEveryone");
         welcomeAlert.setMessage("\tWelcome, " + user);
@@ -53,7 +53,9 @@ public class Login extends AppCompatActivity {
             public void onFinish() {
                 alert.dismiss();
                 Intent testing = new Intent(Login.this, HomeScreen.class);
+                testing.putExtra("username", user);
                 startActivity(testing);
+                finish();
             }
         }.start();
     }

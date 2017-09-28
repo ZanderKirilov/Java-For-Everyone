@@ -34,8 +34,14 @@ public class MainActivity extends AppCompatActivity {
         registerHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent register = new Intent(MainActivity.this, Register.class);
-                startActivity(register);
+                final Intent register = new Intent(MainActivity.this, Register.class);
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        startActivity(register);
+                    }
+                }).start();
+
             }
         });
     }
@@ -63,7 +69,9 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Login Successfull", Toast.LENGTH_LONG).show();
                     dialog.dismiss();
                     Intent goneToHome = new Intent(MainActivity.this, HomeScreen.class);
+                    goneToHome.putExtra("username", userName);
                     startActivity(goneToHome);
+                    finish();
                 }
                 else{
                     Toast.makeText(MainActivity.this, "User Name or Password does not match", Toast.LENGTH_LONG).show();
