@@ -22,25 +22,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         loginDataBaseAdp=new LoginDataBaseAdapter(this);
         loginDataBaseAdp=loginDataBaseAdp.open();
-
+        signUp();
     }
 
 
-    public void signUp(View v){
+    public void signUp(){
         registerHome = (Button) findViewById(R.id.btn_register_main);
         registerHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final Intent register = new Intent(MainActivity.this, Register.class);
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        startActivity(register);
-                    }
-                }).start();
+                Intent register = new Intent(MainActivity.this, Register.class);
+                startActivity(register);
 
             }
         });

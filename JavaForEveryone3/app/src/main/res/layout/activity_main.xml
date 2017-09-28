@@ -38,7 +38,6 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:background="@color/colorDefault"
-        android:onClick="signUp"
         android:text="@string/Create_an_account"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@android:color/background_light"
@@ -55,5 +54,6 @@
         android:background="@drawable/rsz_ittalents_logo"
         android:onClick="websiteITTalents"
         android:tag="http://www.ittalents.bg/home"/>
+
 
 </LinearLayout>
