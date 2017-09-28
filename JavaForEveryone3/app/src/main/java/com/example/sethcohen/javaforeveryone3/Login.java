@@ -55,6 +55,7 @@ public class Login extends AppCompatActivity {
                 Intent testing = new Intent(Login.this, HomeScreen.class);
                 testing.putExtra("username", user);
                 startActivity(testing);
+                finish();
             }
         }.start();
     }

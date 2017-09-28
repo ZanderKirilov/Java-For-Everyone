@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent goneToHome = new Intent(MainActivity.this, HomeScreen.class);
                     goneToHome.putExtra("username", userName);
                     startActivity(goneToHome);
+                    finish();
                 }
                 else{
                     Toast.makeText(MainActivity.this, "User Name or Password does not match", Toast.LENGTH_LONG).show();
