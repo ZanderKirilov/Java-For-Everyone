@@ -41,6 +41,7 @@ public class Arrays extends AppCompatActivity {
         nextSlide_arr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                imgSwArrays.setImageResource(imagesArrays[currentImamge]);
                 currentImamge++;
                 if (currentImamge == imagesArrays.length-1){
                     nextSlide_arr.setText("FINISH");

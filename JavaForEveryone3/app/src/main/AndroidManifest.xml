@@ -29,6 +29,9 @@
         <activity android:name=".Profile" />
         <activity android:name=".Tester" />
         <activity android:name=".Tester2"/>
+        <activity android:name=".MethodsAndRecursion"/>
+        <activity android:name=".Algorithms"/>
+        <activity android:name=".Strings"/>
     </application>
 
 </manifest>

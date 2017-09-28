@@ -43,19 +43,19 @@ public class Strings extends AppCompatActivity {
             }
         });
 
-        prevSlide_strings = (Button) findViewById(R.id.btn_prev_1_strings);
-
-        prevSlide_strings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                imgStrings.setImageResource(imagesStrings[currentImamge]);
-                currentImamge--;
-                if(currentImamge == imagesStrings.length){
-                    currentImamge = 0;
-                }
-
-            }
-        });
+//        prevSlide_strings = (Button) findViewById(R.id.btn_prev_1_strings);
+//
+//        prevSlide_strings.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                imgStrings.setImageResource(imagesStrings[currentImamge]);
+//                currentImamge--;
+//                if(currentImamge == imagesStrings.length){
+//                    currentImamge = 0;
+//                }
+//
+//            }
+//        });
     }
     @Override
     public void onBackPressed() {

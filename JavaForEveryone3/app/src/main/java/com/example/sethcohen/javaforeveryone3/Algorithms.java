@@ -43,19 +43,19 @@ public class Algorithms extends AppCompatActivity {
             }
         });
 
-        prevSlide_algorithms = (Button) findViewById(R.id.btn_prev_1_algorithms);
-
-        prevSlide_algorithms.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                imgAlgorithms.setImageResource(imagesAlgorithms[currentImamge]);
-                currentImamge--;
-                if(currentImamge == imagesAlgorithms.length){
-                    currentImamge = 0;
-                }
-
-            }
-        });
+//        prevSlide_algorithms = (Button) findViewById(R.id.btn_prev_1_algorithms);
+//
+//        prevSlide_algorithms.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                imgAlgorithms.setImageResource(imagesAlgorithms[currentImamge]);
+//                currentImamge--;
+//                if(currentImamge == imagesAlgorithms.length){
+//                    currentImamge = 0;
+//                }
+//
+//            }
+//        });
     }
     @Override
     public void onBackPressed() {

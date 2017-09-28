@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import DBpack.LoginDataBaseAdapter;
 import User.User;
@@ -34,6 +35,8 @@ public class HomeScreen extends AppCompatActivity {
         goToProfile(currentUser);
         goToAchievements(currentUser);
         goToMethodsAndRecursion(currentUser);
+        gotoStrings(currentUser);
+        goToAlgorithms(currentUser);
     }
 
 
@@ -135,13 +138,14 @@ public class HomeScreen extends AppCompatActivity {
             }
         });
     }
-    private void goToMethodsAndRecursion(final User user) {
+    public void goToMethodsAndRecursion(final User user) {
         Button goToMethods = (Button) findViewById(R.id.btn_methodsNrecursion_stages);
         final String user_currentStage = user.getCurrent_stage();
         goToMethods.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (user_currentStage.equalsIgnoreCase("Introduction")|| user_currentStage.equalsIgnoreCase("Conditions And Loops")
+                if (user_currentStage.equalsIgnoreCase("Introduction")
+                        || user_currentStage.equalsIgnoreCase("Conditions And Loops")
                         || user_currentStage.equalsIgnoreCase("Arrays")){
                     final AlertDialog.Builder noAcess = new AlertDialog.Builder(HomeScreen.this);
                     noAcess.setTitle("No Access");
@@ -160,6 +164,69 @@ public class HomeScreen extends AppCompatActivity {
                     Intent goToMethods = new Intent(HomeScreen.this, MethodsAndRecursion.class);
                     goToMethods.putExtra("User", user);
                     startActivity(goToMethods);
+                }
+            }
+        });
+    }
+    public void gotoStrings(final User user){
+        Button goToString = (Button) findViewById(R.id.btn_strings_stages);
+        final String user_currentStage = user.getCurrent_stage();
+        goToString.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (user_currentStage.equalsIgnoreCase("Introduction")
+                        ||user_currentStage.equalsIgnoreCase("Conditions And Loops")
+                        ||user_currentStage.equalsIgnoreCase("Arrays")
+                        ||user_currentStage.equalsIgnoreCase("Methods and Recursion")){
+                    final AlertDialog.Builder noAcess = new AlertDialog.Builder(HomeScreen.this);
+                    noAcess.setTitle("No Access");
+                    noAcess.setMessage("You don't have permission to this course");
+                    noAcess.setIcon(R.drawable.it_talents_logo_inner);
+                    noAcess.setNeutralButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+
+                        }
+                    });
+                    final AlertDialog alert = noAcess.create();
+                    alert.show();
+                    return;
+                }else {
+                    Intent goToArrays = new Intent(HomeScreen.this, Strings.class);
+                    goToArrays.putExtra("User", user);
+                    startActivity(goToArrays);
+                }
+            }
+        });
+    }
+    public void goToAlgorithms(final User user){
+        Button goToAlgorithms = (Button) findViewById(R.id.btn_algorithms_stages);
+        final String user_currentStage = user.getCurrent_stage();
+        goToAlgorithms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (user_currentStage.equalsIgnoreCase("Introduction")
+                        ||user_currentStage.equalsIgnoreCase("Conditions And Loops")
+                        ||user_currentStage.equalsIgnoreCase("Arrays")
+                        ||user_currentStage.equalsIgnoreCase("Methods and Recursion")
+                        ||user_currentStage.equalsIgnoreCase("Strings")){
+                    final AlertDialog.Builder noAcess = new AlertDialog.Builder(HomeScreen.this);
+                    noAcess.setTitle("No Access");
+                    noAcess.setMessage("You don't have permission to this course");
+                    noAcess.setIcon(R.drawable.it_talents_logo_inner);
+                    noAcess.setNeutralButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+
+                        }
+                    });
+                    final AlertDialog alert = noAcess.create();
+                    alert.show();
+                    return;
+                }else {
+                    Intent goToArrays = new Intent(HomeScreen.this, Algorithms.class);
+                    goToArrays.putExtra("User", user);
+                    startActivity(goToArrays);
                 }
             }
         });
