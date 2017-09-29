@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         loginDataBaseAdp=new LoginDataBaseAdapter(this);
         loginDataBaseAdp=loginDataBaseAdp.open();
         signUp();
+        websiteITTalents();
     }
 
 
@@ -80,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public void websiteITTalents(View view){
+    public void websiteITTalents(){
         final ImageButton iTTalents = (ImageButton) findViewById(R.id.img_btn_ittalents_main);
 
         new Thread(new Runnable() {

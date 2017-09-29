@@ -52,7 +52,6 @@
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
         android:background="@drawable/rsz_ittalents_logo"
-        android:onClick="websiteITTalents"
         android:tag="http://www.ittalents.bg/home"/>
 
 

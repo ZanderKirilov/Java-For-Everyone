@@ -7,10 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageSwitcher;
 import android.widget.ImageView;
 import android.widget.Toast;
-import android.widget.ViewSwitcher;
+import tests.CondAndLoopsTEST;
 
 import DBpack.LoginDataBaseAdapter;
 import User.User;
@@ -53,7 +52,7 @@ public class ConditionsAndLoops extends AppCompatActivity {
                     goToLoopsLog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            Intent goingToLoops = new Intent(ConditionsAndLoops.this, Arrays.class);
+                            Intent goingToLoops = new Intent(ConditionsAndLoops.this, CondAndLoopsTEST.class);// Change Here!
                             Toast.makeText(ConditionsAndLoops.this,"Proceeding to Arrays",Toast.LENGTH_SHORT).show();
                             logDBAdp.updateUserStage(currentUser.getUsername(), "Arrays");
                             currentUser.setCurrent_stage("Arrays");

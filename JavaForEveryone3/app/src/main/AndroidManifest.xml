@@ -32,6 +32,7 @@
         <activity android:name=".MethodsAndRecursion"/>
         <activity android:name=".Algorithms"/>
         <activity android:name=".Strings"/>
+        <activity android:name="tests.CondAndLoopsTEST"/>
     </application>
 
 </manifest>

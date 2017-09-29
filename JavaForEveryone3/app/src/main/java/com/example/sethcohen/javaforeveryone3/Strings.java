@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import DBpack.LoginDataBaseAdapter;
 import User.User;
@@ -43,19 +44,27 @@ public class Strings extends AppCompatActivity {
             }
         });
 
-//        prevSlide_strings = (Button) findViewById(R.id.btn_prev_1_strings);
-//
-//        prevSlide_strings.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                imgStrings.setImageResource(imagesStrings[currentImamge]);
-//                currentImamge--;
-//                if(currentImamge == imagesStrings.length){
+        prevSlide_strings = (Button) findViewById(R.id.btn_prev_1_strings);
+
+        prevSlide_strings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (currentImamge <= 0){
+                    Toast.makeText(Strings.this, "There is no Previous page",Toast.LENGTH_SHORT).show();
+                    currentImamge = 0;
+                }
+                imgStrings.setImageResource(imagesStrings[currentImamge]);
+                currentImamge--;
+                if(currentImamge == imagesStrings.length){
+                    currentImamge = 0;
+                }
+//                if (currentImamge <= 0){
+//                    Toast.makeText(Strings.this, "There is no Previous page",Toast.LENGTH_SHORT).show();
 //                    currentImamge = 0;
 //                }
-//
-//            }
-//        });
+
+            }
+        });
     }
     @Override
     public void onBackPressed() {
