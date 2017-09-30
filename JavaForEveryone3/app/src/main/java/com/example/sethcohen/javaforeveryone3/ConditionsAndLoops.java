@@ -11,7 +11,6 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import tests.CondAndLoopsTEST;
 
-import DBpack.LoginDataBaseAdapter;
 import User.User;
 
 public class ConditionsAndLoops extends AppCompatActivity {
@@ -21,7 +20,6 @@ public class ConditionsAndLoops extends AppCompatActivity {
     private Button nextSlide_condnloops;
 
     private User currentUser;
-    private LoginDataBaseAdapter logDBAdp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +27,6 @@ public class ConditionsAndLoops extends AppCompatActivity {
         setContentView(R.layout.activity_conditions_and_loops);
         currentUser = (User)getIntent().getSerializableExtra("User");
         imgSwCondNLoops = (ImageView) findViewById(R.id.is_picchanger_condNloops);
-
-        logDBAdp=new LoginDataBaseAdapter(this);
-        logDBAdp=logDBAdp.open();
 
         nextSlide_condnloops = (Button) findViewById(R.id.btn_next_1_condNloops);
 
@@ -45,17 +40,15 @@ public class ConditionsAndLoops extends AppCompatActivity {
                 }
                 if (currentImamge >= imagesCondNLoops.length) {
                     nextSlide_condnloops.setClickable(false);
-                    final AlertDialog.Builder goToLoopsLog = new AlertDialog.Builder(ConditionsAndLoops.this);
-                    goToLoopsLog.setTitle("ITTalents - JavaForEveryone");
-                    goToLoopsLog.setMessage("\tDo you want to continue to \n Arrays");
+                    final AlertDialog.Builder goToLoopsLog = new AlertDialog.Builder(ConditionsAndLoops.this,android.R.style.Theme_Holo_Dialog_MinWidth);
+                    goToLoopsLog.setTitle("ITTalents - JavaForEveryone - Attend Test");
+                    goToLoopsLog.setMessage("\tDo you want to attend the \n Conditions and Loops' test?");
                     goToLoopsLog.setIcon(R.drawable.it_talents_logo_inner);
                     goToLoopsLog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             Intent goingToLoops = new Intent(ConditionsAndLoops.this, CondAndLoopsTEST.class);// Change Here!
-                            Toast.makeText(ConditionsAndLoops.this,"Proceeding to Arrays",Toast.LENGTH_SHORT).show();
-                            logDBAdp.updateUserStage(currentUser.getUsername(), "Arrays");
-                            currentUser.setCurrent_stage("Arrays");
+                            Toast.makeText(ConditionsAndLoops.this,"Proceeding to Conditions and Loops' TEST",Toast.LENGTH_SHORT).show();
                             goingToLoops.putExtra("User", currentUser);
                             startActivity(goingToLoops);
                         }
@@ -80,7 +73,6 @@ public class ConditionsAndLoops extends AppCompatActivity {
         super.onBackPressed();
         Intent goBack = new Intent(ConditionsAndLoops.this, HomeScreen.class);
         goBack.putExtra("User", currentUser);
-        logDBAdp.close();
         finish();
         startActivity(goBack);
     }

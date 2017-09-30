@@ -46,7 +46,7 @@ public class Introduction extends AppCompatActivity {
                 }
                 if (currentImamge >= imagesIntro.length) {
                     nextSlide_intro.setClickable(false);
-                    final AlertDialog.Builder goToLoopsLog = new AlertDialog.Builder(Introduction.this);
+                    final AlertDialog.Builder goToLoopsLog = new AlertDialog.Builder(Introduction.this, android.R.style.Theme_Holo_Dialog_MinWidth);
                     goToLoopsLog.setTitle("ITTalents - JavaForEveryone");
                     goToLoopsLog.setMessage("\tDo you want to continue to \n Conditions and Loops");
                     goToLoopsLog.setIcon(R.drawable.it_talents_logo_inner);

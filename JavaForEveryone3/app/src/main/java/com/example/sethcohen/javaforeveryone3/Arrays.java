@@ -48,17 +48,17 @@ public class Arrays extends AppCompatActivity {
                 }
                 if (currentImamge >= imagesArrays.length) {
                     nextSlide_arr.setClickable(false);
-                    final AlertDialog.Builder goToLoopsLog = new AlertDialog.Builder(Arrays.this);
-                    goToLoopsLog.setTitle("ITTalents - JavaForEveryone");
-                    goToLoopsLog.setMessage("\tDo you want to continue to \n Methods and Recursion?");
+                    final AlertDialog.Builder goToLoopsLog = new AlertDialog.Builder(Arrays.this, android.R.style.Theme_Holo_Dialog_MinWidth);
+                    goToLoopsLog.setTitle("ITTalents - JavaЗаВсеки");
+                    goToLoopsLog.setMessage("\tИскате ли да продължите към \n Методи и Рекурсия?");
                     goToLoopsLog.setIcon(R.drawable.it_talents_logo_inner);
                     goToLoopsLog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             Intent goingToLoops = new Intent(Arrays.this, MethodsAndRecursion.class);
-                            Toast.makeText(Arrays.this,"Proceeding to Methods and Recursion",Toast.LENGTH_SHORT).show();
-                            logDBAdp.updateUserStage(currentUser.getUsername(), "Methods and Recursion");
-                            currentUser.setCurrent_stage("Methods and Recursion");
+                            Toast.makeText(Arrays.this,"Отиваме към Методи и Рекурсия",Toast.LENGTH_SHORT).show();
+                            logDBAdp.updateUserStage(currentUser.getUsername(), "Методи и Рекурсия");
+                            currentUser.setCurrent_stage("Методи и Рекурсия");
                             goingToLoops.putExtra("User", currentUser);
                             startActivity(goingToLoops);
                         }

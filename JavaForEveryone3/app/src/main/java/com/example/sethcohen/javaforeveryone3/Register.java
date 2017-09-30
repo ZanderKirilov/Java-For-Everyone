@@ -15,7 +15,7 @@ public class Register extends Login {
     private Button btnCreateAccount;
     private String emailRegX = "(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])";
     private String usernameNpassRegX = "[a-zA-Z0-9\\._\\-]{3,}";
-    private String starting_stage = "Introduction";
+    private String starting_stage = "Въведение";
 
     LoginDataBaseAdapter loginDataBaseAdapter;
     @Override
@@ -42,28 +42,28 @@ public class Register extends Login {
                 String email = editTextEmail.getText().toString();
 
                 if(username.equals("")||password.equals("")||confirmPassword.equals("")) {
-                    Toast.makeText(getApplicationContext(), "Some fields are empty, please try again!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Моля попълни всичко", Toast.LENGTH_LONG).show();
                     return;
                 }
                 if (!username.matches(usernameNpassRegX) || !password.matches(usernameNpassRegX)){
-                    Toast.makeText(getApplicationContext(), "Password or Username must contains only letters or digits", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Потребителското име и паролата, трябва да съдържат само букви и цифри", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if(!password.equals(confirmPassword)) {
-                    Toast.makeText(getApplicationContext(), "Password does not match", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Паролите не съвпадат", Toast.LENGTH_LONG).show();
                     EditText passED = (EditText) findViewById(R.id.RetypePassword_Register);
-                    passED.setError("This is bullshit, enter : " + password);
+                    passED.setError("Просто напиши това : " + password);
                     return;
                 }
                 if (!email.matches(emailRegX)){
-                    Toast.makeText(getApplicationContext(), "Email is not valid", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "E-mail адреса не е валиден", Toast.LENGTH_LONG).show();
                     EditText emailED = (EditText) findViewById(R.id.Email_Register);
-                    emailED.setError("This is not a valid password");
+                    emailED.setError("Невалиден e-mail");
                     return;
                 }
                 else {
                     loginDataBaseAdapter.insertEntry(username, password, email, starting_stage, 10);
-                    Toast.makeText(getApplicationContext(), "Account Successfully Created - Log in now", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Профилът е създаден успешно, ВЛЕЗ СЕГА!", Toast.LENGTH_LONG).show();
                     Intent goneToLogin = new Intent(Register.this, Login.class);
                     startActivity(goneToLogin);
                 }

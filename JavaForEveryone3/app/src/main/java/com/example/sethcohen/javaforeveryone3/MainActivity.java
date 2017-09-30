@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 currentUser = new User(userName,user_email, user_stage, user_points);
 
                 if(password.equals(storedPassword)){
-                    Toast.makeText(MainActivity.this, "Login Successfull", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, "Влизането Успешно", Toast.LENGTH_LONG).show();
                     dialog.dismiss();
                     Intent goneToHome = new Intent(MainActivity.this, HomeScreen.class);
                     goneToHome.putExtra("User", currentUser);
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                     finish();
                 }
                 else{
-                    Toast.makeText(MainActivity.this, "User Name or Password does not match", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, "Потребителското име или Паролата, не съвпадат", Toast.LENGTH_LONG).show();
                 }
             }
         });

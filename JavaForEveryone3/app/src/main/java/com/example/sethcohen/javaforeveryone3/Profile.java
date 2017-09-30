@@ -50,7 +50,7 @@ public class Profile extends AppCompatActivity {
 
     private void chooseOption(final String username) {
         spnOptions = (Spinner)findViewById(R.id.spn_options);
-        final String[] items = new String[]{"Options","Achievements", "InviteFriend", "ChangePass"};
+        final String[] items = new String[]{"Опции","Постижения", "Покани Приятел", "Смени Парола"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, items);
         spnOptions.setAdapter(adapter);
         spnOptions.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -98,13 +98,13 @@ public class Profile extends AppCompatActivity {
             public void onClick(View view) {
                 final Dialog outDial = new Dialog(Profile.this);
                 outDial.setContentView(R.layout.dialog_logout);
-                outDial.setTitle("Log Out");
+                outDial.setTitle("Излез");
                 Button btnYes = (Button)outDial.findViewById(R.id.btn_logout_Yes);
                 Button btnNo = (Button)outDial.findViewById(R.id.btn_logoutt_NO);
                 btnYes.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(Profile.this,"Goodbye " + user,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Profile.this,"Довиждане, " + user,Toast.LENGTH_SHORT).show();
                         Intent goToMain = new Intent(Profile.this, MainActivity.class);
                         startActivity(goToMain);
                     }

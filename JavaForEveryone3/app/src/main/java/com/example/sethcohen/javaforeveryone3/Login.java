@@ -40,9 +40,9 @@ public class Login extends AppCompatActivity {
 
 
     public void successfulAppEnter(final User user){
-        final AlertDialog.Builder welcomeAlert = new AlertDialog.Builder(Login.this);
-        welcomeAlert.setTitle("ITTalents - JavaForEveryone");
-        welcomeAlert.setMessage("\tWelcome, " + user.getUsername());
+        final AlertDialog.Builder welcomeAlert = new AlertDialog.Builder(Login.this, android.R.style.Theme_Holo_Dialog_MinWidth);
+        welcomeAlert.setTitle("ITTalents - JavaЗаВсеки!");
+        welcomeAlert.setMessage("\tДобре дошъл, " + user.getUsername());
         welcomeAlert.setIcon(R.drawable.it_talents_logo_inner);
         final AlertDialog alert = welcomeAlert.create();
         alert.show();
@@ -62,7 +62,7 @@ public class Login extends AppCompatActivity {
         }.start();
     }
     public void unSuccessfulAppEnter(){
-        Toast.makeText(this,"Wrong input", Toast.LENGTH_LONG).show();
+        Toast.makeText(this,"Грешни Данни!", Toast.LENGTH_LONG).show();
     }
 
 

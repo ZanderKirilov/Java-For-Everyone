@@ -50,7 +50,7 @@ public class Strings extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (currentImamge <= 0){
-                    Toast.makeText(Strings.this, "There is no Previous page",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Strings.this, "Няма предишна страница",Toast.LENGTH_SHORT).show();
                     currentImamge = 0;
                 }
                 imgStrings.setImageResource(imagesStrings[currentImamge]);

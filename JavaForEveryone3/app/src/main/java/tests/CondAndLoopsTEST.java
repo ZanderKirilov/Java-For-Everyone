@@ -1,7 +1,9 @@
 package tests;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -44,22 +46,56 @@ public class CondAndLoopsTEST extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                RadioButton rBtn = (RadioButton)findViewById(radGrpFirstQ.getCheckedRadioButtonId());
-                RadioButton rBtn2 = (RadioButton)findViewById(radGrpSecondQ.getCheckedRadioButtonId());
+                final RadioButton rBtn = (RadioButton)findViewById(radGrpFirstQ.getCheckedRadioButtonId());
+                final RadioButton rBtn2 = (RadioButton)findViewById(radGrpSecondQ.getCheckedRadioButtonId());
+                AlertDialog.Builder submit = new AlertDialog.Builder(CondAndLoopsTEST.this, android.R.style.Theme_Holo_Dialog_MinWidth);
+                submit.setTitle("Предаване на Теста?");
+                submit.setIcon(R.drawable.it_talents_logo_inner);
+                submit.setMessage("Готови ли сте да предадете теста?");
+                submit.setPositiveButton("Да", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        if (rBtn.getText().toString().equals(task1CorrectAnswer) && rBtn2.getText().toString().equals(task2CorrectAnswer)){
+                            Toast.makeText(CondAndLoopsTEST.this, "You are correct! Congratulations" ,Toast.LENGTH_SHORT).show();
+                            Intent goingToLoops = new Intent(CondAndLoopsTEST.this, Arrays.class);
+                            logDBAdp.updateUserStage(currentUser.getUsername(), "Arrays");
+                            currentUser.setCurrent_stage("Arrays");
+                            goingToLoops.putExtra("User", currentUser);
+                            startActivity(goingToLoops);
+                        }else{
+                            AlertDialog.Builder wrngTest = new AlertDialog.Builder(CondAndLoopsTEST.this, android.R.style.Theme_Holo_Dialog_MinWidth);
+                            wrngTest.setTitle("Грешка!");
+                            wrngTest.setIcon(R.drawable.it_talents_logo_inner);
+                            wrngTest.setMessage("Вашият тест не е правилен! \nСега на къде?");
+                            wrngTest.setPositiveButton("Към Етапи", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    Intent goingToHome = new Intent(CondAndLoopsTEST.this, HomeScreen.class);
+                                    goingToHome.putExtra("User", currentUser);
+                                    startActivity(goingToHome);
+                                }
+                            });
+                            wrngTest.setNegativeButton("Опитай Отново", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    Intent tryAgain = new Intent(CondAndLoopsTEST.this, ConditionsAndLoops.class);
+                                    tryAgain.putExtra("User", currentUser);
+                                    startActivity(tryAgain);
+                                }
+                            });
+                            wrngTest.show();
 
-                if (rBtn.getText().toString().equals(task1CorrectAnswer) && rBtn2.getText().toString().equals(task2CorrectAnswer)){
-                    Toast.makeText(CondAndLoopsTEST.this, "You are correct! Congratulations" ,Toast.LENGTH_SHORT).show();
-                    Intent goingToLoops = new Intent(CondAndLoopsTEST.this, Arrays.class);
-                    logDBAdp.updateUserStage(currentUser.getUsername(), "Arrays");
-                    currentUser.setCurrent_stage("Arrays");
-                    goingToLoops.putExtra("User", currentUser);
-                    startActivity(goingToLoops);
-                }else{
-                    Toast.makeText(CondAndLoopsTEST.this,"There is something wrong, try again...",Toast.LENGTH_SHORT).show();
-                    Intent goingToHome = new Intent(CondAndLoopsTEST.this, ConditionsAndLoops.class);
-                    goingToHome.putExtra("User", currentUser);
-                    startActivity(goingToHome);
-                }
+                        }
+                    }
+                });
+                submit.setNegativeButton("Не", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+                submit.show();
+
             }
         });
 

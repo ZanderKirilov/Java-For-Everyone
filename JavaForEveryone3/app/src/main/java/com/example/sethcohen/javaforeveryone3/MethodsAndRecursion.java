@@ -40,21 +40,21 @@ public class MethodsAndRecursion extends AppCompatActivity {
                 imgMethods.setImageResource(imagesMethods[currentImamge]);
                 currentImamge++;
                 if (currentImamge == imagesMethods.length-1){
-                    nextSlide_methods.setText("FINISH");
+                    nextSlide_methods.setText("КРАЙ");
                 }
                 if (currentImamge >= imagesMethods.length) {
                     nextSlide_methods.setClickable(false);
-                    final AlertDialog.Builder goToLoopsLog = new AlertDialog.Builder(MethodsAndRecursion.this);
-                    goToLoopsLog.setTitle("ITTalents - JavaForEveryone");
-                    goToLoopsLog.setMessage("\tDo you want to continue to \n Strings?");
+                    final AlertDialog.Builder goToLoopsLog = new AlertDialog.Builder(MethodsAndRecursion.this, android.R.style.Theme_Holo_Dialog_MinWidth);
+                    goToLoopsLog.setTitle("ITTalents - JavaЗаВсеки");
+                    goToLoopsLog.setMessage("\tИскате ли да продължите към \n Символни низове?");
                     goToLoopsLog.setIcon(R.drawable.it_talents_logo_inner);
                     goToLoopsLog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             Intent goingToLoops = new Intent(MethodsAndRecursion.this, Strings.class);
-                            Toast.makeText(MethodsAndRecursion.this,"Proceeding to Strings",Toast.LENGTH_SHORT).show();
-                            logDBAdp.updateUserStage(currentUser.getUsername(), "Strings");
-                            currentUser.setCurrent_stage("Strings");
+                            Toast.makeText(MethodsAndRecursion.this,"Отиваме към Символни низове",Toast.LENGTH_SHORT).show();
+                            logDBAdp.updateUserStage(currentUser.getUsername(), "Символни низове");
+                            currentUser.setCurrent_stage("Символни низове");
                             goingToLoops.putExtra("User", currentUser);
                             startActivity(goingToLoops);
                         }

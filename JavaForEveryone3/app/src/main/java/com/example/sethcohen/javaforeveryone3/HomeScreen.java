@@ -44,7 +44,7 @@ public class HomeScreen extends AppCompatActivity {
     public void onBackPressed() {
         final Dialog dialog = new Dialog(HomeScreen.this);
         dialog.setContentView(R.layout.dialog_exit);
-        dialog.setTitle("Leaving so soon..?");
+        dialog.setTitle("Напускаш ни толкова рано...?");
         Button exitBtnYes = (Button)dialog.findViewById(R.id.btn_Exit_Yes);
         Button exitBtnNO = (Button)dialog.findViewById(R.id.btn_Exit_NO);
         exitBtnYes.setOnClickListener(new View.OnClickListener() {
@@ -86,10 +86,10 @@ public class HomeScreen extends AppCompatActivity {
             gotoCondAndLoops.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (user.getCurrent_stage().equals("Introduction")){
-                        final AlertDialog.Builder noAcess = new AlertDialog.Builder(HomeScreen.this);
-                        noAcess.setTitle("No Access");
-                        noAcess.setMessage("You don't have permission to this course");
+                    if (user.getCurrent_stage().equals("Въведение")){
+                        final AlertDialog.Builder noAcess = new AlertDialog.Builder(HomeScreen.this,android.R.style.Theme_Holo_Dialog_MinWidth);
+                        noAcess.setTitle("Нямаш Достъп");
+                        noAcess.setMessage("Още не си готов за този етап!");
                         noAcess.setIcon(R.drawable.it_talents_logo_inner);
                         noAcess.setNeutralButton("OK", new DialogInterface.OnClickListener() {
                             @Override
@@ -116,10 +116,10 @@ public class HomeScreen extends AppCompatActivity {
         goToArrays.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (user_currentStage.equalsIgnoreCase("Introduction")||user_currentStage.equalsIgnoreCase("Conditions And Loops")){
-                    final AlertDialog.Builder noAcess = new AlertDialog.Builder(HomeScreen.this);
-                    noAcess.setTitle("No Access");
-                    noAcess.setMessage("You don't have permission to this course");
+                if (user_currentStage.equalsIgnoreCase("Въведение")||user_currentStage.equalsIgnoreCase("Условия и Цикли")){
+                    final AlertDialog.Builder noAcess = new AlertDialog.Builder(HomeScreen.this,android.R.style.Theme_Holo_Dialog_MinWidth);
+                    noAcess.setTitle("Нямаш Достъп");
+                    noAcess.setMessage("Още не си готов за този етап!");
                     noAcess.setIcon(R.drawable.it_talents_logo_inner);
                     noAcess.setNeutralButton("OK", new DialogInterface.OnClickListener() {
                         @Override
@@ -144,12 +144,12 @@ public class HomeScreen extends AppCompatActivity {
         goToMethods.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (user_currentStage.equalsIgnoreCase("Introduction")
-                        || user_currentStage.equalsIgnoreCase("Conditions And Loops")
-                        || user_currentStage.equalsIgnoreCase("Arrays")){
-                    final AlertDialog.Builder noAcess = new AlertDialog.Builder(HomeScreen.this);
-                    noAcess.setTitle("No Access");
-                    noAcess.setMessage("You don't have permission to this course");
+                if (user_currentStage.equalsIgnoreCase("Въведение")
+                        || user_currentStage.equalsIgnoreCase("Условия и Цикли")
+                        || user_currentStage.equalsIgnoreCase("Масиви")){
+                    final AlertDialog.Builder noAcess = new AlertDialog.Builder(HomeScreen.this,android.R.style.Theme_Holo_Dialog_MinWidth);
+                    noAcess.setTitle("Нямаш Достъп");
+                    noAcess.setMessage("Още не си готов за този етап!");
                     noAcess.setIcon(R.drawable.it_talents_logo_inner);
                     noAcess.setNeutralButton("OK", new DialogInterface.OnClickListener() {
                         @Override
@@ -174,13 +174,13 @@ public class HomeScreen extends AppCompatActivity {
         goToString.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (user_currentStage.equalsIgnoreCase("Introduction")
-                        ||user_currentStage.equalsIgnoreCase("Conditions And Loops")
-                        ||user_currentStage.equalsIgnoreCase("Arrays")
-                        ||user_currentStage.equalsIgnoreCase("Methods and Recursion")){
-                    final AlertDialog.Builder noAcess = new AlertDialog.Builder(HomeScreen.this);
-                    noAcess.setTitle("No Access");
-                    noAcess.setMessage("You don't have permission to this course");
+                if (user_currentStage.equalsIgnoreCase("Въведение")
+                        || user_currentStage.equalsIgnoreCase("Условия и Цикли")
+                        || user_currentStage.equalsIgnoreCase("Масиви")
+                        ||user_currentStage.equalsIgnoreCase("Методи и Рекурсия")){
+                    final AlertDialog.Builder noAcess = new AlertDialog.Builder(HomeScreen.this, android.R.style.Theme_Holo_Dialog_MinWidth);
+                    noAcess.setTitle("Нямаш Достъп");
+                    noAcess.setMessage("Още не си готов за този етап!");
                     noAcess.setIcon(R.drawable.it_talents_logo_inner);
                     noAcess.setNeutralButton("OK", new DialogInterface.OnClickListener() {
                         @Override
@@ -205,14 +205,14 @@ public class HomeScreen extends AppCompatActivity {
         goToAlgorithms.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (user_currentStage.equalsIgnoreCase("Introduction")
-                        ||user_currentStage.equalsIgnoreCase("Conditions And Loops")
-                        ||user_currentStage.equalsIgnoreCase("Arrays")
-                        ||user_currentStage.equalsIgnoreCase("Methods and Recursion")
-                        ||user_currentStage.equalsIgnoreCase("Strings")){
-                    final AlertDialog.Builder noAcess = new AlertDialog.Builder(HomeScreen.this);
-                    noAcess.setTitle("No Access");
-                    noAcess.setMessage("You don't have permission to this course");
+                if (user_currentStage.equalsIgnoreCase("Въведение")
+                        || user_currentStage.equalsIgnoreCase("Условия и Цикли")
+                        || user_currentStage.equalsIgnoreCase("Масиви")
+                        ||user_currentStage.equalsIgnoreCase("Методи и Рекурсия")
+                        ||user_currentStage.equalsIgnoreCase("Символни низове")){
+                    final AlertDialog.Builder noAcess = new AlertDialog.Builder(HomeScreen.this,android.R.style.Theme_Holo_Dialog_MinWidth);
+                    noAcess.setTitle("Нямаш Достъп");
+                    noAcess.setMessage("Още не си готов за този етап!");
                     noAcess.setIcon(R.drawable.it_talents_logo_inner);
                     noAcess.setNeutralButton("OK", new DialogInterface.OnClickListener() {
                         @Override
