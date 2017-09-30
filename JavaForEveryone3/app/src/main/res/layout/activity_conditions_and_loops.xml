@@ -44,7 +44,7 @@
             android:layout_gravity="center"
             android:layout_marginBottom="20dp"
             android:background="@drawable/button_on_click_next"
-            android:text="Next"
+            android:text="@string/next"
             android:textColor="?attr/colorButtonNormal" />
     </LinearLayout>
 </LinearLayout>

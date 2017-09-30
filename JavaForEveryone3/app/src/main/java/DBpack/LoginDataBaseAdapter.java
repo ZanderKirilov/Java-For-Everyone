@@ -155,12 +155,12 @@ public class LoginDataBaseAdapter {
     }
     private void setUpAllAchievements(String userName){
         HashMap<String, String> allAchievements = new HashMap<>();
-        allAchievements.put("First Achievement", "Unlocks when you pass the first test");
-        allAchievements.put("Level up", "Unlocks after 2 exams");
-        allAchievements.put("First of many", "You've made 100points on test");
-        allAchievements.put("Code Master", "Unlocks after all exams");
-        allAchievements.put("Sticky Fingers", "You need more practice");
-        allAchievements.put("You actually did it!", "You're the winner, congrats!");
+        allAchievements.put("Първо Постижение", "Отключва се когато си вземете първият тест");
+        allAchievements.put("По - Високо ниво!", "Отключва се при два взети теста");
+        allAchievements.put("Пъривят от Много", "Поздравления! Ти си получил 100 от 100 на тест");
+        allAchievements.put("Влез в Матрицата!", "Отключва се при взимане на всички тестове");
+        allAchievements.put("Непослушни Пръсти", "Трябва ти повече упражнение за по - добър резултат");
+        allAchievements.put("Ти Всъщност Се Справи!", "Поздравления, ти взе всички постижения!");
 
         for (Map.Entry<String, String> achTemp : allAchievements.entrySet()) {
             ContentValues newValues = new ContentValues();

@@ -87,8 +87,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_gravity="center"
-        android:background="#FF1493"
-        android:text="@string/register" />
+        android:background="#0097A7"
+        android:textColor="@android:color/background_light"
+        android:text="@string/Create_an_account" />
 
 
     <TextView

@@ -42,26 +42,26 @@ public class Introduction extends AppCompatActivity {
                 imgSwIntro.setImageResource(imagesIntro[currentImamge]);
                 currentImamge++;
                 if (currentImamge == imagesIntro.length-1){
-                    nextSlide_intro.setText("FINISH");
+                    nextSlide_intro.setText("КРАЙ");
                 }
                 if (currentImamge >= imagesIntro.length) {
                     nextSlide_intro.setClickable(false);
                     final AlertDialog.Builder goToLoopsLog = new AlertDialog.Builder(Introduction.this, android.R.style.Theme_Holo_Dialog_MinWidth);
-                    goToLoopsLog.setTitle("ITTalents - JavaForEveryone");
-                    goToLoopsLog.setMessage("\tDo you want to continue to \n Conditions and Loops");
+                    goToLoopsLog.setTitle("ITTalents - JavaЗаВсеки");
+                    goToLoopsLog.setMessage("\tИскате ли да продължите към \n Условия и Цикли?");
                     goToLoopsLog.setIcon(R.drawable.it_talents_logo_inner);
-                    goToLoopsLog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    goToLoopsLog.setPositiveButton("Да", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             Intent goingToLoops = new Intent(Introduction.this, ConditionsAndLoops.class);
-                            Toast.makeText(Introduction.this,"Proceeding to Conditions and Loops",Toast.LENGTH_SHORT).show();
-                            logDBAdp.updateUserStage(currentUser.getUsername(), "Conditions And Loops");
-                            currentUser.setCurrent_stage("Conditions And Loops");
+                            Toast.makeText(Introduction.this,"Продължаваме към Условия и Цикли.",Toast.LENGTH_SHORT).show();
+                            logDBAdp.updateUserStage(currentUser.getUsername(), "Условия и Цикли");
+                            currentUser.setCurrent_stage("Условия и Цикли");
                             goingToLoops.putExtra("User", currentUser);
                             startActivity(goingToLoops);
                         }
                     });
-                    goToLoopsLog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    goToLoopsLog.setNegativeButton("Не", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             Intent goingToHome = new Intent(Introduction.this, HomeScreen.class);

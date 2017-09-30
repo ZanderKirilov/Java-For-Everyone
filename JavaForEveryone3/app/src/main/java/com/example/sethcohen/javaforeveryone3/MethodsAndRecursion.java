@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import DBpack.LoginDataBaseAdapter;
 import User.User;
+import tests.MethodsAndRecursionTEST;
 
 
 public class MethodsAndRecursion extends AppCompatActivity {
@@ -46,20 +47,18 @@ public class MethodsAndRecursion extends AppCompatActivity {
                     nextSlide_methods.setClickable(false);
                     final AlertDialog.Builder goToLoopsLog = new AlertDialog.Builder(MethodsAndRecursion.this, android.R.style.Theme_Holo_Dialog_MinWidth);
                     goToLoopsLog.setTitle("ITTalents - JavaЗаВсеки");
-                    goToLoopsLog.setMessage("\tИскате ли да продължите към \n Символни низове?");
+                    goToLoopsLog.setMessage("\tЖелаете ли да отворите теста за \n Методи и Рекурсия?");
                     goToLoopsLog.setIcon(R.drawable.it_talents_logo_inner);
-                    goToLoopsLog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    goToLoopsLog.setPositiveButton("Да", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            Intent goingToLoops = new Intent(MethodsAndRecursion.this, Strings.class);
-                            Toast.makeText(MethodsAndRecursion.this,"Отиваме към Символни низове",Toast.LENGTH_SHORT).show();
-                            logDBAdp.updateUserStage(currentUser.getUsername(), "Символни низове");
-                            currentUser.setCurrent_stage("Символни низове");
+                            Intent goingToLoops = new Intent(MethodsAndRecursion.this, MethodsAndRecursionTEST.class);
+                            Toast.makeText(MethodsAndRecursion.this,"Продължаваме към теста за Методи и Рекурсия...",Toast.LENGTH_SHORT).show();
                             goingToLoops.putExtra("User", currentUser);
                             startActivity(goingToLoops);
                         }
                     });
-                    goToLoopsLog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    goToLoopsLog.setNegativeButton("Не", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             Intent goingToHome = new Intent(MethodsAndRecursion.this, HomeScreen.class);

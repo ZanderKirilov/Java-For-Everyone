@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Java За Всеки</string>
     <string name="signin">ВЛЕЗ</string>
-    <string name="Create_an_account">РЕГИСТРАЦИЯ</string>
+    <string name="Create_an_account">"  "РЕГИСТРАЦИЯ"  "</string>
     <string name="ins_password">Въведете Парола</string>
     <string name="rePassword">Въведете Паролата Отново</string>
     <string name="ins_email">Въведете e-mail</string>
@@ -26,7 +26,7 @@
     <string name="you_actually_did_it">Ти Всъщност Се Справи!</string>
     <string name="did_it_ach_info">Поздравления, ти взе всички постижения!</string>
     <string name="arrays">Масиви</string>
-    <string name="next">Следващ</string>
+    <string name="next">Напред</string>
     <string name="cond_loops">Условия и цикли</string>
     <string name="profile">Профил</string>
     <string name="introduction">Въведение</string>
@@ -52,4 +52,7 @@
     <string name="exit_prompt">Искате ли да излезете от Java За Всеки?</string>
     <string name="log_out_msg">Искате ли да излезете</string>
     <string name="submit">Предай</string>
+    <string name="previous">Назад</string>
+    <string name="insert_friend_mail">Въведете поща на приятел</string>
+    <string name="algorith_answer">В зависимост от  промяна на вх.данни</string>
 </resources>

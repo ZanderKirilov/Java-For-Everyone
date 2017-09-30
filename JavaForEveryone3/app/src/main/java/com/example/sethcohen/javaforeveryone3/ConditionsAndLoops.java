@@ -36,24 +36,24 @@ public class ConditionsAndLoops extends AppCompatActivity {
                 imgSwCondNLoops.setImageResource(imagesCondNLoops[currentImamge]);
                 currentImamge++;
                 if (currentImamge == imagesCondNLoops.length-1){
-                    nextSlide_condnloops.setText("FINISH");
+                    nextSlide_condnloops.setText("КРАЙ");
                 }
                 if (currentImamge >= imagesCondNLoops.length) {
                     nextSlide_condnloops.setClickable(false);
                     final AlertDialog.Builder goToLoopsLog = new AlertDialog.Builder(ConditionsAndLoops.this,android.R.style.Theme_Holo_Dialog_MinWidth);
-                    goToLoopsLog.setTitle("ITTalents - JavaForEveryone - Attend Test");
-                    goToLoopsLog.setMessage("\tDo you want to attend the \n Conditions and Loops' test?");
+                    goToLoopsLog.setTitle("ITTalents - JavaЗаВсеки");
+                    goToLoopsLog.setMessage("\tЖелаете ли да отворите теста за \n Условия и Цикли?");
                     goToLoopsLog.setIcon(R.drawable.it_talents_logo_inner);
-                    goToLoopsLog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    goToLoopsLog.setPositiveButton("Да", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             Intent goingToLoops = new Intent(ConditionsAndLoops.this, CondAndLoopsTEST.class);// Change Here!
-                            Toast.makeText(ConditionsAndLoops.this,"Proceeding to Conditions and Loops' TEST",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ConditionsAndLoops.this,"Продължаваме към теста за Условия и Цикли...",Toast.LENGTH_SHORT).show();
                             goingToLoops.putExtra("User", currentUser);
                             startActivity(goingToLoops);
                         }
                     });
-                    goToLoopsLog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    goToLoopsLog.setNegativeButton("Не", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             Intent goingToHome = new Intent(ConditionsAndLoops.this, HomeScreen.class);

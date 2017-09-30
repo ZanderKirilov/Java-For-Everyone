@@ -15,6 +15,7 @@ import android.widget.ViewSwitcher;
 
 import DBpack.LoginDataBaseAdapter;
 import User.User;
+import tests.ArraysTEST;
 
 public class Arrays extends AppCompatActivity {
 
@@ -44,26 +45,24 @@ public class Arrays extends AppCompatActivity {
                 imgSwArrays.setImageResource(imagesArrays[currentImamge]);
                 currentImamge++;
                 if (currentImamge == imagesArrays.length-1){
-                    nextSlide_arr.setText("FINISH");
+                    nextSlide_arr.setText("КРАЙ");
                 }
                 if (currentImamge >= imagesArrays.length) {
                     nextSlide_arr.setClickable(false);
                     final AlertDialog.Builder goToLoopsLog = new AlertDialog.Builder(Arrays.this, android.R.style.Theme_Holo_Dialog_MinWidth);
                     goToLoopsLog.setTitle("ITTalents - JavaЗаВсеки");
-                    goToLoopsLog.setMessage("\tИскате ли да продължите към \n Методи и Рекурсия?");
+                    goToLoopsLog.setMessage("\tЖелаете ли да отворите теста за \n Масиви?");
                     goToLoopsLog.setIcon(R.drawable.it_talents_logo_inner);
-                    goToLoopsLog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    goToLoopsLog.setPositiveButton("Да", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
-                            Intent goingToLoops = new Intent(Arrays.this, MethodsAndRecursion.class);
-                            Toast.makeText(Arrays.this,"Отиваме към Методи и Рекурсия",Toast.LENGTH_SHORT).show();
-                            logDBAdp.updateUserStage(currentUser.getUsername(), "Методи и Рекурсия");
-                            currentUser.setCurrent_stage("Методи и Рекурсия");
+                            Intent goingToLoops = new Intent(Arrays.this, ArraysTEST.class);
+                            Toast.makeText(Arrays.this,"Продължаваме към теста за Масиви...",Toast.LENGTH_SHORT).show();
                             goingToLoops.putExtra("User", currentUser);
                             startActivity(goingToLoops);
                         }
                     });
-                    goToLoopsLog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    goToLoopsLog.setNegativeButton("Не", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             Intent goingToHome = new Intent(Arrays.this, HomeScreen.class);

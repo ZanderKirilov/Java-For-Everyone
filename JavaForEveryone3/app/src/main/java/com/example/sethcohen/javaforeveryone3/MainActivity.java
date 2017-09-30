@@ -45,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
     {
         final Dialog dialog = new Dialog(MainActivity.this);
         dialog.setContentView(R.layout.dialog_login);
-        dialog.setTitle("Login To " + getString(R.string.app_name));
+        dialog.setTitle("Влезте в " + getString(R.string.app_name));
         final EditText editTextUserName=(EditText)dialog.findViewById(R.id.username_dialoglogin);
-        final EditText editTextPassword=(EditText)dialog.findViewById(R.id.password_dialoglogin);
+        final EditText editTextPassword=(EditText)dialog.findViewById(R.id.password_newpass);
 
         Button btnSignIn=(Button)dialog.findViewById(R.id.btn_login_dialoglogin);
 

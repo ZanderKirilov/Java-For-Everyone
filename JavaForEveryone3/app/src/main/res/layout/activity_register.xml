@@ -70,7 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="Insert E-Mail - Optional"
+        android:hint="@string/ins_email"
         android:inputType="textEmailAddress"
         android:textColorHighlight="@android:color/background_dark"
         android:textColorHint="@color/colorPrimaryDark"
@@ -83,7 +83,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
         android:background="#0097A7"
-        android:text="@string/register"
+        android:text="@string/Create_an_account"
         android:textColor="@android:color/background_light" />
 
 </LinearLayout>

@@ -17,7 +17,7 @@ public class User implements Serializable{
     public User(String username, String e_mail, String current_stage, int points) {
         this.username = username;
         this.e_mail = e_mail;
-        this.last_achievement = "No Achievements, yet";
+        this.last_achievement = "Все още нямаш Постижения";
         this.points = points;
         this.current_stage = current_stage;
     }

@@ -29,7 +29,7 @@
 
 
     <RadioGroup
-        android:id="@+id/rad_grp_first_loops"
+        android:id="@+id/rad_grp_first_arrays"
         android:layout_width="277dp"
         android:layout_height="29dp"
         android:orientation="horizontal"
