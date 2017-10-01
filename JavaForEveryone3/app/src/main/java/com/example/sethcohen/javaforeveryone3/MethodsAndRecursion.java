@@ -45,29 +45,64 @@ public class MethodsAndRecursion extends AppCompatActivity {
                 }
                 if (currentImamge >= imagesMethods.length) {
                     nextSlide_methods.setClickable(false);
-                    final AlertDialog.Builder goToLoopsLog = new AlertDialog.Builder(MethodsAndRecursion.this, android.R.style.Theme_Holo_Dialog_MinWidth);
-                    goToLoopsLog.setTitle("ITTalents - JavaЗаВсеки");
-                    goToLoopsLog.setMessage("\tЖелаете ли да отворите теста за \n Методи и Рекурсия?");
-                    goToLoopsLog.setIcon(R.drawable.it_talents_logo_inner);
-                    goToLoopsLog.setPositiveButton("Да", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            Intent goingToLoops = new Intent(MethodsAndRecursion.this, MethodsAndRecursionTEST.class);
-                            Toast.makeText(MethodsAndRecursion.this,"Продължаваме към теста за Методи и Рекурсия...",Toast.LENGTH_SHORT).show();
-                            goingToLoops.putExtra("User", currentUser);
-                            startActivity(goingToLoops);
-                        }
-                    });
-                    goToLoopsLog.setNegativeButton("Не", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            Intent goingToHome = new Intent(MethodsAndRecursion.this, HomeScreen.class);
-                            goingToHome.putExtra("User", currentUser);
-                            startActivity(goingToHome);
-                        }
-                    });
-                    goToLoopsLog.setCancelable(false);
-                    goToLoopsLog.show();
+                    if (!currentUser.getCurrent_stage().equalsIgnoreCase("Методи и Рекурсия")){
+                        final AlertDialog.Builder testDone = new AlertDialog.Builder(MethodsAndRecursion.this,android.R.style.Theme_Holo_Dialog_MinWidth);
+                        testDone.setTitle("ITTalents - JavaЗаВсеки");
+                        testDone.setMessage("\tВие успешно сте преминали теста за \n Методи и Рекурсия,\n искате ли да го посетите отново?");
+                        testDone.setIcon(R.drawable.it_talents_logo_inner);
+                        testDone.setCancelable(false);
+                        testDone.setPositiveButton("Да, Към теста!", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent goingToLoops = new Intent(MethodsAndRecursion.this, MethodsAndRecursionTEST.class);// Change Here!
+                                Toast.makeText(MethodsAndRecursion.this,"Продължаваме към теста за Методи и Рекурсия...",Toast.LENGTH_SHORT).show();
+                                goingToLoops.putExtra("User", currentUser);
+                                startActivity(goingToLoops);
+                            }
+                        });
+                        testDone.setNegativeButton("Не, Към Етапи!", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent goingToHome = new Intent(MethodsAndRecursion.this, HomeScreen.class);
+                                goingToHome.putExtra("User", currentUser);
+                                startActivity(goingToHome);
+                            }
+                        });
+                        testDone.setNeutralButton("Не, Към Символни Низове!", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent goingToLoops = new Intent(MethodsAndRecursion.this, Strings.class);// Change Here!
+                                Toast.makeText(MethodsAndRecursion.this,"Продължаваме към Символни Низове...",Toast.LENGTH_SHORT).show();
+                                goingToLoops.putExtra("User", currentUser);
+                                startActivity(goingToLoops);
+                            }
+                        });
+                        testDone.show();
+                    }else{
+                        final AlertDialog.Builder goToLoopsLog = new AlertDialog.Builder(MethodsAndRecursion.this, android.R.style.Theme_Holo_Dialog_MinWidth);
+                        goToLoopsLog.setTitle("ITTalents - JavaЗаВсеки");
+                        goToLoopsLog.setMessage("\tЖелаете ли да отворите теста за \n Методи и Рекурсия?");
+                        goToLoopsLog.setIcon(R.drawable.it_talents_logo_inner);
+                        goToLoopsLog.setPositiveButton("Да", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent goingToLoops = new Intent(MethodsAndRecursion.this, MethodsAndRecursionTEST.class);
+                                Toast.makeText(MethodsAndRecursion.this,"Продължаваме към теста за Методи и Рекурсия...",Toast.LENGTH_SHORT).show();
+                                goingToLoops.putExtra("User", currentUser);
+                                startActivity(goingToLoops);
+                            }
+                        });
+                        goToLoopsLog.setNegativeButton("Не", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent goingToHome = new Intent(MethodsAndRecursion.this, HomeScreen.class);
+                                goingToHome.putExtra("User", currentUser);
+                                startActivity(goingToHome);
+                            }
+                        });
+                        goToLoopsLog.setCancelable(false);
+                        goToLoopsLog.show();
+                    }
                 }
             }
         });

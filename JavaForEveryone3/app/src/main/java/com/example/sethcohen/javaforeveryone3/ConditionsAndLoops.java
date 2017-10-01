@@ -40,29 +40,66 @@ public class ConditionsAndLoops extends AppCompatActivity {
                 }
                 if (currentImamge >= imagesCondNLoops.length) {
                     nextSlide_condnloops.setClickable(false);
-                    final AlertDialog.Builder goToLoopsLog = new AlertDialog.Builder(ConditionsAndLoops.this,android.R.style.Theme_Holo_Dialog_MinWidth);
-                    goToLoopsLog.setTitle("ITTalents - JavaЗаВсеки");
-                    goToLoopsLog.setMessage("\tЖелаете ли да отворите теста за \n Условия и Цикли?");
-                    goToLoopsLog.setIcon(R.drawable.it_talents_logo_inner);
-                    goToLoopsLog.setPositiveButton("Да", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            Intent goingToLoops = new Intent(ConditionsAndLoops.this, CondAndLoopsTEST.class);// Change Here!
-                            Toast.makeText(ConditionsAndLoops.this,"Продължаваме към теста за Условия и Цикли...",Toast.LENGTH_SHORT).show();
-                            goingToLoops.putExtra("User", currentUser);
-                            startActivity(goingToLoops);
-                        }
-                    });
-                    goToLoopsLog.setNegativeButton("Не", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            Intent goingToHome = new Intent(ConditionsAndLoops.this, HomeScreen.class);
-                            goingToHome.putExtra("User", currentUser);
-                            startActivity(goingToHome);
-                        }
-                    });
-                    goToLoopsLog.setCancelable(false);
-                    goToLoopsLog.show();
+                    if (!currentUser.getCurrent_stage().equalsIgnoreCase("Условия и Цикли")){
+                        final AlertDialog.Builder testDone = new AlertDialog.Builder(ConditionsAndLoops.this,android.R.style.Theme_Holo_Dialog_MinWidth);
+                        testDone.setTitle("ITTalents - JavaЗаВсеки");
+                        testDone.setMessage("\tВие успешно сте преминали теста за \n Условия и Цикли,\n искате ли да го посетите отново?");
+                        testDone.setIcon(R.drawable.it_talents_logo_inner);
+                        testDone.setCancelable(false);
+                        testDone.setPositiveButton("Да, Към теста!", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent goingToLoops = new Intent(ConditionsAndLoops.this, CondAndLoopsTEST.class);// Change Here!
+                                Toast.makeText(ConditionsAndLoops.this,"Продължаваме към теста за Условия и Цикли...",Toast.LENGTH_SHORT).show();
+                                goingToLoops.putExtra("User", currentUser);
+                                startActivity(goingToLoops);
+                            }
+                        });
+                        testDone.setNegativeButton("Не, Към Етапи!", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent goingToHome = new Intent(ConditionsAndLoops.this, HomeScreen.class);
+                                goingToHome.putExtra("User", currentUser);
+                                startActivity(goingToHome);
+                            }
+                        });
+                        testDone.setNeutralButton("Не, Към Масиви!", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent goingToLoops = new Intent(ConditionsAndLoops.this, Arrays.class);// Change Here!
+                                Toast.makeText(ConditionsAndLoops.this,"Продължаваме към Масиви...",Toast.LENGTH_SHORT).show();
+                                goingToLoops.putExtra("User", currentUser);
+                                startActivity(goingToLoops);
+                            }
+                        });
+                        testDone.show();
+                    }
+                    else {
+                        final AlertDialog.Builder goToLoopsLog = new AlertDialog.Builder(ConditionsAndLoops.this, android.R.style.Theme_Holo_Dialog_MinWidth);
+                        goToLoopsLog.setTitle("ITTalents - JavaЗаВсеки");
+                        goToLoopsLog.setMessage("\tЖелаете ли да отворите теста за \n Условия и Цикли?");
+                        goToLoopsLog.setIcon(R.drawable.it_talents_logo_inner);
+                        goToLoopsLog.setCancelable(false);
+                        goToLoopsLog.setPositiveButton("Да", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent goingToLoops = new Intent(ConditionsAndLoops.this, CondAndLoopsTEST.class);// Change Here!
+                                Toast.makeText(ConditionsAndLoops.this, "Продължаваме към теста за Условия и Цикли...", Toast.LENGTH_SHORT).show();
+                                goingToLoops.putExtra("User", currentUser);
+                                startActivity(goingToLoops);
+                            }
+                        });
+                        goToLoopsLog.setNegativeButton("Не", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent goingToHome = new Intent(ConditionsAndLoops.this, HomeScreen.class);
+                                goingToHome.putExtra("User", currentUser);
+                                startActivity(goingToHome);
+                            }
+                        });
+                        goToLoopsLog.setCancelable(false);
+                        goToLoopsLog.show();
+                    }
                 }
             }
         });

@@ -83,35 +83,68 @@ public class AlgorithmsTEST extends AppCompatActivity {
                         }
                         if (score >= 50){
                             final int innerPoints = score;
-                            AlertDialog.Builder congrats = new AlertDialog.Builder(AlgorithmsTEST.this, android.R.style.Theme_Holo_Dialog_MinWidth);
-                            congrats.setTitle("Поздравления!");
-                            congrats.setMessage("\tВие успешно преминахте всички етапи\n\tна JavaЗаВсеки!");
-                            congrats.setIcon(R.drawable.it_talents_logo_inner);
-                            congrats.setCancelable(false);
-                            congrats.setPositiveButton("Към ITTalents", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
-                                    Intent intent = new Intent();
-                                    intent.setAction(Intent.ACTION_VIEW);
-                                    intent.addCategory(Intent.CATEGORY_BROWSABLE);
-                                    intent.setData(Uri.parse("http://www.ittalents.bg/home"));
-                                    logDBAdp.updateUserStage(currentUser.getUsername(), "Матрицата");
-                                    currentUser.setCurrent_stage("Матрицата!");
-                                    startActivity(intent);
+                            if (currentUser.getCurrent_stage().equalsIgnoreCase("Матрицата")){
+                                AlertDialog.Builder congrats = new AlertDialog.Builder(AlgorithmsTEST.this, android.R.style.Theme_Holo_Dialog_MinWidth);
+                                congrats.setTitle("Ха, Отново!");
+                                congrats.setMessage("\tВие отново преминахте теста за алгоритми... Точки : "+ innerPoints +" \n\tСега на къде?");
+                                congrats.setIcon(R.drawable.it_talents_logo_inner);
+                                congrats.setCancelable(false);
+                                congrats.setPositiveButton("Към ITTalents", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        Intent intent = new Intent();
+                                        intent.setAction(Intent.ACTION_VIEW);
+                                        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                                        intent.setData(Uri.parse("http://www.ittalents.bg/home"));
+                                        logDBAdp.updateUserStage(currentUser.getUsername(), "Матрицата");
+                                        currentUser.setCurrent_stage("Матрицата");
+                                        startActivity(intent);
                                     }
                                 });
-                            congrats.setNegativeButton("Назад", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
-                                    Intent goingToLoops = new Intent(AlgorithmsTEST.this, HomeScreen.class);
-                                    setResult(1, goingToLoops);
-                                    logDBAdp.updateUserStage(currentUser.getUsername(), "Матрицата");
-                                    currentUser.setCurrent_stage("Матрицата!");
-                                    goingToLoops.putExtra("User", currentUser);
-                                    startActivity(goingToLoops);
-                                }
-                            });
-                            congrats.show();
+                                congrats.setNegativeButton("Назад", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        Intent goingToLoops = new Intent(AlgorithmsTEST.this, HomeScreen.class);
+                                        setResult(1, goingToLoops);
+                                        logDBAdp.updateUserStage(currentUser.getUsername(), "Матрицата");
+                                        currentUser.setCurrent_stage("Матрицата!");
+                                        goingToLoops.putExtra("User", currentUser);
+                                        startActivity(goingToLoops);
+                                    }
+                                });
+                                congrats.show();
+                            }
+                            else{
+                                AlertDialog.Builder congrats = new AlertDialog.Builder(AlgorithmsTEST.this, android.R.style.Theme_Holo_Dialog_MinWidth);
+                                congrats.setTitle("Поздравления!");
+                                congrats.setMessage("\tВие успешно преминахте всички етапи\n\tна JavaЗаВсеки!");
+                                congrats.setIcon(R.drawable.it_talents_logo_inner);
+                                congrats.setCancelable(false);
+                                congrats.setPositiveButton("Към ITTalents", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        Intent intent = new Intent();
+                                        intent.setAction(Intent.ACTION_VIEW);
+                                        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                                        intent.setData(Uri.parse("http://www.ittalents.bg/home"));
+                                        logDBAdp.updateUserStage(currentUser.getUsername(), "Матрицата");
+                                        currentUser.setCurrent_stage("Матрицата");
+                                        startActivity(intent);
+                                        }
+                                    });
+                                congrats.setNegativeButton("Назад", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        Intent goingToLoops = new Intent(AlgorithmsTEST.this, HomeScreen.class);
+                                        setResult(1, goingToLoops);
+                                        logDBAdp.updateUserStage(currentUser.getUsername(), "Матрицата");
+                                        currentUser.setCurrent_stage("Матрицата!");
+                                        goingToLoops.putExtra("User", currentUser);
+                                        startActivity(goingToLoops);
+                                    }
+                                });
+                                congrats.show();
+                            }
                         }else{
                             AlertDialog.Builder wrngTest = new AlertDialog.Builder(AlgorithmsTEST.this, android.R.style.Theme_Holo_Dialog_MinWidth);
                             wrngTest.setTitle("Грешка!");

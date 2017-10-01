@@ -46,29 +46,64 @@ public class Strings extends AppCompatActivity {
                 }
                 if (currentImamge >= imagesStrings.length) {
                     nextSlide_strings.setClickable(false);
-                    final AlertDialog.Builder goToLoopsLog = new AlertDialog.Builder(Strings.this, android.R.style.Theme_Holo_Dialog_MinWidth);
-                    goToLoopsLog.setTitle("ITTalents - JavaЗаВсеки");
-                    goToLoopsLog.setMessage("\tЖелаете ли да отворите теста за \n Символни Низове?");
-                    goToLoopsLog.setIcon(R.drawable.it_talents_logo_inner);
-                    goToLoopsLog.setPositiveButton("Да", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            Intent goingToLoops = new Intent(Strings.this, StringsTEST.class);
-                            Toast.makeText(Strings.this,"Продължаваме към теста за Символни Низове...",Toast.LENGTH_SHORT).show();
-                            goingToLoops.putExtra("User", currentUser);
-                            startActivity(goingToLoops);
-                        }
-                    });
-                    goToLoopsLog.setNegativeButton("Не", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            Intent goingToHome = new Intent(Strings.this, HomeScreen.class);
-                            goingToHome.putExtra("User", currentUser);
-                            startActivity(goingToHome);
-                        }
-                    });
-                    goToLoopsLog.setCancelable(false);
-                    goToLoopsLog.show();
+                    if (!currentUser.getCurrent_stage().equalsIgnoreCase("Символни Низове")){
+                        final AlertDialog.Builder testDone = new AlertDialog.Builder(Strings.this,android.R.style.Theme_Holo_Dialog_MinWidth);
+                        testDone.setTitle("ITTalents - JavaЗаВсеки");
+                        testDone.setMessage("\tВие успешно сте преминали теста за \n Символни Низове,\n искате ли да го посетите отново?");
+                        testDone.setIcon(R.drawable.it_talents_logo_inner);
+                        testDone.setCancelable(false);
+                        testDone.setPositiveButton("Да, Към теста!", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent goingToLoops = new Intent(Strings.this, StringsTEST.class);// Change Here!
+                                Toast.makeText(Strings.this,"Продължаваме към теста за Символни Низове...",Toast.LENGTH_SHORT).show();
+                                goingToLoops.putExtra("User", currentUser);
+                                startActivity(goingToLoops);
+                            }
+                        });
+                        testDone.setNegativeButton("Не, Към Етапи!", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent goingToHome = new Intent(Strings.this, HomeScreen.class);
+                                goingToHome.putExtra("User", currentUser);
+                                startActivity(goingToHome);
+                            }
+                        });
+                        testDone.setNeutralButton("Не, Към Алгоритми!", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent goingToLoops = new Intent(Strings.this, Algorithms.class);// Change Here!
+                                Toast.makeText(Strings.this,"Продължаваме към Алгоритми...",Toast.LENGTH_SHORT).show();
+                                goingToLoops.putExtra("User", currentUser);
+                                startActivity(goingToLoops);
+                            }
+                        });
+                        testDone.show();
+                    }else{
+                        final AlertDialog.Builder goToLoopsLog = new AlertDialog.Builder(Strings.this, android.R.style.Theme_Holo_Dialog_MinWidth);
+                        goToLoopsLog.setTitle("ITTalents - JavaЗаВсеки");
+                        goToLoopsLog.setMessage("\tЖелаете ли да отворите теста за \n Символни Низове?");
+                        goToLoopsLog.setIcon(R.drawable.it_talents_logo_inner);
+                        goToLoopsLog.setPositiveButton("Да", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent goingToLoops = new Intent(Strings.this, StringsTEST.class);
+                                Toast.makeText(Strings.this,"Продължаваме към теста за Символни Низове...",Toast.LENGTH_SHORT).show();
+                                goingToLoops.putExtra("User", currentUser);
+                                startActivity(goingToLoops);
+                            }
+                        });
+                        goToLoopsLog.setNegativeButton("Не", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent goingToHome = new Intent(Strings.this, HomeScreen.class);
+                                goingToHome.putExtra("User", currentUser);
+                                startActivity(goingToHome);
+                            }
+                        });
+                        goToLoopsLog.setCancelable(false);
+                        goToLoopsLog.show();
+                    }
                 }
 
             }

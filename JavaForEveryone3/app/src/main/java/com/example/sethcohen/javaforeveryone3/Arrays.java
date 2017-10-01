@@ -49,29 +49,65 @@ public class Arrays extends AppCompatActivity {
                 }
                 if (currentImamge >= imagesArrays.length) {
                     nextSlide_arr.setClickable(false);
-                    final AlertDialog.Builder goToLoopsLog = new AlertDialog.Builder(Arrays.this, android.R.style.Theme_Holo_Dialog_MinWidth);
-                    goToLoopsLog.setTitle("ITTalents - JavaЗаВсеки");
-                    goToLoopsLog.setMessage("\tЖелаете ли да отворите теста за \n Масиви?");
-                    goToLoopsLog.setIcon(R.drawable.it_talents_logo_inner);
-                    goToLoopsLog.setPositiveButton("Да", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            Intent goingToLoops = new Intent(Arrays.this, ArraysTEST.class);
-                            Toast.makeText(Arrays.this,"Продължаваме към теста за Масиви...",Toast.LENGTH_SHORT).show();
-                            goingToLoops.putExtra("User", currentUser);
-                            startActivity(goingToLoops);
-                        }
-                    });
-                    goToLoopsLog.setNegativeButton("Не", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            Intent goingToHome = new Intent(Arrays.this, HomeScreen.class);
-                            goingToHome.putExtra("User", currentUser);
-                            startActivity(goingToHome);
-                        }
-                    });
-                    goToLoopsLog.setCancelable(false);
-                    goToLoopsLog.show();
+                    if (!currentUser.getCurrent_stage().equalsIgnoreCase("Масиви")){
+                        final AlertDialog.Builder testDone = new AlertDialog.Builder(Arrays.this,android.R.style.Theme_Holo_Dialog_MinWidth);
+                        testDone.setTitle("ITTalents - JavaЗаВсеки");
+                        testDone.setMessage("\tВие успешно сте преминали теста за \n Масиви,\n искате ли да го посетите отново?");
+                        testDone.setIcon(R.drawable.it_talents_logo_inner);
+                        testDone.setCancelable(false);
+                        testDone.setPositiveButton("Да, Към теста!", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent goingToLoops = new Intent(Arrays.this, ArraysTEST.class);// Change Here!
+                                Toast.makeText(Arrays.this,"Продължаваме към теста за Масиви...",Toast.LENGTH_SHORT).show();
+                                goingToLoops.putExtra("User", currentUser);
+                                startActivity(goingToLoops);
+                            }
+                        });
+                        testDone.setNegativeButton("Не, Към Етапи!", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent goingToHome = new Intent(Arrays.this, HomeScreen.class);
+                                goingToHome.putExtra("User", currentUser);
+                                startActivity(goingToHome);
+                            }
+                        });
+                        testDone.setNeutralButton("Не, Към Методи и Рекурсия!", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent goingToLoops = new Intent(Arrays.this, Arrays.class);// Change Here!
+                                Toast.makeText(Arrays.this,"Продължаваме към Методи и Рекурсия...",Toast.LENGTH_SHORT).show();
+                                goingToLoops.putExtra("User", currentUser);
+                                startActivity(goingToLoops);
+                            }
+                        });
+                        testDone.show();
+                    }
+                    else{
+                        final AlertDialog.Builder goToLoopsLog = new AlertDialog.Builder(Arrays.this, android.R.style.Theme_Holo_Dialog_MinWidth);
+                        goToLoopsLog.setTitle("ITTalents - JavaЗаВсеки");
+                        goToLoopsLog.setMessage("\tЖелаете ли да отворите теста за \n Масиви?");
+                        goToLoopsLog.setIcon(R.drawable.it_talents_logo_inner);
+                        goToLoopsLog.setPositiveButton("Да", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent goingToLoops = new Intent(Arrays.this, ArraysTEST.class);
+                                Toast.makeText(Arrays.this,"Продължаваме към теста за Масиви...",Toast.LENGTH_SHORT).show();
+                                goingToLoops.putExtra("User", currentUser);
+                                startActivity(goingToLoops);
+                            }
+                        });
+                        goToLoopsLog.setNegativeButton("Не", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent goingToHome = new Intent(Arrays.this, HomeScreen.class);
+                                goingToHome.putExtra("User", currentUser);
+                                startActivity(goingToHome);
+                            }
+                        });
+                        goToLoopsLog.setCancelable(false);
+                        goToLoopsLog.show();
+                    }
                 }
             }
         });
