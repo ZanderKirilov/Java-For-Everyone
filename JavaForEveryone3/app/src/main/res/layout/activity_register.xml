@@ -25,10 +25,11 @@
     <EditText
         android:id="@+id/Username_Register"
         android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="225dp"
+        android:layout_height="50dp"
         android:layout_marginTop="55dp"
         android:ems="10"
+        android:gravity="center"
         android:hint="@string/username"
         android:inputType="textPersonName"
         android:textColor="@android:color/background_dark"
@@ -39,11 +40,12 @@
 
     <EditText
         android:id="@+id/Password_Register"
+        android:layout_width="225dp"
+        android:layout_height="50dp"
         android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
+        android:gravity="center"
         android:hint="@string/ins_password"
         android:inputType="textPassword"
         android:textColorHighlight="@android:color/background_dark"
@@ -53,10 +55,11 @@
     <EditText
         android:id="@+id/RetypePassword_Register"
         android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="225dp"
+        android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:ems="10"
+        android:gravity="center"
         android:hint="@string/rePassword"
         android:inputType="textPassword"
         android:textColorHighlight="@android:color/background_dark"
@@ -66,10 +69,11 @@
     <EditText
         android:id="@+id/Email_Register"
         android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="225dp"
+        android:layout_height="50dp"
         android:layout_marginTop="16dp"
         android:ems="10"
+        android:gravity="center"
         android:hint="@string/ins_email"
         android:inputType="textEmailAddress"
         android:textColorHighlight="@android:color/background_dark"
@@ -79,10 +83,11 @@
     <Button
         android:id="@+id/btn_RegisterHome_Register"
         android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="225dp"
+        android:layout_height="50dp"
         android:layout_marginTop="70dp"
         android:background="#0097A7"
+
         android:text="@string/Create_an_account"
         android:textColor="@android:color/background_light" />
 
