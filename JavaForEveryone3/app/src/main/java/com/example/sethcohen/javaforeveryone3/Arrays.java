@@ -17,15 +17,18 @@ import DBpack.LoginDataBaseAdapter;
 import User.User;
 import tests.ArraysTEST;
 
-public class Arrays extends AppCompatActivity {
+public class Arrays extends Stages {
 
     private Integer[] imagesArrays = { R.drawable.arrays2declare, R.drawable.arrays3usage, R.drawable.arrays4twodimenssions, R.drawable.arrays5last, R.drawable.empty_pic};
     private ImageView imgSwArrays;
-    private int currentImamge = 0;
     private Button nextSlide_arr;
+    private Button prevSlide_arr;
 
     private User currentUser;
     private LoginDataBaseAdapter logDBAdp;
+
+    //Етапи - 1 Сегашен \n Предишен \n Следващ
+    protected String className = "Масиви\nУсловия и Цикли\nМетоди и Рекурсия";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,45 +41,16 @@ public class Arrays extends AppCompatActivity {
         imgSwArrays = (ImageView) findViewById(R.id.is_picchanger_arr);
 
         nextSlide_arr = (Button) findViewById(R.id.btn_next_1_arrays);
-
-        nextSlide_arr.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                imgSwArrays.setImageResource(imagesArrays[currentImamge]);
-                currentImamge++;
-                if (currentImamge == imagesArrays.length-1){
-                    nextSlide_arr.setText("КРАЙ");
-                }
-                if (currentImamge >= imagesArrays.length) {
-                    nextSlide_arr.setClickable(false);
-                    final AlertDialog.Builder goToLoopsLog = new AlertDialog.Builder(Arrays.this, android.R.style.Theme_Holo_Dialog_MinWidth);
-                    goToLoopsLog.setTitle("ITTalents - JavaЗаВсеки");
-                    goToLoopsLog.setMessage("\tЖелаете ли да отворите теста за \n Масиви?");
-                    goToLoopsLog.setIcon(R.drawable.it_talents_logo_inner);
-                    goToLoopsLog.setPositiveButton("Да", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            Intent goingToLoops = new Intent(Arrays.this, ArraysTEST.class);
-                            Toast.makeText(Arrays.this,"Продължаваме към теста за Масиви...",Toast.LENGTH_SHORT).show();
-                            goingToLoops.putExtra("User", currentUser);
-                            startActivity(goingToLoops);
-                        }
-                    });
-                    goToLoopsLog.setNegativeButton("Не", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            Intent goingToHome = new Intent(Arrays.this, HomeScreen.class);
-                            goingToHome.putExtra("User", currentUser);
-                            startActivity(goingToHome);
-                        }
-                    });
-                    goToLoopsLog.setCancelable(false);
-                    goToLoopsLog.show();
-                }
-            }
-        });
+        prevSlide_arr = (Button) findViewById(R.id.btn_prev_1_arrays);
+        Switcher(imgSwArrays, imagesArrays, nextSlide_arr, prevSlide_arr, currentUser, Arrays.this, ArraysTEST.class);
 
     }
+
+    @Override
+    public String toString() {
+        return this.className;
+    }
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();

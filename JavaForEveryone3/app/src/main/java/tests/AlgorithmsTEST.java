@@ -6,10 +6,13 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.sethcohen.javaforeveryone3.Algorithms;
@@ -36,6 +39,10 @@ public class AlgorithmsTEST extends AppCompatActivity {
     private User currentUser;
     private LoginDataBaseAdapter logDBAdp;
 
+    private String allStagesCleared = "Влез в Матрицата!";
+    private RelativeLayout holder;
+    private TextView toastTxt;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,10 +51,21 @@ public class AlgorithmsTEST extends AppCompatActivity {
         logDBAdp = new LoginDataBaseAdapter(this);
         logDBAdp = logDBAdp.open();
 
+        holder = (RelativeLayout) getLayoutInflater().inflate(R.layout.toast_achievement, (RelativeLayout) findViewById(R.id.rell_toast));
+        toastTxt = (TextView) holder.findViewById(R.id.txt_toast);
+        toastTxt.setText("Поздравления, ВИЕ отключихте постижение!\n" + "\n\"" + allStagesCleared + "\"");
+        final Toast achieved = new Toast(AlgorithmsTEST.this);
+        achieved.setGravity(Gravity.CENTER | Gravity.BOTTOM,0,0);
+        achieved.setDuration(Toast.LENGTH_LONG);
+        achieved.setView(holder);
+
+
+
         radGrpFirstQ = (RadioGroup)findViewById(R.id.rad_grp_first_algorithms);
         radGrpSecondQ = (RadioGroup)findViewById(R.id.rad_grp_second_algorithms);
         radGrpThirdQ = (RadioGroup)findViewById(R.id.rad_grp_third_algorithms);
         radGrpFourthQ = (RadioGroup)findViewById(R.id.rad_grp_fourth_algorithms);
+
 
         Button btn = (Button)findViewById(R.id.btn_submittest_algorithms);
         btn.setOnClickListener(new View.OnClickListener() {
@@ -83,35 +101,76 @@ public class AlgorithmsTEST extends AppCompatActivity {
                         }
                         if (score >= 50){
                             final int innerPoints = score;
-                            AlertDialog.Builder congrats = new AlertDialog.Builder(AlgorithmsTEST.this, android.R.style.Theme_Holo_Dialog_MinWidth);
-                            congrats.setTitle("Поздравления!");
-                            congrats.setMessage("\tВие успешно преминахте всички етапи\n\tна JavaЗаВсеки!");
-                            congrats.setIcon(R.drawable.it_talents_logo_inner);
-                            congrats.setCancelable(false);
-                            congrats.setPositiveButton("Към ITTalents", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
-                                    Intent intent = new Intent();
-                                    intent.setAction(Intent.ACTION_VIEW);
-                                    intent.addCategory(Intent.CATEGORY_BROWSABLE);
-                                    intent.setData(Uri.parse("http://www.ittalents.bg/home"));
-                                    logDBAdp.updateUserStage(currentUser.getUsername(), "Матрицата");
-                                    currentUser.setCurrent_stage("Матрицата!");
-                                    startActivity(intent);
+                            if (currentUser.getCurrent_stage().equalsIgnoreCase("Матрицата")){
+                                achieved.show();
+                                currentUser.setLast_achievement(allStagesCleared);
+                                currentUser.addPoints(10);
+                                
+                                AlertDialog.Builder congrats = new AlertDialog.Builder(AlgorithmsTEST.this, android.R.style.Theme_Holo_Dialog_MinWidth);
+                                congrats.setTitle("Ха, Отново!");
+                                congrats.setMessage("\tВие отново преминахте теста за алгоритми... Точки : "+ innerPoints +" \n\tСега на къде?");
+                                congrats.setIcon(R.drawable.it_talents_logo_inner);
+                                congrats.setCancelable(false);
+                                congrats.setPositiveButton("Към ITTalents", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        Intent intent = new Intent();
+                                        intent.setAction(Intent.ACTION_VIEW);
+                                        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                                        intent.setData(Uri.parse("http://www.ittalents.bg/home"));
+                                        logDBAdp.updateUserStage(currentUser.getUsername(), "Матрицата");
+                                        currentUser.setCurrent_stage("Матрицата");
+                                        startActivity(intent);
                                     }
                                 });
-                            congrats.setNegativeButton("Назад", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
-                                    Intent goingToLoops = new Intent(AlgorithmsTEST.this, HomeScreen.class);
-                                    setResult(1, goingToLoops);
-                                    logDBAdp.updateUserStage(currentUser.getUsername(), "Матрицата");
-                                    currentUser.setCurrent_stage("Матрицата!");
-                                    goingToLoops.putExtra("User", currentUser);
-                                    startActivity(goingToLoops);
-                                }
-                            });
-                            congrats.show();
+                                congrats.setNegativeButton("Назад", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        Intent goingToLoops = new Intent(AlgorithmsTEST.this, HomeScreen.class);
+                                        setResult(1, goingToLoops);
+                                        logDBAdp.updateUserStage(currentUser.getUsername(), "Матрицата");
+                                        currentUser.setCurrent_stage("Матрицата!");
+                                        goingToLoops.putExtra("User", currentUser);
+                                        startActivity(goingToLoops);
+                                    }
+                                });
+                                congrats.show();
+                            }
+                            else{
+                                achieved.show();
+                                currentUser.setLast_achievement(allStagesCleared);
+                                currentUser.addPoints(10);
+
+                                AlertDialog.Builder congrats = new AlertDialog.Builder(AlgorithmsTEST.this, android.R.style.Theme_Holo_Dialog_MinWidth);
+                                congrats.setTitle("Поздравления!");
+                                congrats.setMessage("\tВие успешно преминахте всички етапи\n\tна JavaЗаВсеки!");
+                                congrats.setIcon(R.drawable.it_talents_logo_inner);
+                                congrats.setCancelable(false);
+                                congrats.setPositiveButton("Към ITTalents", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        Intent intent = new Intent();
+                                        intent.setAction(Intent.ACTION_VIEW);
+                                        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                                        intent.setData(Uri.parse("http://www.ittalents.bg/home"));
+                                        logDBAdp.updateUserStage(currentUser.getUsername(), "Матрицата");
+                                        currentUser.setCurrent_stage("Матрицата");
+                                        startActivity(intent);
+                                        }
+                                    });
+                                congrats.setNegativeButton("Назад", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        Intent goingToLoops = new Intent(AlgorithmsTEST.this, HomeScreen.class);
+                                        setResult(1, goingToLoops);
+                                        logDBAdp.updateUserStage(currentUser.getUsername(), "Матрицата");
+                                        currentUser.setCurrent_stage("Матрицата!");
+                                        goingToLoops.putExtra("User", currentUser);
+                                        startActivity(goingToLoops);
+                                    }
+                                });
+                                congrats.show();
+                            }
                         }else{
                             AlertDialog.Builder wrngTest = new AlertDialog.Builder(AlgorithmsTEST.this, android.R.style.Theme_Holo_Dialog_MinWidth);
                             wrngTest.setTitle("Грешка!");

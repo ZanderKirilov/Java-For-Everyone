@@ -31,6 +31,9 @@ public class User implements Serializable{
         this.current_stage = current_stage;
     }
 
+    public void setLast_achievement(String achievement){
+        this.last_achievement = achievement;
+    }
 
     public String getUsername() {
         return username;
@@ -46,5 +49,9 @@ public class User implements Serializable{
 
     public String getPoints() {
         return Integer.toString(points);
+    }
+
+    public void addPoints(int addition) {
+        this.points += addition;
     }
 }

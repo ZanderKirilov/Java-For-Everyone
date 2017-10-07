@@ -17,7 +17,7 @@ public class Introduction extends AppCompatActivity {
 
     private Integer[] imagesIntro = {R.drawable.intro2fortheappandittalents, R.drawable.intro3thirdpage, R.drawable.intro4primitives, R.drawable.intro5primitivesecond, R.drawable.intro6moreonprimmitives, R.drawable.intro7moreonprimitives, R.drawable.intro8spesialsigns, R.drawable.intro9operations, R.drawable.intro10moreoperations, R.drawable.intro11scanner, R.drawable.intro12incrementdecrement, R.drawable.empty_pic};
     private ImageView imgSwIntro;
-    private int currentImamge = 0;
+    private int currentImage = 0;
     private Button nextSlide_intro;
     private User currentUser;
     private LoginDataBaseAdapter logDBAdp;
@@ -39,12 +39,12 @@ public class Introduction extends AppCompatActivity {
         nextSlide_intro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                imgSwIntro.setImageResource(imagesIntro[currentImamge]);
-                currentImamge++;
-                if (currentImamge == imagesIntro.length-1){
+                imgSwIntro.setImageResource(imagesIntro[currentImage]);
+                currentImage++;
+                if (currentImage == imagesIntro.length-1){
                     nextSlide_intro.setText("КРАЙ");
                 }
-                if (currentImamge >= imagesIntro.length) {
+                if (currentImage >= imagesIntro.length) {
                     nextSlide_intro.setClickable(false);
                     final AlertDialog.Builder goToLoopsLog = new AlertDialog.Builder(Introduction.this, android.R.style.Theme_Holo_Dialog_MinWidth);
                     goToLoopsLog.setTitle("ITTalents - JavaЗаВсеки");

@@ -15,14 +15,15 @@ import User.User;
 import tests.MethodsAndRecursionTEST;
 
 
-public class MethodsAndRecursion extends AppCompatActivity {
+public class MethodsAndRecursion extends Stages {
     private Integer[] imagesMethods = {R.drawable.metthods2, R.drawable.methods3declaration, R.drawable.method4return, R.drawable.methods5call, R.drawable.methods6main, R.drawable.methods7recursion1on1, R.drawable.methods8recursionwhy, R.drawable.methods9recursionelements, R.drawable.methods10recursionend, R.drawable.empty_pic};
     private ImageView imgMethods;
-    private int currentImamge = 0;
     private Button nextSlide_methods;
     private Button prevSlide_methods;
     private User currentUser;
     private LoginDataBaseAdapter logDBAdp;
+                                //Етапи - 1 Сегашен \n Предишен \n Следващ
+    protected String className = "Методи и Рекурсия\nМасиви\nСимволни Низове";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,47 +35,20 @@ public class MethodsAndRecursion extends AppCompatActivity {
 
         imgMethods = (ImageView) findViewById(R.id.is_picchanger_methods);
         nextSlide_methods = (Button) findViewById(R.id.btn_next_1_methods);
+        prevSlide_methods = (Button) findViewById(R.id.btn_prev_1_methods);
 
-        nextSlide_methods.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                imgMethods.setImageResource(imagesMethods[currentImamge]);
-                currentImamge++;
-                if (currentImamge == imagesMethods.length-1){
-                    nextSlide_methods.setText("КРАЙ");
-                }
-                if (currentImamge >= imagesMethods.length) {
-                    nextSlide_methods.setClickable(false);
-                    final AlertDialog.Builder goToLoopsLog = new AlertDialog.Builder(MethodsAndRecursion.this, android.R.style.Theme_Holo_Dialog_MinWidth);
-                    goToLoopsLog.setTitle("ITTalents - JavaЗаВсеки");
-                    goToLoopsLog.setMessage("\tЖелаете ли да отворите теста за \n Методи и Рекурсия?");
-                    goToLoopsLog.setIcon(R.drawable.it_talents_logo_inner);
-                    goToLoopsLog.setPositiveButton("Да", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            Intent goingToLoops = new Intent(MethodsAndRecursion.this, MethodsAndRecursionTEST.class);
-                            Toast.makeText(MethodsAndRecursion.this,"Продължаваме към теста за Методи и Рекурсия...",Toast.LENGTH_SHORT).show();
-                            goingToLoops.putExtra("User", currentUser);
-                            startActivity(goingToLoops);
-                        }
-                    });
-                    goToLoopsLog.setNegativeButton("Не", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            Intent goingToHome = new Intent(MethodsAndRecursion.this, HomeScreen.class);
-                            goingToHome.putExtra("User", currentUser);
-                            startActivity(goingToHome);
-                        }
-                    });
-                    goToLoopsLog.setCancelable(false);
-                    goToLoopsLog.show();
-                }
-            }
-        });
+        Switcher(imgMethods, imagesMethods, nextSlide_methods,prevSlide_methods, currentUser, MethodsAndRecursion.this, MethodsAndRecursionTEST.class);
+
 
 
 
     }
+
+    @Override
+    public String toString() {
+        return this.className;
+    }
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();
