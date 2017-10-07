@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="18dp"
     android:paddingRight="18dp"
     android:background="@drawable/red_mountain">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_weight="1">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -217,6 +223,67 @@
                 android:textColor="@android:color/background_light" />
 
         </LinearLayout>
+
     </ScrollView>
 
+
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="10"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/img_badge1_achievements"
+            android:layout_marginTop="80dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/it_talents_logo_inner"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            />
+        <ImageView
+            android:id="@+id/img_badge2_achievements"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/it_talents_logo_inner"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            />
+        <ImageView
+            android:id="@+id/img_badge3_achievements"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/it_talents_logo_inner"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            />
+        <ImageView
+            android:id="@+id/img_badge4_achievements"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/it_talents_logo_inner"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            />
+        <ImageView
+            android:id="@+id/img_badge5_achievements"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/it_talents_logo_inner"
+            android:layout_weight="1"
+            android:visibility="invisible"
+            />
+        <ImageView
+            android:id="@+id/img_badge6_achievements"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/it_talents_logo_inner"
+            android:layout_weight="1"
+            android:layout_marginBottom="190dp"
+            android:visibility="invisible"
+            />
+
+
+    </LinearLayout>
 </LinearLayout>
