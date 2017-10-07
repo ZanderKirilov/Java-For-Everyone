@@ -24,12 +24,13 @@
     <EditText
         android:id="@+id/username_login"
         android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="225dp"
+        android:layout_height="50dp"
         android:layout_marginTop="95dp"
         android:ems="10"
         android:hint="@string/ins_username"
         android:inputType="textEmailAddress"
+        android:gravity="center"
         android:textColor="@android:color/background_dark"
         android:textColorHint="@color/colorPrimaryDark"
         android:textColorLink="#0097A7"
@@ -38,11 +39,12 @@
     <EditText
         android:id="@+id/password_login"
         android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="225dp"
+        android:layout_height="50dp"
         android:layout_marginTop="18dp"
         android:ems="10"
         android:hint="@string/ins_password"
+        android:gravity="center"
         android:inputType="textPassword"
         android:textAllCaps="false"
         android:textColor="@android:color/background_dark"
@@ -70,26 +72,27 @@
 
     <Button
         android:id="@+id/btn_Login_Login"
-        android:layout_gravity="center"
         style="@android:style/Widget.DeviceDefault.Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="225dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
         android:background="#0097A7"
-        android:text="@string/login"
         android:onClick="login"
+        android:text="@string/login"
         android:textColor="@android:color/background_light"
         android:textSize="18sp" />
 
     <Button
         android:id="@+id/btn_register_login"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="225dp"
+        android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:layout_gravity="center"
         android:background="#0097A7"
         android:textColor="@android:color/background_light"
-        android:text="@string/Create_an_account" />
+        android:text="@string/Create_an_account"
+        android:textSize="18sp" />
 
 
     <TextView
@@ -103,6 +106,7 @@
         android:onClick="login"
         android:padding="16dp"
         android:text="@string/forget_password"
-        android:textColor="#fff" />
+        android:textColor="#fff"
+        android:textSize="14sp"/>
 
 </LinearLayout>

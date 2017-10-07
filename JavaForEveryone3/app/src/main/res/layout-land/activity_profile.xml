@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/pink_nuances"
+    android:background="@drawable/profile_back"
     android:orientation="horizontal"
     android:paddingLeft="18dp"
     android:paddingRight="18dp"
@@ -102,6 +102,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="Your last achievement"
+                    android:gravity="end"
+                    android:textColor="#ffffffff"
+                    android:textColorHint="#46eeff"
                     android:textSize="15sp" />
 
             </LinearLayout>
@@ -134,6 +137,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="Your E-mail Here"
+                    android:gravity="end"
+                    android:textColor="#ffffffff"
+                    android:textColorHint="#46eeff"
                     android:textSize="15sp" />
             </LinearLayout>
         </LinearLayout>
@@ -165,6 +171,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:hint="Your Current stage Here"
+                    android:gravity="end"
+                    android:textColor="#ffffffff"
+                    android:textColorHint="#46eeff"
                     android:textSize="15sp" />
 
             </LinearLayout>
@@ -198,9 +207,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="9"
-                    android:gravity="center"
+                    android:gravity="end"
                     android:hint="Your HelpPoints Here"
+                    android:textColor="#ffffffff"
+                    android:textColorHint="#46eeff"
                     android:inputType="number"
+
                     android:textSize="15sp" />
             </LinearLayout>
         </LinearLayout>

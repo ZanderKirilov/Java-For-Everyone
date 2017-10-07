@@ -3,11 +3,11 @@
     <string name="signin">ВЛЕЗ</string>
     <string name="Create_an_account">"  "РЕГИСТРАЦИЯ"  "</string>
     <string name="ins_password">Въведете Парола</string>
-    <string name="rePassword">Въведете Паролата Отново</string>
+    <string name="rePassword">Повторете Паролата</string>
     <string name="ins_email">Въведете e-mail</string>
     <string name="success_login_msg">Влязохте Успешно</string>
     <string name="error_login_msg">Моля въведете всички полета</string>
-    <string name="retype_password">Въведете Паролата Отново</string>
+    <string name="retype_password">Повторете Паролата</string>
     <string name="ins_username">Въведете Потребителско Име</string>
     <string name="loginfailed">Влизането Неуспешно! Опитайте Отново</string>
     <string name="loginsuccess">Влязохте Успешно</string>
@@ -19,7 +19,7 @@
     <string name="level_up_ach_info">Отключва се при два взети теста</string>
     <string name="code_master_achievement">Влез в Матрицата!</string>
     <string name="code_master_ach_info">Отключва се при взимане на всички тестове</string>
-    <string name="hundred_ach">Пъривят от Много</string>
+    <string name="hundred_ach">Първият от Много</string>
     <string name="hundred_ach_info">Поздравления! Ти си получил 100 от 100 на тест</string>
     <string name="sticky_fingers_ach">Непослушни Пръсти</string>
     <string name="sticky_fing_ach_info">Трябва ти повече упражнение за по - добър резултат</string>
