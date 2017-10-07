@@ -10,23 +10,23 @@
     android:paddingRight="18dp"
     android:background="@drawable/pink_nuances"
     tools:context="com.example.sethcohen.javaforeveryone3.HomeScreen"
-    android:weightSum="1">
+    >
 
     <TextView
         android:id="@+id/ExitTXT"
         android:layout_gravity="center"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/exit_prompt"
         android:textIsSelectable="false"
-        android:textSize="30sp"
+        android:textSize="26sp"
         android:textAlignment="center"
-        android:layout_weight="0.02"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.547"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.132" />
+        app:layout_constraintVertical_bias="0.099" />
 
 
     <Button

@@ -2,6 +2,7 @@ package tests;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -39,6 +40,7 @@ public class AlgorithmsTEST extends AppCompatActivity {
     private User currentUser;
     private LoginDataBaseAdapter logDBAdp;
 
+    //За Пример Постижение ...
     private String allStagesCleared = "Влез в Матрицата!";
     private RelativeLayout holder;
     private TextView toastTxt;
@@ -51,6 +53,7 @@ public class AlgorithmsTEST extends AppCompatActivity {
         logDBAdp = new LoginDataBaseAdapter(this);
         logDBAdp = logDBAdp.open();
 
+        //За Пример Постижение ...
         holder = (RelativeLayout) getLayoutInflater().inflate(R.layout.toast_achievement, (RelativeLayout) findViewById(R.id.rell_toast));
         toastTxt = (TextView) holder.findViewById(R.id.txt_toast);
         toastTxt.setText("Поздравления, ВИЕ отключихте постижение!\n" + "\n\"" + allStagesCleared + "\"");
@@ -59,7 +62,10 @@ public class AlgorithmsTEST extends AppCompatActivity {
         achieved.setDuration(Toast.LENGTH_LONG);
         achieved.setView(holder);
 
-
+        //За Sound Пример
+        final MediaPlayer achievementUnlocked = MediaPlayer.create(AlgorithmsTEST.this, R.raw.achievement_unclocked);
+        //
+        //
 
         radGrpFirstQ = (RadioGroup)findViewById(R.id.rad_grp_first_algorithms);
         radGrpSecondQ = (RadioGroup)findViewById(R.id.rad_grp_second_algorithms);
@@ -102,10 +108,16 @@ public class AlgorithmsTEST extends AppCompatActivity {
                         if (score >= 50){
                             final int innerPoints = score;
                             if (currentUser.getCurrent_stage().equalsIgnoreCase("Матрицата")){
+
+                                //За Пример Постижение ...
                                 achieved.show();
                                 currentUser.setLast_achievement(allStagesCleared);
                                 currentUser.addPoints(10);
-                                
+
+                                //За Sound Пример ...
+                                achievementUnlocked.start();
+                                //
+                                //
                                 AlertDialog.Builder congrats = new AlertDialog.Builder(AlgorithmsTEST.this, android.R.style.Theme_Holo_Dialog_MinWidth);
                                 congrats.setTitle("Ха, Отново!");
                                 congrats.setMessage("\tВие отново преминахте теста за алгоритми... Точки : "+ innerPoints +" \n\tСега на къде?");
@@ -137,9 +149,15 @@ public class AlgorithmsTEST extends AppCompatActivity {
                                 congrats.show();
                             }
                             else{
+                                //За Пример Постижение ...
                                 achieved.show();
                                 currentUser.setLast_achievement(allStagesCleared);
                                 currentUser.addPoints(10);
+
+                                //За Sound Пример ...
+                                achievementUnlocked.start();
+                                //
+                                //
 
                                 AlertDialog.Builder congrats = new AlertDialog.Builder(AlgorithmsTEST.this, android.R.style.Theme_Holo_Dialog_MinWidth);
                                 congrats.setTitle("Поздравления!");
