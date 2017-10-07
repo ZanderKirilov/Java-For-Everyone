@@ -37,11 +37,11 @@ public class Strings extends Stages {
 
         imgStrings = (ImageView) findViewById(R.id.is_picchanger_strings);
         nextSlide_strings = (Button) findViewById(R.id.btn_next_1_strings);
-
-
-        switchPic(imgStrings, imagesStrings, nextSlide_strings, currentUser, Strings.this, StringsTEST.class);
-
         prevSlide_strings = (Button) findViewById(R.id.btn_prev_1_strings);
+
+
+//        switchPic(imgStrings, imagesStrings, nextSlide_strings, currentUser, Strings.this, StringsTEST.class);
+        Switcher(imgStrings, imagesStrings, nextSlide_strings, prevSlide_strings, currentUser, Strings.this, StringsTEST.class);
 
 //        prevSlide_strings.setOnClickListener(new View.OnClickListener() {
 //            @Override

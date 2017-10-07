@@ -38,17 +38,38 @@
 
     </LinearLayout>
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
     <Button
-        android:id="@+id/btn_next_1_arrays"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:id="@+id/btn_prev_1_arrays"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="left"
         android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
         android:background="@drawable/button_on_click_next"
-        android:text="@string/next"
-        android:textColor="?attr/colorButtonNormal" />
-    </LinearLayout>
+        android:text="@string/previous"
+        android:textColor="?attr/colorButtonNormal"
+        android:layout_weight="1"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+        </LinearLayout>
+        <Button
+            android:id="@+id/btn_next_1_arrays"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="top"
+            android:layout_weight="1"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/button_not_clicked_next"
+            android:text="@string/next"
+            android:textColor="?attr/colorButtonNormal"
+            />
+</LinearLayout>
 </LinearLayout>

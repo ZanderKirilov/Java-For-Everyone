@@ -36,9 +36,9 @@ public class Algorithms extends Stages {
 
         imgAlgorithms = (ImageView) findViewById(R.id.is_picchanger_algorithms);
         nextSlide_algorithms = (Button) findViewById(R.id.btn_next_1_algorithms);
+        prevSlide_algorithms = (Button) findViewById(R.id.btn_prev_1_algorithms);
 
-
-        switchPic(imgAlgorithms,imagesAlgorithms,nextSlide_algorithms,currentUser,Algorithms.this,AlgorithmsTEST.class);
+        Switcher(imgAlgorithms,imagesAlgorithms,nextSlide_algorithms, prevSlide_algorithms,currentUser,Algorithms.this,AlgorithmsTEST.class);
 
 //        prevSlide_algorithms = (Button) findViewById(R.id.btn_prev_1_algorithms);
 //

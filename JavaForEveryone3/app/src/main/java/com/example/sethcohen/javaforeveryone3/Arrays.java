@@ -22,6 +22,7 @@ public class Arrays extends Stages {
     private Integer[] imagesArrays = { R.drawable.arrays2declare, R.drawable.arrays3usage, R.drawable.arrays4twodimenssions, R.drawable.arrays5last, R.drawable.empty_pic};
     private ImageView imgSwArrays;
     private Button nextSlide_arr;
+    private Button prevSlide_arr;
 
     private User currentUser;
     private LoginDataBaseAdapter logDBAdp;
@@ -40,8 +41,8 @@ public class Arrays extends Stages {
         imgSwArrays = (ImageView) findViewById(R.id.is_picchanger_arr);
 
         nextSlide_arr = (Button) findViewById(R.id.btn_next_1_arrays);
-
-        switchPic(imgSwArrays, imagesArrays, nextSlide_arr, currentUser, Arrays.this, ArraysTEST.class);
+        prevSlide_arr = (Button) findViewById(R.id.btn_prev_1_arrays);
+        Switcher(imgSwArrays, imagesArrays, nextSlide_arr, prevSlide_arr, currentUser, Arrays.this, ArraysTEST.class);
 
     }
 

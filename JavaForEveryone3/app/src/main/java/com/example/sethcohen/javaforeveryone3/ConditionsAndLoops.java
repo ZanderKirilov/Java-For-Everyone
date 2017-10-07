@@ -17,6 +17,7 @@ public class ConditionsAndLoops extends Stages {
     private Integer[] imagesCondNLoops = {R.drawable.condnloops2ifelsestatement, R.drawable.condnloops3loops, R.drawable.condnloops4loopslife, R.drawable.condnloop5innerloop, R.drawable.condnloops6keywords, R.drawable.empty_pic};
     private ImageView imgSwCondNLoops;
     private Button nextSlide_condnloops;
+    private Button prevSlide_condnloops;
 
     private User currentUser;
 
@@ -31,8 +32,9 @@ public class ConditionsAndLoops extends Stages {
         imgSwCondNLoops = (ImageView) findViewById(R.id.is_picchanger_condNloops);
 
         nextSlide_condnloops = (Button) findViewById(R.id.btn_next_1_condNloops);
+        prevSlide_condnloops = (Button) findViewById(R.id.btn_prev_1_condNloops);
 
-        switchPic(imgSwCondNLoops, imagesCondNLoops, nextSlide_condnloops, currentUser, ConditionsAndLoops.this, CondAndLoopsTEST.class);
+        Switcher(imgSwCondNLoops, imagesCondNLoops, nextSlide_condnloops,prevSlide_condnloops, currentUser, ConditionsAndLoops.this, CondAndLoopsTEST.class);
 
     }
 

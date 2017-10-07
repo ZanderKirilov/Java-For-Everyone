@@ -19,7 +19,9 @@ import User.User;
 
 public class Stages extends AppCompatActivity{
 
-    public void switchPic(final ImageView img, final Integer [] allImages, final Button btnNextSlide,final User currentUser,final Context currentContext,final Class test){
+    int proba = 0;
+
+    public void Switcher(final ImageView img, final Integer [] allImages, final Button btnNextSlide, final Button btnPrevSlide,final User currentUser,final Context currentContext,final Class test){
 
         final String [] stageInfo = currentContext.toString().split("\n");
         final String currentStage = stageInfo[0];
@@ -27,9 +29,9 @@ public class Stages extends AppCompatActivity{
         final String nextStage = stageInfo[2];
 
         btnNextSlide.setOnClickListener(new View.OnClickListener() {
-            int currentImage = 0;
             @Override
             public void onClick(View view) {
+                int currentImage = proba;
                 img.setImageResource(allImages[currentImage]);
                 currentImage++;
                 if (currentImage == allImages.length-1){
@@ -90,8 +92,44 @@ public class Stages extends AppCompatActivity{
                         goToLoopsLog.show();
                     }
                 }
+                proba = currentImage;
+            }
 
+        });
 
+        btnPrevSlide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int currentImage = proba-1;
+                if (btnNextSlide.getText().equals("КРАЙ")){
+                    btnNextSlide.setText("НАПРЕД");
+                }
+                if (currentImage < 0){
+                    Toast.makeText(currentContext, "Няма предишна страница",Toast.LENGTH_SHORT).show();
+                    return;
+                }else{
+                    currentImage--;
+                    if (currentImage < 0){
+                        if (currentStage.equalsIgnoreCase("Символни Низове")){
+                            img.setImageResource(R.drawable.string1);
+                        }
+                        if (currentStage.equalsIgnoreCase("Масиви")){
+                            img.setImageResource(R.drawable.arrays1start);
+                        }
+                        if (currentStage.equalsIgnoreCase("Алгоритми")){
+                            img.setImageResource(R.drawable.algorithm1);
+                        }
+                        if (currentStage.equalsIgnoreCase("Условия и Цикли")){
+                            img.setImageResource(R.drawable.condnloops1conditoperatots);
+                        }
+                        if (currentStage.equalsIgnoreCase("Методи и Рекурсия")){
+                            img.setImageResource(R.drawable.methods1);
+                        }
+                    }else{
+                        img.setImageResource(allImages[currentImage]);
+                    }
+                    proba = currentImage+1;
+                }
             }
         });
 

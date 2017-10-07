@@ -35,8 +35,9 @@ public class MethodsAndRecursion extends Stages {
 
         imgMethods = (ImageView) findViewById(R.id.is_picchanger_methods);
         nextSlide_methods = (Button) findViewById(R.id.btn_next_1_methods);
+        prevSlide_methods = (Button) findViewById(R.id.btn_prev_1_methods);
 
-        switchPic(imgMethods, imagesMethods, nextSlide_methods, currentUser, MethodsAndRecursion.this, MethodsAndRecursionTEST.class);
+        Switcher(imgMethods, imagesMethods, nextSlide_methods,prevSlide_methods, currentUser, MethodsAndRecursion.this, MethodsAndRecursionTEST.class);
 
 
 
